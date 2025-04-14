@@ -137,8 +137,7 @@ with col[0]:
         map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
         choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',highlight=True )       
         choropleth.geojson.add_to(map)
-
-        df_indexed = df.set_index('deleg')
+        df_indexed = df.set_index('ref_tn_cod')
         for feature in choropleth.geojson.data['features']:
             id_dele=feature["properties"]["id"]
             feature['properties']['effeleve']='التلاميذ :' + '{:,}'.format(df_indexed.loc[id_dele, 'student'][0]) if id_dele in list(df_indexed.index) else ''
