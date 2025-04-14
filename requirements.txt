@@ -3,6 +3,7 @@ numpy
 streamlit ==1.2.0
 plotly
 plotly.express 
+streamlit_folium
 altair 
 geopandas 
 geoviews 
@@ -10,3 +11,4 @@ cartopy
 panel 
 folium 
 base64
+
