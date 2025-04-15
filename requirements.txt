@@ -11,6 +11,4 @@ geoviews
 cartopy   
 panel 
 folium 
-folium.plugins 
-GeoJsonTooltip
 
