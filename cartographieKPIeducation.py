@@ -9,7 +9,7 @@ from cartopy import crs
 import panel as pn
 import folium 
 from streamlit_folium import st_folium 
-import base64
+from folium.plugins import GeoJsonTooltip
 
 
 
