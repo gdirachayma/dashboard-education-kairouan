@@ -3,3 +3,4 @@ pandas
 folium
 altair
 streamlit-folium
+plotly.express
