@@ -9,8 +9,6 @@ from cartopy import crs
 import panel as pn
 import folium 
 from streamlit_folium import st_folium 
-from folium.features import GeoJsonTooltip
-
 
 
 
@@ -103,9 +101,9 @@ with st.sidebar:
     selected_niveau = st.selectbox('Select a cycle', niveau_list)
     df_selected_niveau = df[df.niveau== selected_niveau]
 
-    color_theme_list = ['blues',  'greens',  'reds']
-    selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
-    
+    color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+    selected_color_theme = st.selectbox('Select a color theme', list(color_theme_list.keys()))
+    folium_palette, altair_palette = color_theme_list[ selected_color_theme]
 #######################
 # Plots
 
@@ -134,11 +132,11 @@ col = st.columns((4.5, 2.5), gap='medium')
 
 with col[0]:
         st.markdown('#### Total élèves')
-        heatmap = make_heatmap( df,'year',  'deleg', 'student', selected_color_theme)
+        heatmap = make_heatmap( df,'year',  'deleg', 'student', altair_palette)
         st.altair_chart(heatmap, use_container_width=True) 
 
         map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
-        choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',highlight=True, legend_name=f"Nombre d'élèves ({selected_year})" )       
+        choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette)
         choropleth.geojson.add_to(map)
         
         student_dict = dict(zip(df_selected_year['ref_tn_cod'], df_selected_year['student']))
@@ -146,15 +144,15 @@ with col[0]:
         for feature in choropleth.geojson.data['features']:
             id_dele=feature["properties"]["id"]
             feature['properties']['student']=student_dict.get(id_dele, 0)
-        st.subheader(f'{selected_year}')
+        st.subheader('La cartographie de la distribution élève-délègation' +f'{selected_year}')
         choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_ar','student'],labels=False))
         st_fol=st_folium(map,width=850,height=450)
 
 with col[1]:
        st.markdown('#### Top delegation')
        st.header(f'{selected_year}')
-       st.write(df_selected_year['densite'])
-        
+       st.write(df_selected_year['deleg'] + df_selected_year['densite'])
+         
 with st.expander('About', expanded=True):
             st.write('''
                 - Data: [Bureau de planification et de statistiques à Kairouan](http://www.edunet.tn/index.php?id=523&lan=1).
