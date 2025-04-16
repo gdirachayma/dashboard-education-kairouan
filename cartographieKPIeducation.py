@@ -9,6 +9,8 @@ from cartopy import crs
 import panel as pn
 import folium 
 from streamlit_folium import st_folium 
+from folium.features import GeoJsonTooltip
+
 
 
 
