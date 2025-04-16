@@ -143,7 +143,7 @@ with col[0]:
         for feature in choropleth.geojson.data['features']:
             id_dele=feature["properties"]["id"]
             feature['properties']['effeleve']='التلاميذ :' + '{:,}'.format(df_indexed.loc[id_dele, 'student'][6]) if id_dele in list(df_indexed.index) else ''
-        st.header(f'{selected_year}')
+        st.subheader('La cartographie de la distribution -élèves par délègation'+f'{selected_year}')
         choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_ar','effeleve'],labels=False))
         st_fol=st_folium(map,width=850,height=450)
 
