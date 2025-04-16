@@ -136,15 +136,18 @@ with col[0]:
         st.markdown('#### Total élèves')
         heatmap = make_heatmap( df,'year',  'deleg', 'student', selected_color_theme)
         st.altair_chart(heatmap, use_container_width=True) 
+
         map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
-        choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',highlight=True )       
+        choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',highlight=True, legend_name=f"Nombre d'élèves ({selected_year})" )       
         choropleth.geojson.add_to(map)
+        
+        student_dict = dict(zip(df_selected_year['ref_tn_cod'], df_selected_year['student']))
         df_indexed = df.set_index('ref_tn_cod')
         for feature in choropleth.geojson.data['features']:
             id_dele=feature["properties"]["id"]
-            feature['properties']['effeleve']='التلاميذ :' + '{:,}'.format(df_indexed.loc[id_dele, 'student'][6]) if id_dele in list(df_indexed.index) else ''
-        st.subheader('La cartographie de la distribution -élèves par délègation'+f'{selected_year}')
-        choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_ar','effeleve'],labels=False))
+            feature['properties']['student']=student_dict.get(id_dele, 0)
+        st.subheader(f'{selected_year}')
+        choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_ar','student'],labels=False))
         st_fol=st_folium(map,width=850,height=450)
 
 with col[1]:
