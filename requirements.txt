@@ -11,4 +11,5 @@ geoviews
 cartopy   
 panel 
 folium 
+folium.features
 
