@@ -1,7 +1,6 @@
 python
 pandas 
 numpy 
-streamlit ==1.2.0
 plotly
 plotly.express 
 streamlit_folium
