@@ -4,3 +4,8 @@ folium
 altair
 streamlit-folium
 plotly.express
+geopandas
+altair 
+geoviews 
+cartopy   
+panel 
