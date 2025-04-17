@@ -283,7 +283,7 @@ def show_dashboard():
 
         # Mise en forme
         fig1.update_layout(
-            title_x=0.5,
+            title_x=0.03,
             xaxis_title="Délégation",
             yaxis_title="Densité (élèves par classe)",
             coloraxis_showscale=False
