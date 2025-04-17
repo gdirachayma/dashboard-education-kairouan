@@ -265,11 +265,36 @@ def show_dashboard():
                  title=f"Classes préparatoires - {selected_year}")
         st.plotly_chart(fig, use_container_width=True)
 
-        
-        st.subheader("🏫 Densité des classes par Délégation ")
-        fig1 = px.histogram(df_selected_year, y='densite',x='deleg',
-                 title=f"Densité des classes- {selected_year}")   
+        st.subheader("🏫 Densité des classes par Délégation") 
+        # Nettoyage des virgules + conversion en float
+        df_selected_year['densite'] = df_selected_year['densite'].str.replace(',', '.').astype(float)       
+        # Trier les délégations par densité (desc)
+        df_sorted = df_selected_year.sort_values(by='densite', ascending=False)
+
+        # Histogramme
+        fig1 = px.bar(
+            df_sorted,
+            x='deleg',
+            y='densite',
+            color='deleg',
+            color_discrete_sequence=px.colors.sequential.RdBu_r,
+            text='densite',
+            title=f"Densité des classes par Délégation - {selected_year}")
+
+        # Mise en forme
+        fig1.update_layout(
+            title_x=0.5,
+            xaxis_title="Délégation",
+            yaxis_title="Densité (élèves par classe)",
+            coloraxis_showscale=False
+        )
+
+        fig1.update_traces(texttemplate='%{text:.1f}')
+
+        # Affichage
         st.plotly_chart(fig1, use_container_width=True)
+
+
     with st.expander('About', expanded=True):
                 st.write('''
                     - Data: [Bureau de planification et de statistiques à Kairouan](http://www.edunet.tn/index.php?id=523&lan=1).
