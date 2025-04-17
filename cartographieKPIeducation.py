@@ -38,7 +38,7 @@ st.markdown("""
 [data-testid="block-container"] {
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 0rem;
     margin-bottom: -7rem;
 }
@@ -128,7 +128,7 @@ def navigate():
         if st.session_state.current_step == 0:
             show_dashboard()  # Afficher le dashboard après connexion
         elif st.session_state.current_step == 1:
-            show_data_analysis()  # Afficher une autre page (exemple: analyse des données)
+            show_data_analysis_Secondaire()  # Afficher une autre page (exemple: analyse des données)
         elif st.session_state.current_step == 2:
             show_reports()  # Afficher une troisième page (exemple: rapports)
 
@@ -146,8 +146,8 @@ def navigate():
 # === 6. Fonction pour afficher différentes pages ===
 
 
-def show_data_analysis():
-    st.title("📈 Analyse des Données")
+def show_data_analysis_Secondaire():
+    st.title("📈 Analyse des Données de Cycle Préparatoire et Enseignement Secondaire")
     st.write("Ici vous pouvez analyser les données de manière détaillée.")
 
 def show_reports():
@@ -169,7 +169,7 @@ def show_dashboard():
     # Load data
     df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
     #######################
-    st.header("Key Performance Indicators  Of Education in Kairouan")
+    st.header("Key Performance Indicators  Of Education in Kairouan- Cycle Primaire")
     #######################
     # Sidebar-page.
     with st.sidebar:
@@ -216,7 +216,7 @@ def show_dashboard():
 
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5, 2.5), gap='medium')
+    col = st.columns((3.5, 2.5), gap='medium')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -258,7 +258,30 @@ def show_dashboard():
 
 
 
-    with col[1]:     
+    with col[1]:  
+        st.markdown("""
+                <div style="background-color: #f9f9f9; padding: 26px; border-radius: 11px;">
+                    <h4 style="text-align:center;">🔢 Indicateurs Clés</h4>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        📊 Densité<br><strong style="color:#009966;">{densite}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        👶🏻 Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                    </div>
+                </div>
+            """.format(
+                eleves=int(df_selected_year['student'].sum()),
+                classes=int(df_selected_year['class'].sum()),
+                densite=round(df_selected_year['densite'].str.replace(',', '.').astype(float).mean(),2),
+                classes_preparatoires=int(df_selected_year['prep'].sum())
+            ), unsafe_allow_html=True) 
+
         st.subheader("🧒 Classes Préparatoires par Délégation ")
         fig = px.pie(df_selected_year, names='deleg', values='prep',
                  color_discrete_sequence=px.colors.sequential.RdBu,
