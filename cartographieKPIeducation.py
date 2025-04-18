@@ -190,11 +190,12 @@ with st.sidebar:
 
 def show_dashboard():
     
-    st.write("Bienvenue dans le tableau de bord. Vous pouvez consulter les données d'éducation ici.")
+   
    
     #######################
     st.header("Key Performance Indicators  Of Education in Kairouan- Cycle Primaire")
     #######################
+     st.write("Bienvenue dans le tableau de bord. Vous pouvez consulter les données d'éducation ici.")
     ################
     # Plots
 
