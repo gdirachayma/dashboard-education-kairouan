@@ -326,5 +326,11 @@ def show_dashboard():
                     - Data: [Bureau de planification et de statistiques à Kairouan](http://www.edunet.tn/index.php?id=523&lan=1).
                     ''')
 # === 7. Exécuter la navigation ===
+if page == "Accueil":
+    show_dashboard()
+elif page == "Dashboard":
+    show_data_analysis_Secondaire()
+elif page == "Analyse":
+    show_reports()
 navigate()
 
