@@ -148,51 +148,54 @@ def navigate():
 
 def show_data_analysis_Secondaire():
     st.title("📈 Analyse des Données de Cycle Préparatoire et Enseignement Secondaire")
-    st.write("Ici vous pouvez analyser les données de manière détaillée.")
+    st.write("Ici on va  mettre en lumiére les données de manière détaillée.")
 
 def show_reports():
     st.title("📑 Rapports")
-    st.write("Ici vous pouvez consulter et télécharger les rapports.")
+    st.write("Ici on va presenter les indicateurs d'efficacité .")
 
 
 
 # 👉 Le reste de ton app ici...
 
+ #######################
+    # Load data
+df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+# Sidebar-page.
+with st.sidebar:
+        st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
+        st.title('Indicateurs éducatifs de Kairouan ')
+        st.title('Kairouan en Chiffres')
+        year_list = list(df.year.unique())[::1]
+        selected_year = st.selectbox('Select a year', year_list)
+        df_selected_year = df[df.year == selected_year]
+        df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
 
+        deleg_list = list(df.deleg.unique())[::1]
+        selected_deleg = st.selectbox('Select a delegation', deleg_list)
+        df_selected_deleg = df[df.deleg == selected_deleg]
+
+        niveau_list = list(df.niveau.unique())[::-1]
+        ordre_personnalise=["Cycle Primaire","Cycle Preparatoire(G)& Enseignement Secondaire","Cycle Preparatoire(Tech)"]
+        niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
+        selected_niveau = st.selectbox('Select a cycle', niveau_list_sorted)
+        df_selected_niveau = df[df.niveau== selected_niveau]
+        
+
+        color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+        selected_color_theme = st.selectbox('Select a color theme', list(color_theme_list.keys()))
+        folium_palette, altair_palette = color_theme_list[ selected_color_theme]
 
 
 
 def show_dashboard():
     
     st.write("Bienvenue dans le tableau de bord. Vous pouvez consulter les données d'éducation ici.")
-    #######################
-    # Load data
-    df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+   
     #######################
     st.header("Key Performance Indicators  Of Education in Kairouan- Cycle Primaire")
     #######################
-    # Sidebar-page.
-    with st.sidebar:
-        st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
-        st.title('Indicateurs éducatifs de Kairouan ')
-        st.title('Kairouan en Chiffres')
-        year_list = list(df.year.unique())[::-1]
-        selected_year = st.selectbox('Select a year', year_list)
-        df_selected_year = df[df.year == selected_year]
-        df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
-
-        deleg_list = list(df.deleg.unique())[::-1]
-        selected_deleg = st.selectbox('Select a delegation', deleg_list)
-        df_selected_deleg = df[df.deleg == selected_deleg]
-
-        niveau_list = list(df.niveau.unique())[::-1]
-        selected_niveau = st.selectbox('Select a cycle', niveau_list)
-        df_selected_niveau = df[df.niveau== selected_niveau]
-
-        color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
-        selected_color_theme = st.selectbox('Select a color theme', list(color_theme_list.keys()))
-        folium_palette, altair_palette = color_theme_list[ selected_color_theme]
-    #######################
+    ################
     # Plots
 
     # Heatmap
