@@ -116,15 +116,227 @@ if not st.session_state.logged_in:
     login()
     st.stop()
 
+# 🎉 Si connecté, afficher le dashboard :
+# Barre latérale de navigation
+st.write("Naviguer vers : ➡")
+if st.button( "Accueil"):
+    login()
+elif st.button( "Dashboard"):
+    show_reports()
+elif st.button("Analyse"):
+    show_data_analysis_Secondaire()
+
+    
+
+    
+st.title("📊 Dashboard Éducation - Kairouan")
+
+# === 5. Fonction de navigation avec Précédent et Suivant ===
+def navigate():
+    # Page de login ou page après connexion
+    if not st.session_state.logged_in:
+        login()  # Si l'utilisateur n'est pas connecté, afficher la page de login
+    else:
+        if st.session_state.current_step == 0:
+            show_dashboard()  # Afficher le dashboard après connexion
+        elif st.session_state.current_step == 1:
+            show_data_analysis_Secondaire()  # Afficher une autre page (exemple: analyse des données)
+        elif st.session_state.current_step == 2:
+            show_reports()  # Afficher une troisième page (exemple: rapports)
+
+    # Boutons de navigation
+    col1, col2, col3 = st.columns([1, 4, 1])
+    with col1:
+        if st.button("← Précédent") and st.session_state.current_step > 0:
+            st.session_state.current_step -= 1
+    with col2:
+        if st.button("Suivant →"):
+            st.session_state.current_step += 1
+    with col3:
+        pass
+
+# === 6. Fonction pour afficher différentes pages ===
+
+
+def show_data_analysis_Secondaire():
+    st.title("📈 Analyse des Données de Cycle Préparatoire et Enseignement Secondaire")
+    st.write("Ici on va  mettre en lumiére les données de manière détaillée.")
+
+def show_reports():
+    st.title("📑 Rapports")
+    st.write("Ici on va presenter les indicateurs d'efficacité .")
+
+
 
 # 👉 Le reste de ton app ici...
 
-
-if st.button("➡️ Accéder au Dashboard Primaire"):
-    st.switch_page("pages/1_Dashboardprimaire.py")
-if st.button("➡️ Accéder au Dashboard secondaire"):
-    st.switch_page("pages/2_Dashboardseco.py")
-if st.button("➡️ Accéder au Dashboard Résultats nationaux"):
-    st.switch_page("pages/3_Dashboardresultat.py")
  #######################
+    # Load data
+df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+# Sidebar-page.
+with st.sidebar:
+        st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
+        st.title('Indicateurs éducatifs de Kairouan ')
+        st.title('Kairouan en Chiffres')
+        year_list = list(df.year.unique())[::1]
+        selected_year = st.selectbox('Select a year', year_list)
+        df_selected_year = df[df.year == selected_year]
+        df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
+
+        deleg_list = list(df.deleg.unique())[::1]
+        selected_deleg = st.selectbox('Select a delegation', deleg_list)
+        df_selected_deleg = df[df.deleg == selected_deleg]
+
+        niveau_list = list(df.niveau.unique())[::-1]
+        ordre_personnalise=["Cycle Primaire","Cycle Preparatoire(G)& Enseignement Secondaire","Cycle Preparatoire(Tech)"]
+        niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
+        selected_niveau = st.selectbox('Select a cycle', niveau_list_sorted)
+        df_selected_niveau = df[df.niveau== selected_niveau]
+        
+
+        color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+        selected_color_theme = st.selectbox('Select a color theme', list(color_theme_list.keys()))
+        folium_palette, altair_palette = color_theme_list[ selected_color_theme]
+
+
+
+def show_dashboard():
+    
+    st.write("Bienvenue dans le tableau de bord. Vous pouvez consulter les données d'éducation ici.")
+   
+    #######################
+    st.header("Key Performance Indicators  Of Education in Kairouan- Cycle Primaire")
+    #######################
+    ################
+    # Plots
+
+    # Heatmap
+    def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
+        heatmap = alt.Chart(input_df).mark_rect().encode(
+                y=alt.Y(f'{input_y}:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
+                x=alt.X(f'{input_x}:O', axis=alt.Axis(title="", titleFontSize=18, titlePadding=15, titleFontWeight=900)),
+                color=alt.Color(f'max({input_color}):Q',
+                                legend=None,
+                                scale=alt.Scale(scheme=input_color_theme)),
+                stroke=alt.value('black'),
+                strokeWidth=alt.value(0.25),
+            ).properties(width=900
+            ).configure_axis(
+            labelFontSize=12,
+            titleFontSize=12
+            ) 
+        # height=300
+        return heatmap
+
+
+    #######################
+    # Dashboard Main Panel
+    col = st.columns((3.5, 2.5), gap='medium')
+
+    with col[0]:
+            st.markdown('#### Total élèves')
+            heatmap = make_heatmap( df,'year',  'deleg', 'student', altair_palette)
+            chart=st.altair_chart(heatmap, use_container_width=True) 
+
+            map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
+            choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
+            choropleth.geojson.add_to(map)
+            
+            student_dict = dict(zip(df_selected_year['ref_tn_cod'], df_selected_year['student']))
+            df_indexed = df.set_index('ref_tn_cod')
+            
+            for feature in choropleth.geojson.data['features']:
+                id_dele=feature["properties"]["id"]
+                feature['properties']['student']=student_dict.get(id_dele, 0)       
+
+            choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_fr','student'],labels=False))
+
+            # 🎯 Highlight de la délégation choisie
+            for feature in choropleth.geojson.data["features"]:
+                if feature["properties"]["del_fr"] == selected_deleg:
+                    folium.GeoJson(
+                        data=feature,
+                        style_function=lambda x: {
+                            'fillColor': 'red',
+                            'color': 'red',
+                            'weight': 4,
+                            'fillOpacity': 0.9
+                        },
+                        tooltip=folium.GeoJsonTooltip(fields=["del_fr", "student"])
+                    ).add_to(map)
+
+            # Affichage de la carte
+            st.subheader(f'📍 Répartition des élèves par délégation - Année {selected_year}')
+            st_fol=st_folium(map, width=850, height=450)
+
+
+
+
+
+    with col[1]:  
+        st.markdown("""
+                <div style="background-color: #f9f9f9; padding: 26px; border-radius: 11px;">
+                    <h4 style="text-align:center;">🔢 Indicateurs Clés</h4>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        📊 Densité<br><strong style="color:#009966;">{densite}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        👶🏻 Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                    </div>
+                </div>
+            """.format(
+                eleves=int(df_selected_year['student'].sum()),
+                classes=int(df_selected_year['class'].sum()),
+                densite=round(df_selected_year['densite'].str.replace(',', '.').astype(float).mean(),2),
+                classes_preparatoires=int(df_selected_year['prep'].sum())
+            ), unsafe_allow_html=True) 
+
+        st.subheader("🧒 Classes Préparatoires par Délégation ")
+        fig = px.pie(df_selected_year, names='deleg', values='prep',
+                 color_discrete_sequence=px.colors.sequential.RdBu,
+                 title=f"Classes préparatoires - {selected_year}")
+        st.plotly_chart(fig, use_container_width=True)
+
+        st.subheader("🏫 Densité des classes par Délégation") 
+        # Nettoyage des virgules + conversion en float
+        df_selected_year['densite'] = df_selected_year['densite'].str.replace(',', '.').astype(float)       
+        # Trier les délégations par densité (desc)
+        df_sorted = df_selected_year.sort_values(by='densite', ascending=False)
+
+        # Histogramme
+        fig1 = px.bar(
+            df_sorted,
+            x='deleg',
+            y='densite',
+            color='deleg',
+            color_discrete_sequence=px.colors.sequential.RdBu_r,
+            text='densite',
+            title=f"Densité des classes par Délégation - {selected_year}")
+
+        # Mise en forme
+        fig1.update_layout(
+            title_x=0.03,
+            xaxis_title="Délégation",
+            yaxis_title="Densité (élèves par classe)",
+            coloraxis_showscale=False
+        )
+
+        fig1.update_traces(texttemplate='%{text:.1f}')
+
+        # Affichage
+        st.plotly_chart(fig1, use_container_width=True)
+
+
+    with st.expander('About', expanded=True):
+                st.write('''
+                    - Data: [Bureau de planification et de statistiques à Kairouan](http://www.edunet.tn/index.php?id=523&lan=1).
+                    ''')
+# === 7. Exécuter la navigation ===
+navigate()
  
