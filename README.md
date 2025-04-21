@@ -18,4 +18,4 @@ Les données proviennent de [ton fichier CSV/GeoJSON].
 ## ✅ Lancer en local
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run cartographieKPIeducation.py
