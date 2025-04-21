@@ -1,4 +1,5 @@
 
+
 #pip install streamlit geoviews holoviews bokeh pandas panel dans bash
 import pandas as pd
 import numpy as np 
@@ -102,7 +103,8 @@ def login():
             st.success("Bienvenue ! Vous êtes connecté ✅ ")
         else:
             st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
-    st.markdown("</div>", unsafe_allow_html=True)
+
+
 
 
 # === 4. Gestion de la session ===
@@ -116,12 +118,37 @@ def navigate():
     if not st.session_state.logged_in:
         login()  # Si l'utilisateur n'est pas connecté, afficher la page de login
     else:
-        if st.session_state.current_step == 0:
-            show_dashboardprim()  # Afficher le dashboard après connexion
-        elif st.session_state.current_step == 1:
+        with st.sidebar:    
+            st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
+            st.title('Indicateurs éducatifs de Kairouan ')
+            st.title('Kairouan en Chiffres')
+            year_list = list(df.year.unique())[::1]
+            st.session_state.selected_year = st.selectbox('🗓️ Select a year', year_list)
+            df_selected_year = df[df.year == st.session_state.selected_year]
+            df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
+
+            deleg_list = list(df.deleg.unique())[::1]
+            st.session_state.selected_deleg = st.selectbox('🌎 Select a delegation', deleg_list)
+            df_selected_deleg = df[df.deleg == st.session_state.selected_deleg]
+
+            niveau_list = list(df.niveau.unique())[::-1]
+            ordre_personnalise=["Cycle Primaire","Cycle Preparatoire(G)& Enseignement Secondaire","Cycle Preparatoire(Tech)"]
+            niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
+            st.session_state.selected_niveau = st.selectbox('💡 Select a cycle', niveau_list_sorted)
+            df_selected_niveau = df[df.niveau== st.session_state.selected_niveau]
+            
+            color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+            st.session_state.selected_color_theme = st.selectbox('🖌️ Select a color theme', list(color_theme_list.keys()))
+            color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+            folium_palette, altair_palette = color_theme_list[ st.session_state.selected_color_theme]
+             
+        if st.session_state.selected_niveau == "Cycle Primaire":
+            show_dashboardprim()
+        elif st.session_state.selected_niveau == "Cycle Preparatoire(G)& Enseignement Secondaire":
             show_data_analysis_Secondaire()  # Afficher une autre page (exemple: analyse des données)
-        elif st.session_state.current_step == 2:
+        elif st.session_state.current_step == "Cycle Preparatoire(Tech)":
             show_data_analysis_technique()  # Afficher une troisième page (exemple: rapports)
+        
         # Boutons de navigation
         col1, col2, col3 = st.columns([1, 4, 1])
         with col1:
@@ -132,7 +159,7 @@ def navigate():
                 st.session_state.current_step += 1
         with col3:
             pass
-
+          
 #######
 
 
@@ -177,33 +204,19 @@ def show_dashboardprim():
     
 
     # Sidebar-page.
-    with st.sidebar:
-            st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
-            st.title('Indicateurs éducatifs de Kairouan ')
-            st.title('Kairouan en Chiffres')
-            year_list = list(df.year.unique())[::1]
-            selected_year = st.selectbox('🗓️ Select a year', year_list)
-            df_selected_year = df[df.year == selected_year]
-            df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
-
-            deleg_list = list(df.deleg.unique())[::1]
-            selected_deleg = st.selectbox('🌎 Select a delegation', deleg_list)
-            df_selected_deleg = df[df.deleg == selected_deleg]
-
-            niveau_list = list(df.niveau.unique())[::-1]
-            ordre_personnalise=["Cycle Primaire","Cycle Preparatoire(G)& Enseignement Secondaire","Cycle Preparatoire(Tech)"]
-            niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
-            selected_niveau = st.selectbox('💡 Select a cycle', niveau_list_sorted)
-            df_selected_niveau = df[df.niveau== selected_niveau]
-            
-            color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
-            selected_color_theme = st.selectbox('🖌️ Select a color theme', list(color_theme_list.keys()))
-            folium_palette, altair_palette = color_theme_list[ selected_color_theme]
+    
         
     st.write("Bienvenue dans le tableau de bord. Vous pouvez consulter les données d'éducation ici.")
    
     #######################
     st.header("Key Performance Indicators  Of Education in Kairouan- Cycle Primaire 📚")
+    #################
+    selected_year = st.session_state.selected_year
+    selected_niveau = st.session_state.selected_niveau
+    selected_deleg=st.session_state.selected_deleg
+    selected_color=st.session_state.selected_color_theme
+    color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+    folium_palette, altair_palette = color_theme_list[ selected_color]
     #######################
     df_prim = df[(df['niveau'] == "Cycle Primaire") & (df["year"] == selected_year)]
     df_selected_primaire = df_prim[df_prim['year'] == selected_year]
@@ -218,7 +231,7 @@ def show_dashboardprim():
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
             map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
-            choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
+            choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_prim,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
             choropleth.geojson.add_to(map)
             
             student_dict = dict(zip(df_selected_primaire ['ref_tn_cod'], df_selected_primaire ['student']))
@@ -320,33 +333,19 @@ def show_dashboardprim():
 def show_data_analysis_Secondaire():
     st.title("📈 Analyse des Données de Cycle Préparatoire et Enseignement Secondaire")
     st.write("Ici on va  mettre en lumiére sur les données de manière détaillée.")
-    # Sidebar-page.
-    with st.sidebar:
-            st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
-            st.title('Indicateurs éducatifs de Kairouan ')
-            st.title('Kairouan en Chiffres')
-            year_list = list(df.year.unique())[::1]
-            selected_year = st.selectbox('🗓️ Select a year', year_list)
-            df_selected_year = df[df.year == selected_year]
-            df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
-
-            deleg_list = list(df.deleg.unique())[::1]
-            selected_deleg = st.selectbox('🌎 Select a delegation', deleg_list)
-            df_selected_deleg = df[df.deleg == selected_deleg]
-
-            niveau_list = list(df.niveau.unique())[::-1]
-            ordre_personnalise=["Cycle Primaire","Cycle Preparatoire(G)& Enseignement Secondaire","Cycle Preparatoire(Tech)"]
-            niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
-            selected_niveau = st.selectbox('💡 Select a cycle', niveau_list_sorted)
-            df_selected_niveau = df[df.niveau== selected_niveau]
-            
-            color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
-            selected_color_theme = st.selectbox('🖌️ Select a color theme', list(color_theme_list.keys()))
-            folium_palette, altair_palette = color_theme_list[ selected_color_theme]
+    
      #######################
     st.header("Key Performance Indicators  Of Education in Kairouan- Cycle Preparatoire(G)& Enseignement Secondaire 📚")
     #######################
-    df_seco = df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire") & (df["year"] == selected_year)]
+    selected_year = st.session_state.selected_year
+    selected_niveau = st.session_state.selected_niveau
+    selected_deleg=st.session_state.selected_deleg
+    selected_color=st.session_state.selected_color_theme
+   
+    color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+    folium_palette, altair_palette = color_theme_list[ selected_color]
+    #########################
+    df_seco = df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire")&(df["year"] == selected_year)]
     
     df_selected_seco= df_seco[df_seco['year'] == selected_year]
     
@@ -361,11 +360,11 @@ def show_data_analysis_Secondaire():
 
     with col[0]:
             st.markdown('#### Total élèves')
-            heatmap = make_heatmap( df_selected_seco,'year', 'deleg', 'student', altair_palette)
+            heatmap = make_heatmap( df_seco,'year', 'deleg', 'student', altair_palette)
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
             map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
-            choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
+            choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_seco,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
             choropleth.geojson.add_to(map)
             
             student_dict = dict(zip(df_selected_seco ['ref_tn_cod'], df_selected_seco ['student']))
@@ -451,40 +450,31 @@ def show_data_analysis_Secondaire():
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
     st.write("Ici on va  prendre le cycle préparatoire Technique en considération")
-    # Sidebar-page.
-    with st.sidebar:
-            st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
-            st.title('Indicateurs éducatifs de Kairouan ')
-            st.title('Kairouan en Chiffres')
-            year_list = list(df.year.unique())[::1]
-            selected_year = st.selectbox('🗓️ Select a year', year_list)
-            df_selected_year = df[df.year == selected_year]
-            df_selected_year_sorted = df_selected_year.sort_values(by="student", ascending=False)
+    selected_year = st.session_state.selected_year
+    selected_niveau = st.session_state.selected_niveau
+    selected_deleg=st.session_state.selected_deleg
+    selected_color=st.session_state.selected_color_theme
+    color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
+    folium_palette, altair_palette = color_theme_list[ selected_color]
 
-            deleg_list = list(df.deleg.unique())[::1]
-            selected_deleg = st.selectbox('🌎 Select a delegation', deleg_list)
-            df_selected_deleg = df[df.deleg == selected_deleg]
-
-            niveau_list = list(df.niveau.unique())[::-1]
-            ordre_personnalise=["Cycle Primaire","Cycle Preparatoire(G)& Enseignement Secondaire","Cycle Preparatoire(Tech)"]
-            niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
-            selected_niveau = st.selectbox('💡 Select a cycle', niveau_list_sorted)
-            df_selected_niveau = df[df.niveau== selected_niveau]
-            
-            color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
-            selected_color_theme = st.selectbox('🖌️ Select a color theme', list(color_theme_list.keys()))
-            folium_palette, altair_palette = color_theme_list[ selected_color_theme]
-        
 
 def show_reports():
+
     st.title("📑 Rapports")
     st.write("Ici on va presenter les indicateurs d'efficacité .")
+    selected_year = st.session_state.selected_year
+    selected_niveau = st.session_state.selected_niveau
+    selected_deleg=st.session_state.selected_deleg
+    selected_color=st.session_state.selected_color_theme
+
 
 # === 7. Exécuter la navigation ===
 
-
-navigate()
- 
+navigate()  # Démarre la fonction de navigation
 
  
+
+ 
+
+
 
