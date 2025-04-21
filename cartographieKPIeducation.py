@@ -1,4 +1,3 @@
-
 #pip install streamlit geoviews holoviews bokeh pandas panel dans bash
 import pandas as pd
 import numpy as np 
@@ -277,13 +276,34 @@ def show_dashboardprim():
             fig1.update_traces(texttemplate='%{text:.1f}')
             # Affichage
             st.plotly_chart(fig1, use_container_width=True)
+                        # Restructurer les colonnes 1ann → 6ann en format long (melt)
+            df_long = df_prim.melt(id_vars=["deleg"], 
+                            value_vars=["1ann", "2ann", "3ann", "4ann", "5ann", "6ann"],
+                            var_name="Niveau", 
+                            value_name="Élèves")
+
+
+
+            # Tracer la courbe
+            fig2= px.line(df_long, x="deleg", y="Élèves", color="Niveau", markers=True,
+                        title=f"📚 Répartition des élèves par niveau (1ère à 6ème année)– {selected_year}")
+
+            fig2.update_layout(
+                xaxis_title="delegation",
+                yaxis_title="Nombre d'élèves",
+                title_x=0.5,
+                template="plotly_white"
+            )
+
+            st.plotly_chart(fig2, use_container_width=True)
 
             # camembert des classes préparatoires
-            st.subheader("🧒 Classes Préparatoires par Délégation ")
+            st.subheader("🧒 Groupes Préparatoires par Délégation ")
             fig = px.pie(df_selected_primaire , names='deleg', values='prep',
                     color_discrete_sequence=px.colors.sequential.RdBu,
-                    title=f"Classes préparatoires - {selected_year}")
+                    title=f"Groupes préparatoires - {selected_year}")
             st.plotly_chart(fig, use_container_width=True)
+            # Courbe
 
 
     with col[1]:  
@@ -303,7 +323,7 @@ def show_dashboardprim():
                         📊 Densité<br><strong style="color:#009966;">{densite}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        👶🏻 Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                        👶🏻 Groupes Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
@@ -319,16 +339,16 @@ def show_dashboardprim():
                         🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        👨🏻‍🎓 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
                         🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        📊 Densité<br><strong style="color:#009966;">{densite}</strong>
+                        🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#009966;">{densite}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        👶🏻 Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                        🍼🧸 Groupes Préparatoires <br><strong style="color:#009966;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
@@ -462,8 +482,7 @@ def show_data_analysis_Secondaire():
         # Affichage
         st.plotly_chart(fig1, use_container_width=True)
 
-
-        
+       
 
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
@@ -476,14 +495,6 @@ def show_data_analysis_technique():
     folium_palette, altair_palette = color_theme_list[ selected_color]
 
 
-
-
-
 # === 7. Exécuter la navigation ===
 
 navigate()  # Démarre la fonction de navigation
-
- 
-
- 
-
