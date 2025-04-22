@@ -13,7 +13,6 @@ from streamlit_folium import st_folium
 import tempfile
 import os
 import base64
-
 #######################
 # === 1. Page configuration ===
 st.set_page_config(
@@ -149,7 +148,11 @@ def navigate():
         
 
           
-####### #######################
+#######
+
+
+
+ #######################
 # Load data
 df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
 
@@ -387,11 +390,11 @@ def show_data_analysis_Secondaire():
 
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5, 2.5), gap='medium')
+    col = st.columns((4.5,2.5), gap='medium')
 
     with col[0]:
             st.markdown('#### Total élèves')
-            heatmap = make_heatmap( df_seco,'year', 'deleg', 'student', altair_palette)
+            heatmap = make_heatmap( df,'year', 'deleg', 'student', altair_palette)
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
             map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
@@ -523,3 +526,4 @@ def show_data_analysis_technique():
 # === 7. Exécuter la navigation ===
 
 navigate()  # Démarre la fonction de navigation
+
