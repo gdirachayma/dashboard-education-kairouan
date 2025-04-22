@@ -149,11 +149,7 @@ def navigate():
         
 
           
-#######
-
-
-
- #######################
+####### #######################
 # Load data
 df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
 
@@ -207,7 +203,7 @@ def show_dashboardprim():
     ################
     #######################
     # Dashboard Main Panel
-    col = st.columns((3.5, 2.5), gap='medium')
+    col = st.columns((4.5, 2.5), gap='medium')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -391,7 +387,7 @@ def show_data_analysis_Secondaire():
 
     #######################
     # Dashboard Main Panel
-    col = st.columns((3.5, 2.5), gap='medium')
+    col = st.columns((4.5, 2.5), gap='medium')
 
     with col[0]:
             st.markdown('#### Total élèves')
