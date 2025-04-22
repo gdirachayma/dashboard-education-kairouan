@@ -157,15 +157,9 @@ def navigate():
 # Load data
 df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
 
-
-        
-
-
-
-
 # 👉 Le reste de ton app ici...
 
-    # Heatmap
+# Heatmap
 def make_heatmap(input_df, input_y, input_x, input_color, input_color_theme):
         heatmap = alt.Chart(input_df).mark_rect().encode(
                 y=alt.Y(f'{input_y}:O', axis=alt.Axis(title="Year", titleFontSize=18, titlePadding=15, titleFontWeight=900, labelAngle=0)),
@@ -264,7 +258,6 @@ def show_dashboardprim():
                 color_discrete_sequence=px.colors.sequential.RdBu_r,
                 text='densite',
                 title=f"Densité des classes par Délégation - {selected_year}")
-
             # Mise en forme
             fig1.update_layout(
                 title_x=0.03,
@@ -281,9 +274,6 @@ def show_dashboardprim():
                             value_vars=["1ann", "2ann", "3ann", "4ann", "5ann", "6ann"],
                             var_name="Niveau", 
                             value_name="Élèves")
-
-
-
             # Tracer la courbe
             fig2= px.line(df_long, x="deleg", y="Élèves", color="Niveau", markers=True,
                         title=f"📚 Répartition des élèves par niveau (1ère à 6ème année)– {selected_year}")
@@ -309,7 +299,7 @@ def show_dashboardprim():
     with col[1]:  
         st.markdown("""
                 <div style="background-color: #fcf7f7; padding: 26px; border-radius: 11px;">
-                    <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
+                    <h4 style="text-align:center;"> Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
                     </div>
@@ -320,10 +310,13 @@ def show_dashboardprim():
                         🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        📊 Densité<br><strong style="color:#009966;">{densite}</strong>
+                      👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        👶🏻 Groupes Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                        📊 Densité<br><strong style="color:#009966;">{densite}</strong> 
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                      👶🏻 Groupes Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
@@ -331,10 +324,12 @@ def show_dashboardprim():
                 eleves=int(df_selected_primaire ['student'].sum()),
                 classes=int(df_selected_primaire ['class'].sum()),
                 densite=round(df_selected_primaire ['densite'].replace(',', '.').astype(float).mean(),2),
-                classes_preparatoires=int(df_selected_primaire ['prep'].sum())), unsafe_allow_html=True) 
+                classes_preparatoires=int(df_selected_primaire ['prep'].sum()),
+                enseign=int(df_selected_primaire ['enseignant'].sum())
+                ), unsafe_allow_html=True) 
         st.markdown("""
                 <div style="background-color:#fff3f3 ; padding: 26px; border-radius: 11px;">
-                    <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>
+                    <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
                         🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
                     </div>
@@ -345,6 +340,9 @@ def show_dashboardprim():
                         🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
                         🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#009966;">{densite}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
@@ -352,14 +350,15 @@ def show_dashboardprim():
                     </div>
                 </div>
             """.format(
+                delegationaffichage=str(selected_deleg),
                 établissemnts=int(df_prim_del ['nbetabli'].sum()),
                 eleves=int(df_prim_del ['student'].sum()),
                 classes=int(df_prim_del ['class'].sum()),
                 densite=round(df_prim_del ['densite'].str.replace(',', '.').astype(float).mean(),2),
+                enseign=int(df_prim_del ['enseignant'].sum()),
                 classes_preparatoires=int(df_prim_del ['prep'].sum())), unsafe_allow_html=True) 
 
         
-
     with st.expander('About', expanded=True):
                 st.write('''
                     - Data: [Bureau de planification et de statistiques à Kairouan](http://www.edunet.tn/index.php?id=523&lan=1).
@@ -384,13 +383,11 @@ def show_data_analysis_Secondaire():
     folium_palette, altair_palette = color_theme_list[ selected_color]
     #########################
     df_seco = df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire")&(df["year"] == selected_year)]
-    
     df_selected_seco= df_seco[df_seco['year'] == selected_year]
+    df_seco_del=df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire") & (df["year"] == selected_year) & (df["deleg"] == selected_deleg)]
     
     ################
     # Plots
-
-
 
     #######################
     # Dashboard Main Panel
@@ -431,59 +428,91 @@ def show_data_analysis_Secondaire():
             # Affichage de la carte
             st.subheader(f'📍 Répartition des élèves par délégation - Année {selected_year}')
             st_fol=st_folium(map, width=850, height=450)
+            st.subheader("🏫 Densité des classes par Délégation") 
+        # Nettoyage des virgules + conversion en float
+            df_selected_seco ['densite'] = df_selected_seco ['densite'].str.replace(',', '.').astype(float)       
+        # Trier les délégations par densité (desc)
+            df_sorted = df_selected_seco .sort_values(by='densite', ascending=False)
+
+        # Histogramme
+            fig1 = px.bar(
+                df_sorted,
+                x='deleg',
+                y='densite',
+                color='deleg',
+                color_discrete_sequence=px.colors.sequential.RdBu_r,
+                text='densite',
+                title=f"Densité des classes par Délégation - {selected_year}")
+
+            # Mise en forme
+            fig1.update_layout(
+                title_x=0.03,
+                xaxis_title="Délégation",
+                yaxis_title="Densité (élèves par classe)",
+                coloraxis_showscale=False
+            )
+
+            fig1.update_traces(texttemplate='%{text:.1f}')
+
+            # Affichage
+            st.plotly_chart(fig1, use_container_width=True)
 
 
     with col[1]:  
         st.markdown("""
-                <div style="background-color: #f9f9f9; padding: 26px; border-radius: 11px;">
-                    <h4 style="text-align:center;">🔢 Indicateurs Clés</h4>
+                <div style="background-color: #fcf7f7; padding: 26px; border-radius: 11px;">
+                    <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                    </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
                     </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                    </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         📊 Densité<br><strong style="color:#009966;">{densite}</strong>
                     </div>
                 </div>
             """.format(
+                établissemnts=int(df_selected_seco['nbetabli'].sum()),
                 eleves=int(df_selected_seco ['student'].sum()),
                 classes=int(df_selected_seco ['class'].sum()),
-                densite=round(df_selected_seco ['densite'].str.replace(',', '.').astype(float).mean(),2)
-            ), unsafe_allow_html=True) 
-
-        st.subheader("🏫 Densité des classes par Délégation") 
-        # Nettoyage des virgules + conversion en float
-        df_selected_seco ['densite'] = df_selected_seco ['densite'].str.replace(',', '.').astype(float)       
-        # Trier les délégations par densité (desc)
-        df_sorted = df_selected_seco .sort_values(by='densite', ascending=False)
-
-        # Histogramme
-        fig1 = px.bar(
-            df_sorted,
-            x='deleg',
-            y='densite',
-            color='deleg',
-            color_discrete_sequence=px.colors.sequential.RdBu_r,
-            text='densite',
-            title=f"Densité des classes par Délégation - {selected_year}")
-
-        # Mise en forme
-        fig1.update_layout(
-            title_x=0.03,
-            xaxis_title="Délégation",
-            yaxis_title="Densité (élèves par classe)",
-            coloraxis_showscale=False
-        )
-
-        fig1.update_traces(texttemplate='%{text:.1f}')
-
-        # Affichage
-        st.plotly_chart(fig1, use_container_width=True)
-
-       
-
+                densite=round(df_selected_seco ['densite'].replace(',', '.').astype(float).mean(),2),
+                enseign=int(df_selected_seco ['enseignant'].sum())
+                ), unsafe_allow_html=True) 
+        st.markdown("""
+                <div style="background-color:#fff3f3 ; padding: 26px; border-radius: 11px;">
+                    <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        👨🏻‍🎓 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#009966;">{densite}</strong>
+                    </div>
+                </div>
+            """.format(
+                delegationaffichage=str(selected_deleg),
+                établissemnts=int(df_seco_del ['nbetabli'].sum()),
+                eleves=int(df_seco_del ['student'].sum()),
+                classes=int(df_seco_del ['class'].sum()),
+                densite=round(df_seco_del ['densite'].str.replace(',', '.').astype(float).mean(),2),
+                enseign=int(df_seco_del ['enseignant'].sum())
+                ), unsafe_allow_html=True) 
+  
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
     st.write("Ici on va  prendre le cycle préparatoire Technique en considération")
