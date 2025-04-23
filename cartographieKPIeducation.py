@@ -13,6 +13,7 @@ from streamlit_folium import st_folium
 import tempfile
 import os
 import base64
+from streamlit.components.v1 import html
 #######################
 # === 1. Page configuration ===
 st.set_page_config(
@@ -213,7 +214,7 @@ def show_dashboardprim():
             heatmap = make_heatmap( df,'year',  'deleg', 'student', altair_palette)
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
-            map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
+            map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
             choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_prim,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
             choropleth.geojson.add_to(map)
             
@@ -397,7 +398,7 @@ def show_data_analysis_Secondaire():
             heatmap = make_heatmap( df,'year', 'deleg', 'student', altair_palette)
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
-            map=folium.Map(location=[35.69,10.06],zoom_start=8,scrolwheelzoom=False,tiles='CartoDB positron')
+            map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
             choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_seco,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
             choropleth.geojson.add_to(map)
             
@@ -521,9 +522,55 @@ def show_data_analysis_technique():
     selected_color=st.session_state.selected_color_theme
     color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
     folium_palette, altair_palette = color_theme_list[ selected_color]
+    df_tech = df[(df['niveau'] == "Cycle Preparatoire(Tech)")]
+    df_selected_tech = df_tech[df_tech['year'] == selected_year]
+    df_tech_del=df[(df['niveau'] == "Cycle Preparatoire(Tech)") & (df["year"] == selected_year) & (df["deleg"] == selected_deleg)]
+    # Ajout du choropleth
+    # Création de la carte Folium
+    map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
+    choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_tech_del,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
+    choropleth.geojson.add_to(map)
+    # Création d’un dictionnaire pour retrouver les infos
+    student_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['student']))
+    deleg_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['deleg']))
+    densite_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['densite']))
+    # Ajout du tooltip (au survol)
+    choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_fr', 'student'], labels=False))
+    # Ajout du popup (au clic)
+    for feature in choropleth.geojson.data['features']:
+        id_dele = feature["properties"]["id"]
+        feature['properties']['student'] = student_dict.get(id_dele, "N/A")
+        feature['properties']['densite'] = densite_dict.get(id_dele, "N/A")
+        feature['properties']['deleg'] = deleg_dict.get(id_dele, "N/A")
+
+    # 4. Ajout des tooltips (infos au survol)
+    choropleth.geojson.add_child(folium.GeoJsonTooltip(
+        fields=['del_fr', 'student', 'densite'],
+        aliases=['Délégation', 'Nombre élèves', 'Densité'],
+        localize=True
+        ))
+    # 5. Ajout des popups (au clic)
+    for index, row in df_tech_del.iterrows():
+        popup_content = f"""
+        <b>🏫 {row['nom']}</b><br>
+        👥 Élèves : {row['student']}<br>
+        🏫 Classes : {row['class']}<br>
+        📊 Densité : {row['densite']}
+        """
+        folium.Marker(
+            location=[row['lat'], row['lon']],
+            popup=folium.Popup(popup_content, max_width=250),
+            tooltip=row['nom'],
+            icon=folium.Icon(color="purple", icon="sign")
+        ).add_to(map)
+
+    # Affichage de la carte dans Streamlit
+    st.subheader(f"🗺️ Cartographie élève-délégation – {selected_year}")
+    st_folium(map, width=850, height=500)
 
 
 # === 7. Exécuter la navigation ===
 
 navigate()  # Démarre la fonction de navigation
+
 
