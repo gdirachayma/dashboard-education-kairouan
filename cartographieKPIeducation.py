@@ -201,6 +201,7 @@ def show_dashboardprim():
     color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
     folium_palette, altair_palette = color_theme_list[ selected_color]
     #######################
+    df_p=df[(df['niveau'] == "Cycle Primaire")]
     df_prim = df[(df['niveau'] == "Cycle Primaire") & (df["year"] == selected_year)]
     df_selected_primaire = df_prim[df_prim['year'] == selected_year]
     df_prim_del=df[(df['niveau'] == "Cycle Primaire") & (df["year"] == selected_year) & (df["deleg"] == selected_deleg)]
@@ -211,7 +212,7 @@ def show_dashboardprim():
 
     with col[0]:
             st.markdown('#### Total élèves')
-            heatmap = make_heatmap( df,'year',  'deleg', 'student', altair_palette)
+            heatmap = make_heatmap( df_p,'year',  'deleg', 'student', altair_palette)
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
             map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
@@ -382,6 +383,7 @@ def show_data_analysis_Secondaire():
     color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
     folium_palette, altair_palette = color_theme_list[ selected_color]
     #########################
+    df_s=df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire")]
     df_seco = df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire")&(df["year"] == selected_year)]
     df_selected_seco= df_seco[df_seco['year'] == selected_year]
     df_seco_del=df[(df['niveau'] == "Cycle Preparatoire(G)& Enseignement Secondaire") & (df["year"] == selected_year) & (df["deleg"] == selected_deleg)]
@@ -395,7 +397,7 @@ def show_data_analysis_Secondaire():
 
     with col[0]:
             st.markdown('#### Total élèves')
-            heatmap = make_heatmap( df,'year', 'deleg', 'student', altair_palette)
+            heatmap = make_heatmap( df_s,'year', 'deleg', 'student', altair_palette)
             chart=st.altair_chart(heatmap, use_container_width=True) 
 
             map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
@@ -524,50 +526,131 @@ def show_data_analysis_technique():
     folium_palette, altair_palette = color_theme_list[ selected_color]
     df_tech = df[(df['niveau'] == "Cycle Preparatoire(Tech)")]
     df_selected_tech = df_tech[df_tech['year'] == selected_year]
-    df_tech_del=df[(df['niveau'] == "Cycle Preparatoire(Tech)") & (df["year"] == selected_year) & (df["deleg"] == selected_deleg)]
-    # Ajout du choropleth
-    # Création de la carte Folium
-    map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
-    choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_tech_del,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
-    choropleth.geojson.add_to(map)
-    # Création d’un dictionnaire pour retrouver les infos
-    student_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['student']))
-    deleg_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['deleg']))
-    densite_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['densite']))
-    # Ajout du tooltip (au survol)
-    choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_fr', 'student'], labels=False))
-    # Ajout du popup (au clic)
-    for feature in choropleth.geojson.data['features']:
-        id_dele = feature["properties"]["id"]
-        feature['properties']['student'] = student_dict.get(id_dele, "N/A")
-        feature['properties']['densite'] = densite_dict.get(id_dele, "N/A")
-        feature['properties']['deleg'] = deleg_dict.get(id_dele, "N/A")
+    df_tech_del=df[(df['niveau'] == "Cycle Preparatoire(Tech)") & (df["year"] == selected_year) & (df["deleg"] == selected_deleg)]  
+    df_selected_tech['densite'] = df_selected_tech ['densite'].str.replace(',', '.').astype(float)       
+    # Trier les délégations par densité (desc)
+    df_sorted = df_selected_tech .sort_values(by='densite', ascending=False)
+    #######################
+    # Dashboard Main Panel
+    col = st.columns((4.5,2.5), gap='medium')
 
-    # 4. Ajout des tooltips (infos au survol)
-    choropleth.geojson.add_child(folium.GeoJsonTooltip(
-        fields=['del_fr', 'student', 'densite'],
-        aliases=['Délégation', 'Nombre élèves', 'Densité'],
-        localize=True
-        ))
-    # 5. Ajout des popups (au clic)
-    for index, row in df_tech_del.iterrows():
-        popup_content = f"""
-        <b>🏫 {row['nom']}</b><br>
-        👥 Élèves : {row['student']}<br>
-        🏫 Classes : {row['class']}<br>
-        📊 Densité : {row['densite']}
-        """
-        folium.Marker(
-            location=[row['lat'], row['lon']],
-            popup=folium.Popup(popup_content, max_width=250),
-            tooltip=row['nom'],
-            icon=folium.Icon(color="purple", icon="sign")
-        ).add_to(map)
+    with col[0]:
+        st.markdown('#### Total élèves')
+        heatmap = make_heatmap( df_tech,'year', 'deleg', 'student', altair_palette)
+        chart=st.altair_chart(heatmap, use_container_width=True)
+        # Ajout du choropleth
+        # Création de la carte Folium
+        map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
+        choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_tech_del,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
+        choropleth.geojson.add_to(map)
+        # Création d’un dictionnaire pour retrouver les infos
+        student_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['student']))
+        deleg_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['deleg']))
+        densite_dict = dict(zip(df_tech_del['ref_tn_cod'], df_tech_del['densite']))
+        # Ajout du tooltip (au survol)
+        choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_fr', 'student'], labels=False))
+        # Ajout du popup (au clic)
+        for feature in choropleth.geojson.data['features']:
+            id_dele = feature["properties"]["id"]
+            feature['properties']['student'] = student_dict.get(id_dele, "N/A")
+            feature['properties']['densite'] = densite_dict.get(id_dele, "N/A")
+            feature['properties']['deleg'] = deleg_dict.get(id_dele, "N/A")
 
-    # Affichage de la carte dans Streamlit
-    st.subheader(f"🗺️ Cartographie élève-délégation – {selected_year}")
-    st_folium(map, width=850, height=500)
+        # 4. Ajout des tooltips (infos au survol)
+        choropleth.geojson.add_child(folium.GeoJsonTooltip(
+            fields=['del_fr', 'student', 'densite'],
+            aliases=['Délégation', 'Nombre élèves', 'Densité'],
+            localize=True
+            ))
+        # 5. Ajout des popups (au clic)
+        for index, row in df_tech_del.iterrows():
+            popup_content = f"""
+            <b>🏫 {row['nom']}</b><br>
+            👥 Élèves : {row['student']}<br>
+            🏫 Classes : {row['class']}<br>
+            📊 Densité : {row['densite']}
+            """
+            folium.Marker(
+                location=[row['lat'], row['lon']],
+                popup=folium.Popup(popup_content, max_width=250),
+                tooltip=row['nom'],
+                icon=folium.Icon(color="purple", icon="sign")
+            ).add_to(map)
 
+        # Affichage de la carte dans Streamlit
+        st.subheader(f"🗺️ Cartographie élève-délégation – {selected_year}")
+        st_folium(map, width=850, height=500)
+         # Histogramme
+        fig2 = px.bar(
+                df_sorted,
+                x='deleg',
+                y='densite',
+                color='deleg',
+                color_discrete_sequence=px.colors.sequential.RdBu_r,
+                text='densite',
+                title=f"Densité de classes des collèges techniques par Délég- {selected_year}")
+
+            # Mise en forme
+        fig2.update_layout(
+                title_x=0.03,
+                xaxis_title="Délégation",
+                yaxis_title="Densité (élèves par classe)",
+                coloraxis_showscale=False
+            )
+
+        fig2.update_traces(texttemplate='%{text:.1f}')
+
+            # Affichage
+        st.plotly_chart(fig2, use_container_width=True)
+
+
+    with col[1]:
+            st.markdown("""
+                <div style="background-color: #fcf7f7; padding: 26px; border-radius: 11px;">
+                    <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 26px; margin: 8px 0;">
+                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                    </div>
+                </div>
+            """.format(
+                établissemnts=int(df_selected_tech['nbetabli'].sum()),
+                eleves=int(df_selected_tech ['student'].sum()),
+                classes=int(df_selected_tech ['class'].sum()),
+                enseign=int(df_selected_tech ['enseignant'].sum())
+                ), unsafe_allow_html=True) 
+            st.markdown("""
+                <div style="background-color:#fff3f3 ; padding: 26px; border-radius: 11px;">
+                    <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        👨🏻‍🎓 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                    </div>
+                    <div style="text-align:center; font-size: 20px; margin: 8px 0;">
+                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                    </div>
+                </div>
+            """.format(
+                delegationaffichage=str(selected_deleg),
+                établissemnts=int(df_tech_del['nbetabli'].sum()),
+                eleves=int(df_tech_del ['student'].sum()),
+                classes=int(df_tech_del ['class'].sum()),
+                enseign=int(df_tech_del ['enseignant'].sum())
+                ), unsafe_allow_html=True) 
+        
 
 # === 7. Exécuter la navigation ===
 
