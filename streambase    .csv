@@ -38,6 +38,19 @@ year;niveau;deleg;codedel;nbetabli;1ann;2ann;3ann;4ann;5ann;6ann;student;class;p
 2022/2023;Cycle Primaire;Manzel mhiri;8147;11;308;355;308;314;257;235;1777;91;8;19,53;193;10;136;TN421;;;
 2022/2023;Cycle Primaire;Bouhajla;8151;43;1757;1771;1826;1751;1617;1361;10083;418;21;24,12;546;26;597;TN41B;;;
 2022/2023;Cycle Primaire;Echrarda;8156;25;726;789;765;733;621;553;4187;206;5;20,33;133;6;288;TN41A;;;
+2021/2022;Cycle Primaire;Kairaouan Nord;8121;23;1753;1819;1872;1825;1620;1502;10391;386;4;26,92;135;7;616;TN411;;;
+2021/2022;Cycle Primaire;Kairouan Sud;8122;27;1812;1835;1886;1779;1655;1492;10459;401;15;26,08;487;25;646;TN412;;;
+2021/2022;Cycle Primaire;Echbika;8123;24;899;858;857;742;698;617;4671;217;14;21,53;326;19;322;TN413;;;
+2021/2022;Cycle Primaire;Sebikha;8126;36;1885;1813;1842;1589;1360;1186;9675;397;24;24,37;666;31;531;TN414;;;
+2021/2022;Cycle Primaire;El  Oueslatia;8131;26;627;643;623;585;557;541;3576;205;9;17,44;212;12;284;TN415;;;
+2021/2022;Cycle Primaire;Ain jloula;8132;5;141;124;152;128;102;98;745;40;2;18,63;58;3;57;TN420;;;
+2021/2022;Cycle Primaire;El Ala;8134;25;713;762;784;668;653;565;4145;205;12;20,22;353;17;257;TN417;;;
+2021/2022;Cycle Primaire;Haffouz;8136;25;965;960;964;918;840;756;5403;243;19;22,23;517;26;356;TN416;;;
+2021/2022;Cycle Primaire;Hajeb El Ayoun;8141;22;961;946;938;839;869;689;5242;226;17;23,19;474;23;299;TN418;;;
+2021/2022;Cycle Primaire;Nasrallah;8146;20;451;447;446;427;355;378;2504;139;11;18,01;299;13;200;TN419;;;
+2021/2022;Cycle Primaire;Manzel mhiri;8147;11;338;312;323;268;260;247;1748;92;8;19,00;197;10;134;TN421;;;
+2021/2022;Cycle Primaire;Bouhajla;8151;42;1708;1767;1924;1642;1563;1362;9966;420;22;23,73;658;30;550;TN41B;;;
+2021/2022;Cycle Primaire;Echrarda;8156;25;775;764;772;680;590;568;4149;201;5;20,64;125;6;262;TN41A;;;
 2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Kairaouan Nord;8121;11;;;;;;;6717;229;;29,33;;;1056;TN411;;;
 2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Kairouan Sud;8122;14;;;;;;;9640;367;;26,27;;;282;TN412;;;
 2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Echbika;8123;3;;;;;;;2407;81;;29,72;;;151;TN413;;;
@@ -61,7 +74,7 @@ year;niveau;deleg;codedel;nbetabli;1ann;2ann;3ann;4ann;5ann;6ann;student;class;p
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Haffouz;8136;5;;;;;;;3835;143;;26,82;;;267;TN416;;;
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Hajeb El Ayoun;8141;5;;;;;;;3590;128;;28,05;;;215;TN418;;;
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Nasrallah;8146;6;;;;;;;2839;113;;25,12;;;179;TN419;;;
-2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Manzel mhiri;8147;2;;;;;;;576;18;;32;;;83;TN421;;;
+2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Manzel mhiri;8147;2;;;;;;;576;18;;32,00;;;83;TN421;;;
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Bouhajla;8151;6;;;;;;;5408;118;;45,83;;;322;TN41B;;;
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Echrarda;8156;4;;;;;;;1098;47;;23,36;;;149;TN41A;;;
 2022/2023;Cycle Preparatoire(G)& Enseignement Secondaire;Kairaouan Nord;8121;11;;;;;;;6194;238;;26,03;;;1139;TN411;;;
@@ -77,15 +90,34 @@ year;niveau;deleg;codedel;nbetabli;1ann;2ann;3ann;4ann;5ann;6ann;student;class;p
 2022/2023;Cycle Preparatoire(G)& Enseignement Secondaire;Manzel mhiri;8147;2;;;;;;;574;20;;28,7;;;85;TN421;;;
 2022/2023;Cycle Preparatoire(G)& Enseignement Secondaire;Bouhajla;8151;6;;;;;;;4421;158;;27,98;;;349;TN41B;;;
 2022/2023;Cycle Preparatoire(G)& Enseignement Secondaire;Echrarda;8156;4;;;;;;;2363;93;;25,41;;;161;TN41A;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Kairaouan Nord;8121;;;;;;;;6179;232;;26,63;;;1147;TN411;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Kairouan Sud;8122;;;;;;;;10368;410;;25,29;;;302;TN412;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Echbika;8123;;;;;;;;2169;77;;28,17;;;163;TN413;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Sebikha;8126;;;;;;;;4798;176;;27,26;;;332;TN414;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;El  Oueslatia;8131;;;;;;;;2762;99;;27,90;;;184;TN415;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Ain jloula;8132;;;;;;;;715;31;;23,06;;;46;TN420;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;El Ala;8134;;;;;;;;2327;94;;24,76;;;162;TN417;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Haffouz;8136;;;;;;;;3859;138;;27,96;;;276;TN416;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Hajeb El Ayoun;8141;;;;;;;;3267;125;;26,14;;;237;TN418;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Nasrallah;8146;;;;;;;;2657;114;;23,31;;;195;TN419;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Manzel mhiri;8147;;;;;;;;577;20;;28,85;;;82;TN421;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Bouhajla;8151;;;;;;;;5400;183;;29,51;;;357;TN41B;;;
+2021/2022;Cycle Preparatoire(G)& Enseignement Secondaire;Echrarda;8156;;;;;;;;2401;92;;26,10;;;167;TN41A;;;
 2024/2025;Cycle Preparatoire(Tech);Kairouan Sud;8122;1;;;;;;;227;7;;32,43;;;17;TN412;35.6651805;10.0956385;E.PREP.TECH.CHARAA FESS
 2024/2025;Cycle Preparatoire(Tech);Haffouz;8136;1;;;;;;;116;4;;29;;;7;TN416;35.63276;9.6783085;E.PREP.TECH.HAFFOUZ
 2024/2025;Cycle Preparatoire(Tech);Nasrallah;8146;1;;;;;;;98;4;;24,5;;;8;TN419;35.3607487;9.8358649;E.PREP.TECHNASRALLAH
 2024/2025;Cycle Preparatoire(Tech);Bouhajla;8151;1;;;;;;;139;5;;27,8;;;9;TN41B;35.3937739;10.0499161;E.PREP.TECH  BOUHAJLA
-2023/2024;Cycle Preparatoire(Tech);Kairouan Sud;8122;1;;;;;;;;0;;;;;0;TN412;35.6651805;10.0956385;E.PREP.TECH.CHARAA FESS
-2023/2024;Cycle Preparatoire(Tech);Haffouz;8136;1;;;;;;;;;;;;;0;TN416;35.63276;9.6783085;E.PREP.TECH.HAFFOUZ
-2023/2024;Cycle Preparatoire(Tech);Nasrallah;8146;1;;;;;;;;;;;;;0;TN419;35.3607487;9.8358649;E.PREP.TECHNASRALLAH
-2023/2024;Cycle Preparatoire(Tech);Bouhajla;8151;1;;;;;;;;;;;;;0;TN41B;35.3937739;10.0499161;E.PREP.TECH  BOUHAJLA
-2022/2023;Cycle Preparatoire(Tech);Kairouan Sud;8122;1;;;;;;;;;;;;;0;TN412;35.6651805;10.0956385;E.PREP.TECH.CHARAA FESS
-2022/2023;Cycle Preparatoire(Tech);Haffouz;8136;1;;;;;;;;;;;;;0;TN416;35.63276;9.6783085;E.PREP.TECH.HAFFOUZ
-2022/2023;Cycle Preparatoire(Tech);Nasrallah;8146;1;;;;;;;;;;;;;0;TN419;35.3607487;9.8358649;E.PREP.TECHNASRALLAH
-2022/2023;Cycle Preparatoire(Tech);Bouhajla;8151;1;;;;;;;;;;;;;0;TN41B;35.3937739;10.0499161;E.PREP.TECH  BOUHAJLA
+2023/2024;Cycle Preparatoire(Tech);Kairouan Sud;8122;1;;;;;;;205;6;;34,17;;;17;TN412;35.6651805;10.0956385;E.PREP.TECH.CHARAA FESS
+2023/2024;Cycle Preparatoire(Tech);Haffouz;8136;1;;;;;;;130;4;;32,50;;;9;TN416;35.63276;9.6783085;E.PREP.TECH.HAFFOUZ
+2023/2024;Cycle Preparatoire(Tech);Nasrallah;8146;1;;;;;;;76;4;;19,00;;;7;TN419;35.3607487;9.8358649;E.PREP.TECHNASRALLAH
+2023/2024;Cycle Preparatoire(Tech);Bouhajla;8151;1;;;;;;;142;5;;28,40;;;9;TN41B;35.3937739;10.0499161;E.PREP.TECH  BOUHAJLA
+2022/2023;Cycle Preparatoire(Tech);Kairouan Sud;8122;1;;;;;;;198;6;;33;;;21;TN412;35.6651805;10.0956385;E.PREP.TECH.CHARAA FESS
+2022/2023;Cycle Preparatoire(Tech);Haffouz;8136;1;;;;;;;134;4;;33,5;;;10;TN416;35.63276;9.6783085;E.PREP.TECH.HAFFOUZ
+2022/2023;Cycle Preparatoire(Tech);Nasrallah;8146;1;;;;;;;98;4;;24,5;;;7;TN419;35.3607487;9.8358649;E.PREP.TECHNASRALLAH
+2022/2023;Cycle Preparatoire(Tech);Bouhajla;8151;1;;;;;;;159;5;;31,8;;;9;TN41B;35.3937739;10.0499161;E.PREP.TECH  BOUHAJLA
+2021/2022;Cycle Preparatoire(Tech);Kairouan Sud;8122;1;;;;;;;223;6;;37,17;;;23;TN411;;;
+2021/2022;Cycle Preparatoire(Tech);Haffouz;8136;1;;;;;;;91;4;;22,75;;;11;TN412;;;
+2021/2022;Cycle Preparatoire(Tech);Nasrallah;8146;1;;;;;;;83;4;;20,75;;;8;TN413;;;
+2021/2022;Cycle Preparatoire(Tech);Bouhajla;8151;1;;;;;;;160;5;;32,00;;;10;TN414;;;
+;;;;;;;;;;;;;;#DIV/0!;;;;;;;
+;;;;;;;;;;;;;;#DIV/0!;;;;;;;
