@@ -155,8 +155,14 @@ def navigate():
 
 
  #######################
-# Load data
-df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+# Load data  se fait en écrivant cette formule df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+#mais on va l'ecrire comme ci dessous pour charger et automatiser le calcul sans retard
+
+@st.cache_data
+def load_data():
+    return pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+
+df = load_data()
 
 # 👉 Le reste de ton app ici...
 
@@ -391,7 +397,7 @@ def show_dashboardprim():
             xref="paper", yref="y",
             x0=0, x1=1,
             y0=0, y1=moyenne,
-            fillcolor="lightblue",
+            fillcolor="white",
             opacity=0.2,
             layer="below",
             line_width=0,
@@ -403,7 +409,7 @@ def show_dashboardprim():
             xref="paper", yref="y",
             x0=0, x1=1,
             y0=moyenne, y1=max(taux),
-            fillcolor="lightgreen",
+            fillcolor="green",
             opacity=0.15,
             layer="below",
             line_width=0,
@@ -606,7 +612,7 @@ def show_data_analysis_technique():
     df_sorted = df_selected_tech .sort_values(by='densite', ascending=False)
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5,2.5), gap='medium')
+    col = st.columns((3.5,3.0), gap='large')
 
     with col[0]:
         st.markdown('#### Total élèves')
@@ -653,7 +659,7 @@ def show_data_analysis_technique():
 
         # Affichage de la carte dans Streamlit
         st.subheader(f"🗺️ Cartographie élève-délégation – {selected_year}")
-        st_folium(map, width=850, height=500)
+        st_folium(map, width='100%', height=450)
         # Histogramme
         fig2 = px.bar(
                 df_sorted,
@@ -680,19 +686,19 @@ def show_data_analysis_technique():
 
     with col[1]:
             st.markdown("""
-                <div style="background-color: #fcf7f7; padding: 26px; border-radius: 11px;">
+                <div style="background-color: #f3f4fb; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                        🧮 établissements<br><strong style="color:#3f678c;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        🧒 Élèves<br><strong style="color:#3f678c;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                        🏫 Classes<br><strong style="color:#3f678c;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                       👩‍🏫 Enseignants<br><strong style="color:#3f678c;">{enseign}</strong>
                     </div>
                 </div>
             """.format(
@@ -702,19 +708,19 @@ def show_data_analysis_technique():
                 enseign=int(df_selected_tech ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
             st.markdown("""
-                <div style="background-color:#fff3f3 ; padding: 26px; border-radius: 11px;">
+                <div style="background-color:#3f678c ; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                        🧮 établissements<br><strong style="color:#f3f4fb;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        👨🏻‍🎓 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        👨🏻‍🎓 Élèves<br><strong style="color:#f3f4fb;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                        🏫 Classes<br><strong style="color:#f3f4fb;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                       👩‍🏫 Enseignants<br><strong style="color:#f3f4fb;">{enseign}</strong>
                     </div>
                 </div>
             """.format(
