@@ -209,7 +209,7 @@ def show_dashboardprim():
     ################
     #######################
     # Dashboard Main Panel
-    col = st.columns((3.5, 3.5), gap='medium')
+    col = st.columns((3.5, 3.0), gap='large')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -299,25 +299,25 @@ def show_dashboardprim():
 
     with col[1]:  
         st.markdown("""
-                <div style="background-color: #fcf7f7; padding: 60px; border-radius: 11px;">
+                <div style="background-color: #3f678c; padding: 60px; border-radius: 11px;">
                     <h4 style="text-align:center;"> Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                        🧮 établissements<br><strong style="color:#fefcfb;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        🧒 Élèves<br><strong style="color:#fefcfb;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                        🏫 Classes<br><strong style="color:#fefcfb;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                      👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                      👩‍🏫 Enseignants<br><strong style="color:#fefcfb;">{enseign}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        📊 Densité<br><strong style="color:#009966;">{densite}</strong> 
+                        📊 Densité<br><strong style="color:#fefcfb;">{densite}</strong> 
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                      👶🏻 Nb d'écoles ayant des CP<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                      👶🏻 Nb d'écoles ayant des CP<br><strong style="color:#fefcfb;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
@@ -329,25 +329,25 @@ def show_dashboardprim():
                 enseign=int(df_selected_primaire ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
         st.markdown("""
-                <div style="background-color:#fff3f3 ; padding: 26px; border-radius: 11px;">
+                <div style="background-color:#f3f4fb ; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                        🧮 établissements<br><strong style="color:#3f678c;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        👨🏻‍🎓 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        👨🏻‍🎓 Élèves<br><strong style="color:#3f678c;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                        🏫 Classes<br><strong style="color:#3f678c;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                       👩‍🏫 Enseignants<br><strong style="color:#3f678c;">{enseign}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#009966;">{densite}</strong>
+                        🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#3f678c;">{densite}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🍼🧸 Nb d'écoles ayant des CP <br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                        🍼🧸 Nb d'écoles ayant des CP <br><strong style="color:#3f678c;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
@@ -380,7 +380,7 @@ def show_dashboardprim():
         fig.add_trace(go.Bar(
             x=delegations,
             y=taux,
-            marker_color=['darkgreen' if val > moyenne else 'darkblue' for val in taux],
+            marker_color=['#153160' if val > moyenne else '#3f678c' for val in taux],
             text=[f"{val:.1f} %" for val in taux],
             textposition='inside'
         ))
@@ -466,7 +466,7 @@ def show_data_analysis_Secondaire():
 
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5,2.5), gap='medium')
+    col = st.columns((3.5,3.0), gap='large')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -535,22 +535,22 @@ def show_data_analysis_Secondaire():
 
     with col[1]:  
         st.markdown("""
-                <div style="background-color: #fcf7f7; padding: 26px; border-radius: 11px;">
+                <div style="background-color: #3f678c; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                        🧮 établissements<br><strong style="color:#fefcfb;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🧒 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        🧒 Élèves<br><strong style="color:#fefcfb;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                        🏫 Classes<br><strong style="color:#fefcfb;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                       👩‍🏫 Enseignants<br><strong style="color:#fefcfb;">{enseign}</strong>
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                        📊 Densité<br><strong style="color:#009966;">{densite}</strong>
+                        📊 Densité<br><strong style="color:#fefcfb;">{densite}</strong>
                     </div>
                 </div>
             """.format(
@@ -561,22 +561,22 @@ def show_data_analysis_Secondaire():
                 enseign=int(df_selected_seco ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
         st.markdown("""
-                <div style="background-color:#fff3f3 ; padding: 26px; border-radius: 11px;">
+                <div style="background-color:#f3f4fb ; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
+                        🧮 établissements<br><strong style="color:#3f678c;">{établissemnts}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        👨🏻‍🎓 Élèves<br><strong style="color:#ff6600;">{eleves}</strong>
+                        👨🏻‍🎓 Élèves<br><strong style="color:#3f678c;">{eleves}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🏫 Classes<br><strong style="color:#3366cc;">{classes}</strong>
+                        🏫 Classes<br><strong style="color:#3f678c;">{classes}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                       👩‍🏫 Enseignants<br><strong style="color:#009966;">{enseign}</strong>
+                       👩‍🏫 Enseignants<br><strong style="color:#3f678c;">{enseign}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#009966;">{densite}</strong>
+                        🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#3f678c;">{densite}</strong>
                     </div>
                 </div>
             """.format(
