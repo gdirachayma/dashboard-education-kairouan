@@ -289,13 +289,12 @@ def show_dashboardprim():
             st.plotly_chart(fig2, use_container_width=True)
 
             # camembert des classes préparatoires
-            st.subheader("🧒 Groupes Préparatoires par Délégation ")
+            st.subheader("🧒 % Ecoles ayant des CP par rapport à la totalité des écoles contenant des CP")
             fig = px.pie(df_selected_primaire , names='deleg', values='prep',
                     color_discrete_sequence=px.colors.sequential.RdBu,
                     title=f"Groupes préparatoires - {selected_year}")
             st.plotly_chart(fig, use_container_width=True)
             # Courbe
-
 
     with col[1]:  
         st.markdown("""
@@ -317,7 +316,7 @@ def show_dashboardprim():
                         📊 Densité<br><strong style="color:#009966;">{densite}</strong> 
                     </div>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
-                      👶🏻 Groupes Préparatoire<br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                      👶🏻 Nb d'écoles ayant des CP<br><strong style="color:#009966;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
@@ -347,7 +346,7 @@ def show_dashboardprim():
                         🧑🏽‍🤝‍🧑🏽 Densité<br><strong style="color:#009966;">{densite}</strong>
                     </div>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
-                        🍼🧸 Groupes Préparatoires <br><strong style="color:#009966;">{classes_preparatoires}</strong>
+                        🍼🧸 Nb d'écoles ayant des CP <br><strong style="color:#009966;">{classes_preparatoires}</strong>
                     </div>
                 </div>
             """.format(
