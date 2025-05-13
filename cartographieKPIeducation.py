@@ -15,6 +15,7 @@ import os
 import base64
 from streamlit.components.v1 import html
 import plotly.graph_objects as go
+import json
 #######################
 # === 1. Page configuration ===
 st.set_page_config(
@@ -277,7 +278,7 @@ def show_dashboardprim():
             fig1.update_traces(texttemplate='%{text:.1f}')
             # Affichage
             st.plotly_chart(fig1, use_container_width=True)
-                        # Restructurer les colonnes 1ann → 6ann en format long (melt)
+            # Restructurer les colonnes 1ann → 6ann en format long (melt)
             df_long = df_prim.melt(id_vars=["deleg"], 
                             value_vars=["1ann", "2ann", "3ann", "4ann", "5ann", "6ann"],
                             var_name="Niveau", 
@@ -537,6 +538,81 @@ def show_data_analysis_Secondaire():
 
             # Affichage
             st.plotly_chart(fig1, use_container_width=True)
+    # Renommer les colonnes
+    df_seco_renamed = df_seco.rename(columns={
+        "per section math": "Math",
+        "per section science": "Science",
+        "per section tech": "Technique",
+        "per section info": "Informatique",
+        "per section eco": "Économie",
+        "per section sport": "Sport"
+    })
+    
+    # Nettoyer les données (convertir virgules en points)
+    for col in ["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
+        df_seco_renamed[col] = df_seco_renamed[col].replace(',', '.', regex=True).astype(float)
+
+    # Total des élèves orientés par délégation
+    df_seco_renamed["Total_orientés"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].sum(axis=1)
+
+    # Calcul des pourcentages
+    for col in ["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
+        df_seco_renamed[col] = round(df_seco_renamed[col] / df_seco_renamed["Total_orientés"] * 100, 1)
+
+    # Créer la carte ou le diagramme
+    mode = st.radio("Choisissez le mode de visualisation :", ["🗺️ Carte", "📊 Diagramme empilé"])
+    
+    if mode == "🗺️ Carte":
+        st.subheader("Carte du taux moyen d’orientation (toutes sections) par délégation")
+        
+        # Moyenne du taux d’orientation toutes sections (optionnel)
+        df_seco_renamed["Taux_moyen_orientation"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].mean(axis=1)
+        
+        m = folium.Map(location=[35.40, 10.06], zoom_start=8, tiles='CartoDB positron')
+        with open("kai-deleg.json", encoding="utf-8") as f:
+            geojson_data = json.load(f)
+        choropleth = folium.Choropleth(
+            geo_data=geojson_data,
+            data=df_seco_renamed,
+            columns=('ref_tn_cod', 'Taux_moyen_orientation'),
+            key_on='feature.properties.id',
+            fill_color=folium_palette,
+            legend_name="Taux moyen orientation (%)",
+            highlight=True
+        )
+        choropleth.geojson.add_to(m)
+        choropleth.geojson.add_child(folium.GeoJsonTooltip(
+            fields=['del_fr'],  # champs du GeoJSON
+            aliases=['Délégation']
+        ))
+
+        st_folium(m, width=900, height=500)
+
+    elif mode == "📊 Diagramme empilé":
+        st.subheader("Diagramme empilé des % d’orientation par section et par délégation")
+
+        df_long = df_seco_renamed.melt(
+            id_vars=["deleg"],
+            value_vars=["Math", "Science", "Technique", "Informatique", "Économie", "Sport"],
+            var_name="Section",
+            value_name="Pourcentage"
+        )
+
+        fig7 = px.bar(
+            df_long,
+            x="deleg",
+            y="Pourcentage",
+            color="Section",
+            title="Orientation des élèves par délégation et section (%)",
+            text="Pourcentage",
+            labels={"deleg": "Délégation", "Pourcentage": "%"}
+        )
+        fig7.update_layout(barmode='stack')
+        fig7.update_traces(texttemplate='%{text:.1f}%', textposition='inside')
+
+        st.plotly_chart(fig7, use_container_width=True)
+
+        
 
 
     with col[1]:  
