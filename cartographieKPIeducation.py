@@ -14,6 +14,7 @@ import tempfile
 import os
 import base64
 from streamlit.components.v1 import html
+import plotly.graph_objects as go
 #######################
 # === 1. Page configuration ===
 st.set_page_config(
@@ -208,7 +209,7 @@ def show_dashboardprim():
     ################
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5, 2.5), gap='medium')
+    col = st.columns((3.5, 3.5), gap='medium')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -298,7 +299,7 @@ def show_dashboardprim():
 
     with col[1]:  
         st.markdown("""
-                <div style="background-color: #fcf7f7; padding: 26px; border-radius: 11px;">
+                <div style="background-color: #fcf7f7; padding: 60px; border-radius: 11px;">
                     <h4 style="text-align:center;"> Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         🧮 établissements<br><strong style="color:#ff6600;">{établissemnts}</strong>
@@ -357,6 +358,79 @@ def show_dashboardprim():
                 densite=round(df_prim_del ['densite'].str.replace(',', '.').astype(float).mean(),2),
                 enseign=int(df_prim_del ['enseignant'].sum()),
                 classes_preparatoires=int(df_prim_del ['prep'].sum())), unsafe_allow_html=True) 
+
+        # Nettoyage des données
+        df_selected_primaire['per nouv 1 ayant ben AP'] = (
+            df_selected_primaire['per nouv 1 ayant ben AP']
+            .replace(',', '.', regex=True)
+            .astype(float)
+        )
+
+        # Trier les délégations
+        df_sorted1 = df_selected_primaire.sort_values(by='per nouv 1 ayant ben AP', ascending=True)
+
+        delegations = df_sorted1['deleg']
+        taux = df_sorted1['per nouv 1 ayant ben AP']
+        moyenne = round(taux.mean(), 1)
+
+        # Créer figure vide
+        fig = go.Figure()
+
+        # Ajouter barres
+        fig.add_trace(go.Bar(
+            x=delegations,
+            y=taux,
+            marker_color=['darkgreen' if val > moyenne else 'darkblue' for val in taux],
+            text=[f"{val:.1f} %" for val in taux],
+            textposition='inside'
+        ))
+
+        # Zone SOUS la moyenne
+        fig.add_shape(
+            type="rect",
+            xref="paper", yref="y",
+            x0=0, x1=1,
+            y0=0, y1=moyenne,
+            fillcolor="lightblue",
+            opacity=0.2,
+            layer="below",
+            line_width=0,
+        )
+
+        # Zone AU-DESSUS de la moyenne
+        fig.add_shape(
+            type="rect",
+            xref="paper", yref="y",
+            x0=0, x1=1,
+            y0=moyenne, y1=max(taux),
+            fillcolor="lightgreen",
+            opacity=0.15,
+            layer="below",
+            line_width=0,
+        )
+
+        # Ligne de la moyenne
+        fig.add_hline(
+            y=moyenne,
+            line_dash="dot",
+            line_color="black",
+            line_width=2,
+            annotation_text=f"Moyenne : {moyenne} %",
+            annotation_position="top left",
+            annotation_font=dict(size=12, color="black", family="Arial Black")
+        )
+
+        # Mise en page
+        fig.update_layout(
+            title=f"Taux des nouveaux inscrits en 1ère année ayant bénéficié de l'année préparatoire – {selected_year}",
+            title_x=0.05,
+            xaxis_title="Délégation",
+            yaxis_title="Taux (%)",
+            height=500
+        )
+
+        # Affichage dans Streamlit
+        st.plotly_chart(fig, use_container_width=True)
 
         
     with st.expander('About', expanded=True):
@@ -513,6 +587,7 @@ def show_data_analysis_Secondaire():
                 densite=round(df_seco_del ['densite'].str.replace(',', '.').astype(float).mean(),2),
                 enseign=int(df_seco_del ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
+        
   
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
@@ -579,7 +654,7 @@ def show_data_analysis_technique():
         # Affichage de la carte dans Streamlit
         st.subheader(f"🗺️ Cartographie élève-délégation – {selected_year}")
         st_folium(map, width=850, height=500)
-         # Histogramme
+        # Histogramme
         fig2 = px.bar(
                 df_sorted,
                 x='deleg',
