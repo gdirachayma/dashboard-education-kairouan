@@ -216,7 +216,7 @@ def show_dashboardprim():
     ################
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5, 2.0), gap='large')
+    col = st.columns((4.0, 2.5), gap='large')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -383,21 +383,23 @@ def show_dashboardprim():
         # Créer figure vide
         fig = go.Figure()
 
-        # Ajouter barres
+        # Ajouter barres horizontales
         fig.add_trace(go.Bar(
-            x=delegations,
-            y=taux,
+            y=delegations,                # <- Délégations en Y
+            x=taux,                       # <- Taux en X
+            orientation='h',             # <- Orientation horizontale
             marker_color=['#153160' if val > moyenne else '#3f678c' for val in taux],
             text=[f"{val:.1f} %" for val in taux],
-            textposition='inside'
+            textposition='auto',
+            insidetextanchor='start'
         ))
 
         # Zone SOUS la moyenne
         fig.add_shape(
             type="rect",
-            xref="paper", yref="y",
-            x0=0, x1=1,
-            y0=0, y1=moyenne,
+            xref="x", yref="paper",   # <- Inversé : X pour le taux
+            x0=0, x1=moyenne,
+            y0=0, y1=1,
             fillcolor="white",
             opacity=0.2,
             layer="below",
@@ -407,38 +409,37 @@ def show_dashboardprim():
         # Zone AU-DESSUS de la moyenne
         fig.add_shape(
             type="rect",
-            xref="paper", yref="y",
-            x0=0, x1=1,
-            y0=moyenne, y1=max(taux),
+            xref="x", yref="paper",
+            x0=moyenne, x1=max(taux),
+            y0=0, y1=1,
             fillcolor="green",
             opacity=0.15,
             layer="below",
             line_width=0,
         )
 
-        # Ligne de la moyenne
-        fig.add_hline(
-            y=moyenne,
+        # Ligne verticale de la moyenne
+        fig.add_vline(
+            x=moyenne,
             line_dash="dot",
-            line_color="black",
+            line_color="white",
             line_width=2,
             annotation_text=f"Moyenne : {moyenne} %",
             annotation_position="top left",
-            annotation_font=dict(size=12, color="black", family="Arial Black")
+            annotation_font=dict(size=13, color="white", family="Arial Black")
         )
 
         # Mise en page
         fig.update_layout(
             title=f"Taux des nouveaux inscrits en 1ère année ayant bénéficié de l'année préparatoire – {selected_year}",
             title_x=0.05,
-            xaxis_title="Délégation",
-            yaxis_title="Taux (%)",
-            height=500
+            xaxis_title="Taux (%)",
+            yaxis_title="Délégation",
+            height=600
         )
 
         # Affichage dans Streamlit
         st.plotly_chart(fig, use_container_width=True)
-
         
     with st.expander('About', expanded=True):
                 st.write('''
@@ -446,8 +447,6 @@ def show_dashboardprim():
                     ''')
                 
 # === 6. Fonction pour afficher différentes pages ===
-
-
 def show_data_analysis_Secondaire():
     st.title("📈 Analyse des Données de Cycle Préparatoire et Enseignement Secondaire")
     st.write("Ici on va  mettre en lumiére sur les données de manière détaillée.")
@@ -711,7 +710,7 @@ def show_data_analysis_technique():
     df_sorted = df_selected_tech .sort_values(by='densite', ascending=False)
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.5,3.0), gap='large')
+    col = st.columns((4.5,2.0), gap='large')
 
     with col[0]:
         st.markdown('#### Total élèves')
@@ -828,8 +827,7 @@ def show_data_analysis_technique():
                 eleves=int(df_tech_del ['student'].sum()),
                 classes=int(df_tech_del ['class'].sum()),
                 enseign=int(df_tech_del ['enseignant'].sum())
-                ), unsafe_allow_html=True)         
-
+                ), unsafe_allow_html=True) 
+        
 # === 7. Exécuter la navigation ===
-
 navigate()  # Démarre la fonction de navigation
