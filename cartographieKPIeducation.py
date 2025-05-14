@@ -473,51 +473,50 @@ def show_data_analysis_Secondaire():
 
     #######################
     # Dashboard Main Panel
-    col = st.columns((3.5,3.0), gap='large')
+    col1, col2 = st.columns((3.5, 3.0), gap='large')
+    with col1:
+        st.markdown('#### Total élèves')
+        heatmap = make_heatmap( df_s,'year', 'deleg', 'student', altair_palette)
+        chart=st.altair_chart(heatmap, use_container_width=True) 
 
-    with col[0]:
-            st.markdown('#### Total élèves')
-            heatmap = make_heatmap( df_s,'year', 'deleg', 'student', altair_palette)
-            chart=st.altair_chart(heatmap, use_container_width=True) 
-
-            map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
-            choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_seco,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
-            choropleth.geojson.add_to(map)
+        map=folium.Map(location=[35.40,10.06],zoom_start=7,scrolwheelzoom=False,tiles='CartoDB positron')
+        choropleth=folium.Choropleth(geo_data='kai-deleg.json',data=df_seco,columns=('ref_tn_cod','student'),key_on='feature.properties.id',legend_name=f"Nombre d'élèves ({selected_year})",fill_color=folium_palette,highlight=True)
+        choropleth.geojson.add_to(map)
             
-            student_dict = dict(zip(df_selected_seco ['ref_tn_cod'], df_selected_seco ['student']))
-            df_indexed = df.set_index('ref_tn_cod')
+        student_dict = dict(zip(df_selected_seco ['ref_tn_cod'], df_selected_seco ['student']))
+        df_indexed = df.set_index('ref_tn_cod')
             
-            for feature in choropleth.geojson.data['features']:
-                id_dele=feature["properties"]["id"]
-                feature['properties']['student']=student_dict.get(id_dele, 0)       
+        for feature in choropleth.geojson.data['features']:
+            id_dele=feature["properties"]["id"]
+            feature['properties']['student']=student_dict.get(id_dele, 0)       
 
-            choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_fr','student'],labels=False))
+        choropleth.geojson.add_child(folium.GeoJsonTooltip(['del_fr','student'],labels=False))
 
-            # 🎯 Highlight de la délégation choisie
-            for feature in choropleth.geojson.data["features"]:
-                if feature["properties"]["del_fr"] == selected_deleg:
-                    folium.GeoJson(
-                        data=feature,
-                        style_function=lambda x: {
-                            'fillColor': 'red',
-                            'color': 'red',
-                            'weight': 4,
-                            'fillOpacity': 0.9
+        # 🎯 Highlight de la délégation choisie
+        for feature in choropleth.geojson.data["features"]:
+            if feature["properties"]["del_fr"] == selected_deleg:
+                folium.GeoJson(
+                    data=feature,
+                    style_function=lambda x: {
+                        'fillColor': 'red',
+                        'color': 'red',
+                        'weight': 4,
+                        'fillOpacity': 0.9
                         },
-                        tooltip=folium.GeoJsonTooltip(fields=["del_fr", "student"])
+                    tooltip=folium.GeoJsonTooltip(fields=["del_fr", "student"])
                     ).add_to(map)
 
-            # Affichage de la carte
-            st.subheader(f'📍 Répartition des élèves par délégation - Année {selected_year}')
-            st_fol=st_folium(map, width=850, height=450)
-            st.subheader("🏫 Densité des classes par Délégation") 
+        # Affichage de la carte
+        st.subheader(f'📍 Répartition des élèves par délégation - Année {selected_year}')
+        st_fol=st_folium(map, width=850, height=450)
+        st.subheader("🏫 Densité des classes par Délégation") 
         # Nettoyage des virgules + conversion en float
-            df_selected_seco ['densite'] = df_selected_seco ['densite'].str.replace(',', '.').astype(float)       
+        df_selected_seco ['densite'] = df_selected_seco ['densite'].str.replace(',', '.').astype(float)       
         # Trier les délégations par densité (desc)
-            df_sorted = df_selected_seco .sort_values(by='densite', ascending=False)
+        df_sorted = df_selected_seco .sort_values(by='densite', ascending=False)
 
         # Histogramme
-            fig1 = px.bar(
+        fig1 = px.bar(
                 df_sorted,
                 x='deleg',
                 y='densite',
@@ -527,96 +526,19 @@ def show_data_analysis_Secondaire():
                 title=f"Densité des classes par Délégation - {selected_year}")
 
             # Mise en forme
-            fig1.update_layout(
+        fig1.update_layout(
                 title_x=0.03,
                 xaxis_title="Délégation",
                 yaxis_title="Densité (élèves par classe)",
                 coloraxis_showscale=False
             )
 
-            fig1.update_traces(texttemplate='%{text:.1f}')
-
-            # Affichage
-            st.plotly_chart(fig1, use_container_width=True)
-    # Renommer les colonnes
-    df_seco_renamed = df_seco.rename(columns={
-        "per section math": "Math",
-        "per section science": "Science",
-        "per section tech": "Technique",
-        "per section info": "Informatique",
-        "per section eco": "Économie",
-        "per section sport": "Sport"
-    })
+        fig1.update_traces(texttemplate='%{text:.1f}')
+        # Affichage
+        st.plotly_chart(fig1, use_container_width=True)
     
-    # Nettoyer les données (convertir virgules en points)
-    for col in ["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
-        df_seco_renamed[col] = df_seco_renamed[col].replace(',', '.', regex=True).astype(float)
-
-    # Total des élèves orientés par délégation
-    df_seco_renamed["Total_orientés"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].sum(axis=1)
-
-    # Calcul des pourcentages
-    for col in ["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
-        df_seco_renamed[col] = round(df_seco_renamed[col] / df_seco_renamed["Total_orientés"] * 100, 1)
-
-    # Créer la carte ou le diagramme
-    mode = st.radio("Choisissez le mode de visualisation :", ["🗺️ Carte", "📊 Diagramme empilé"])
-    
-    if mode == "🗺️ Carte":
-        st.subheader("Carte du taux moyen d’orientation (toutes sections) par délégation")
-        
-        # Moyenne du taux d’orientation toutes sections (optionnel)
-        df_seco_renamed["Taux_moyen_orientation"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].mean(axis=1)
-        
-        m = folium.Map(location=[35.40, 10.06], zoom_start=8, tiles='CartoDB positron')
-        with open("kai-deleg.json", encoding="utf-8") as f:
-            geojson_data = json.load(f)
-        choropleth = folium.Choropleth(
-            geo_data=geojson_data,
-            data=df_seco_renamed,
-            columns=('ref_tn_cod', 'Taux_moyen_orientation'),
-            key_on='feature.properties.id',
-            fill_color=folium_palette,
-            legend_name="Taux moyen orientation (%)",
-            highlight=True
-        )
-        choropleth.geojson.add_to(m)
-        choropleth.geojson.add_child(folium.GeoJsonTooltip(
-            fields=['del_fr'],  # champs du GeoJSON
-            aliases=['Délégation']
-        ))
-
-        st_folium(m, width=900, height=500)
-
-    elif mode == "📊 Diagramme empilé":
-        st.subheader("Diagramme empilé des % d’orientation par section et par délégation")
-
-        df_long = df_seco_renamed.melt(
-            id_vars=["deleg"],
-            value_vars=["Math", "Science", "Technique", "Informatique", "Économie", "Sport"],
-            var_name="Section",
-            value_name="Pourcentage"
-        )
-
-        fig7 = px.bar(
-            df_long,
-            x="deleg",
-            y="Pourcentage",
-            color="Section",
-            title="Orientation des élèves par délégation et section (%)",
-            text="Pourcentage",
-            labels={"deleg": "Délégation", "Pourcentage": "%"}
-        )
-        fig7.update_layout(barmode='stack')
-        fig7.update_traces(texttemplate='%{text:.1f}%', textposition='inside')
-
-        st.plotly_chart(fig7, use_container_width=True)
-
-        
-
-
-    with col[1]:  
-        st.markdown("""
+    with col2:  
+            st.markdown("""
                 <div style="background-color: #3f678c; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
@@ -642,7 +564,7 @@ def show_data_analysis_Secondaire():
                 densite=round(df_selected_seco ['densite'].replace(',', '.').astype(float).mean(),2),
                 enseign=int(df_selected_seco ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
-        st.markdown("""
+            st.markdown("""
                 <div style="background-color:#f3f4fb ; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
@@ -669,8 +591,109 @@ def show_data_analysis_Secondaire():
                 densite=round(df_seco_del ['densite'].str.replace(',', '.').astype(float).mean(),2),
                 enseign=int(df_seco_del ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
+    #creer une carte ou diagramme selon choix à la fin de page 
+    # Renommer les colonnes
+    df_seco_renamed = df_seco.rename(columns={
+            "per section math": "Math",
+            "per section science": "Science",
+            "per section tech": "Technique",
+            "per section info": "Informatique",
+            "per section eco": "Économie",
+            "per section sport": "Sport"
+        })
         
-  
+    # Nettoyer les données (convertir virgules en points)
+    for col in ["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
+         df_seco_renamed[col] = df_seco_renamed[col].replace(',', '.', regex=True).astype(float)
+
+    # Total des élèves orientés par délégation
+    df_seco_renamed["Total_orientés"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].sum(axis=1)
+
+    # Calcul des pourcentages
+    for col in ["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
+         df_seco_renamed[col] = round(df_seco_renamed[col] / df_seco_renamed["Total_orientés"] * 100, 1)
+
+    # Créer la carte ou le diagramme
+    st.markdown("""
+    <p style="font-weight:bold; color:#111111; font-size:18px;">
+        Choisissez le mode de visualisation :
+    </p>
+    """, unsafe_allow_html=True)
+    mode = st.radio("Choisissez le mode de visualisation :", ["🗺️ Carte", "📊 Diagramme empilé"])
+        
+    if mode == "🗺️ Carte":
+        st.subheader("Carte du taux moyen d’orientation (toutes sections) par délégation")
+        # Moyenne du taux d’orientation toutes sections (optionnel)
+        df_seco_renamed["Taux_moyen_orientation"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].mean(axis=1)
+        m = folium.Map(location=[35.40, 10.06], zoom_start=8, tiles='CartoDB positron')
+        with open("kai-deleg.json", encoding="utf-8") as f:
+            geojson_data = json.load(f)
+
+        # Fusionner les données dans les features du GeoJSON
+        for feature in geojson_data["features"]:
+            ref_code = feature["properties"]["id"]
+            row = df_seco_renamed[df_seco_renamed["ref_tn_cod"] == ref_code]
+            if not row.empty:
+                for col in ["Taux_moyen_orientation", "Math", "Science", "Technique", "Informatique", "Économie", "Sport"]:
+                    val = row.iloc[0][col]
+                    feature["properties"][col] = round(val, 1)
+        choropleth = folium.Choropleth(
+                geo_data=geojson_data,
+                data=df_seco_renamed,
+                columns=('ref_tn_cod', "Taux_moyen_orientation"),
+                key_on='feature.properties.id',
+                fill_color=folium_palette,
+                legend_name="Taux orientation en bac (%)",
+                highlight=True
+            )
+        choropleth.geojson.add_to(m)
+        choropleth.geojson.add_child(folium.GeoJsonTooltip(
+                fields=['del_fr', 'Math', 'Science', 'Technique', 'Informatique', 'Économie', 'Sport'],
+                aliases=[
+                    'Délégation',
+                    'Math (%)',
+                    'Science (%)',
+                    'Technique (%)',
+                    'Informatique (%)',
+                    'Économie (%)',
+                    'Sport (%)'
+                ],
+                localize=True,
+                sticky=True
+            ))
+
+        st_folium(m, width=900, height=500)
+
+    elif mode == "📊 Diagramme empilé":
+        st.subheader("Diagramme empilé des % d’orientation par section et par délégation")
+
+        df_long = df_seco_renamed.melt(
+                id_vars=["deleg"],
+                value_vars=["Math", "Science", "Technique", "Informatique", "Économie", "Sport"],
+                var_name="Section",
+                value_name="Pourcentage"
+            )
+
+        fig7 = px.bar(
+                df_long,
+                x="deleg",
+                y="Pourcentage",
+                color="Section",
+                title="Orientation des élèves par délégation et section (%)",
+                text="Pourcentage",
+                labels={"deleg": "Délégation", "Pourcentage": "%"},
+                color_discrete_sequence=["rgb(132,29,34)",  # Rouge foncé-math
+                             "rgb(205,66,68)",  # rouge moins foncé-science
+                             "rgb(221,93,54)",  # rouge orange-technique
+                             "rgb(255,203,117)",  # jaune -informatique
+                             "rgb(48,97,165)",  # bleue-economie
+                             "rgb(51,51,51)"]   # Gris anthracite (Dark)-sport
+            )
+        fig7.update_layout(barmode='stack')
+        fig7.update_traces(texttemplate='%{text:.1f}%', textposition='inside')
+
+        st.plotly_chart(fig7, use_container_width=True)
+          
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
     st.write("Ici on va  prendre le cycle préparatoire Technique en considération")
@@ -805,11 +828,8 @@ def show_data_analysis_technique():
                 eleves=int(df_tech_del ['student'].sum()),
                 classes=int(df_tech_del ['class'].sum()),
                 enseign=int(df_tech_del ['enseignant'].sum())
-                ), unsafe_allow_html=True) 
-        
+                ), unsafe_allow_html=True)         
 
 # === 7. Exécuter la navigation ===
 
 navigate()  # Démarre la fonction de navigation
-
-
