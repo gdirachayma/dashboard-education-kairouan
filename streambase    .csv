@@ -51,19 +51,19 @@ year;niveau;deleg;codedel;nbetabli;1ann;2ann;3ann;4ann;5ann;6ann;student;class;p
 2021/2022;Cycle Primaire;Manzel mhiri;8147;11;338;312;323;268;260;247;1748;92;8;19;197;10;134;TN421;;;;79;;;;;;;;
 2021/2022;Cycle Primaire;Bouhajla;8151;42;1708;1767;1924;1642;1563;1362;9966;420;22;23,73;658;30;550;TN41B;;;;50,3;;;;;;;;
 2021/2022;Cycle Primaire;Echrarda;8156;25;775;764;772;680;590;568;4149;201;5;20,64;125;6;262;TN41A;;;;39,9;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Kairaouan Nord;8121;11;;;;;;;6717;229;;29,33;;;1056;TN411;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Kairouan Sud;8122;14;;;;;;;9640;367;;26,27;;;282;TN412;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Echbika;8123;3;;;;;;;2407;81;;29,72;;;151;TN413;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Sebikha;8126;6;;;;;;;5311;182;;29,18;;;286;TN414;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;El  Oueslatia;8131;5;;;;;;;2670;80;;33,38;;;152;TN415;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Ain jloula;8132;2;;;;;;;644;27;;23,85;;;36;TN420;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;El Ala;8134;6;;;;;;;2458;90;;27,31;;;121;TN417;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Haffouz;8136;5;;;;;;;3959;139;;28,48;;;243;TN416;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Hajeb El Ayoun;8141;5;;;;;;;3639;125;;29,11;;;202;TN418;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Nasrallah;8146;6;;;;;;;2257;84;;26,87;;;157;TN419;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Manzel mhiri;8147;2;;;;;;;1220;43;;28,37;;;78;TN421;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Bouhajla;8151;6;;;;;;;5521;188;;29,37;;;301;TN41B;;;;;;;;;;;;
-2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Echrarda;8156;4;;;;;;;2522;89;;28,34;;;139;TN41A;;;;;;;;;;;;
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Kairaouan Nord;8121;11;;;;;;;6717;229;;29,33;;;1056;TN411;;;;;;77;113;211;125;26;194;73
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Kairouan Sud;8122;14;;;;;;;9640;367;;26,27;;;282;TN412;;;;;;222;29;335;226;144;467;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Echbika;8123;3;;;;;;;2407;81;;29,72;;;151;TN413;;;;;;39;0;89;0;0;112;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Sebikha;8126;6;;;;;;;5311;182;;29,18;;;286;TN414;;;;;;186;24;61;102;29;146;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;El  Oueslatia;8131;5;;;;;;;2670;80;;33,38;;;152;TN415;;;;;;126;11;39;66;0;138;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Ain jloula;8132;2;;;;;;;644;27;;23,85;;;36;TN420;;;;;;10;0;29;0;0;34;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;El Ala;8134;6;;;;;;;2458;90;;27,31;;;121;TN417;;;;;;63;11;25;18;0;83;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Haffouz;8136;5;;;;;;;3959;139;;28,48;;;243;TN416;;;;;;93;24;50;81;15;152;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Hajeb El Ayoun;8141;5;;;;;;;3639;125;;29,11;;;202;TN418;;;;;;166;13;63;97;19;115;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Nasrallah;8146;6;;;;;;;2257;84;;26,87;;;157;TN419;;;;;;39;0;55;47;0;116;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Manzel mhiri;8147;2;;;;;;;1220;43;;28,37;;;78;TN421;;;;;;14;0;36;0;0;48;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Bouhajla;8151;6;;;;;;;5521;188;;29,37;;;301;TN41B;;;;;;91;15;110;130;22;270;0
+2024/2025;Cycle Preparatoire(G)& Enseignement Secondaire;Echrarda;8156;4;;;;;;;2522;89;;28,34;;;139;TN41A;;;;;;55;0;34;0;50;44;0
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Kairaouan Nord;8121;11;;;;;;;4465;169;;26,42;;;1108;TN411;;;;;;45;56;80;12;0;37;80
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Kairouan Sud;8122;14;;;;;;;9128;354;;25,79;;;297;TN412;;;;;;145;32;289;226;119;454;0
 2023/2024;Cycle Preparatoire(G)& Enseignement Secondaire;Echbika;8123;3;;;;;;;2270;80;;28,38;;;159;TN413;;;;;;49;0;87;0;0;95;0
