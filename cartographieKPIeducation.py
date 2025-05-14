@@ -216,7 +216,7 @@ def show_dashboardprim():
     ################
     #######################
     # Dashboard Main Panel
-    col = st.columns((3.5, 3.0), gap='large')
+    col = st.columns((4.5, 2.0), gap='large')
 
     with col[0]:
             st.markdown('#### Total élèves')
@@ -473,7 +473,7 @@ def show_data_analysis_Secondaire():
 
     #######################
     # Dashboard Main Panel
-    col1, col2 = st.columns((3.5, 3.0), gap='large')
+    col1, col2 = st.columns((4.5, 2.0), gap='large')
     with col1:
         st.markdown('#### Total élèves')
         heatmap = make_heatmap( df_s,'year', 'deleg', 'student', altair_palette)
@@ -711,7 +711,7 @@ def show_data_analysis_technique():
     df_sorted = df_selected_tech .sort_values(by='densite', ascending=False)
     #######################
     # Dashboard Main Panel
-    col = st.columns((3.5,3.0), gap='large')
+    col = st.columns((4.5,3.0), gap='large')
 
     with col[0]:
         st.markdown('#### Total élèves')
