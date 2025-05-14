@@ -103,6 +103,7 @@ def login():
             st.success("Bienvenue ! Vous êtes connecté ✅ ")
         else:
             st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
+    st.image("https://i.pinimg.com/originals/d7/64/c7/d764c70776b64e523cb4eea2f322db96.gif", use_container_width=True)
 
 
 
