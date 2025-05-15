@@ -30,50 +30,27 @@ alt.themes.enable()
 # CSS styling
 st.markdown("""
 <style>
-
+/* Réduit l'espace général au-dessus du contenu principal */
+[data-testid="stAppViewContainer"] > .main {
+    padding-top: 0 !important;
+}
+/* Réduit l’espace à l’intérieur du bloc principal */
 [data-testid="block-container"] {
-    padding-left: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding-top: 0.01rem !important;  /* ⬅️ Réduit l’espace interne en haut */
     padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 0rem;
-    margin-bottom: -7rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    margin-top: 0 !important;
 }
-
-[data-testid="stVerticalBlock"] {
-    padding-left: 0rem;
-    padding-right: 0rem;
-}
-
-[data-testid="stMetric"] {
-    background-color: #496C9F;
-    text-align: center;
-    padding: 20px 0;
-}
-
-[data-testid="stMetricLabel"] {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-[data-testid="stMetricDeltaIcon-Up"] {
-    position: relative;
-    left: 35%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-[data-testid="stMetricDeltaIcon-Down"] {
-    position: relative;
-    left: 35%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+/* Réduit encore l’espace au-dessus du titre */
+h1 {
+    margin-top: -0.1 !important;
 }
 </style>
 """, unsafe_allow_html=True)
-
 
 
 
@@ -86,21 +63,24 @@ USER_CREDENTIALS = {
 
 # === Authentification de base ===
 def login():
-    st.title("🔐 Connexion au Dashboard-KPI Education in KAIROUAN")
-    username = st.text_input("Nom d'utilisateur")
-    password = st.text_input("Mot de passe", type="password")
-    if st.button("Se connecter"):
-        if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
-            st.session_state.username = username
-            st.session_state.logged_in = True
-            st.success("Bienvenue ! Vous êtes connecté ✅ ")
-        else:
-            st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
+    col1, col2 = st.columns((1.3,5.0), gap='medium')
+    with col1:
+         st.image("470202910_1029942125839144_4726740988042572752_n.jpg", use_container_width=True)
+    with col2:
+        st.title("🔐 Connexion au Dashboard-KPI Education in KAIROUAN")
+        with st.form(key="login_form"):
+            username = st.text_input("Nom d'utilisateur")
+            password = st.text_input("Mot de passe", type="password")
+             
+            if st.form_submit_button("Se connecter"):
+                if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
+                    st.session_state.username = username
+                    st.session_state.logged_in = True
+                    st.success("Bienvenue ! Vous êtes connecté ✅ ")
+                else:
+                    st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
     st.image("https://i.pinimg.com/originals/d7/64/c7/d764c70776b64e523cb4eea2f322db96.gif", use_container_width=True)
-
-
-
-
+         
 # === 4. Gestion de la session ===
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
