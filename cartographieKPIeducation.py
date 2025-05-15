@@ -189,6 +189,10 @@ def show_dashboardprim():
     selected_color=st.session_state.selected_color_theme
     color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
     folium_palette, altair_palette = color_theme_list[ selected_color]
+    palette = getattr(px.colors.sequential, folium_palette)
+    custom_palette = [palette[i] for i in [1, 2, 3, 4, 5, 6]]
+    indices = np.linspace(1, len(palette) - 1, 6, dtype=int)  # évite les extrêmes
+    custom_palette = [palette[i] for i in indices]
     #######################
     df_p=df[(df['niveau'] == "Cycle Primaire")]
     df_prim = df[(df['niveau'] == "Cycle Primaire") & (df["year"] == selected_year)]
@@ -265,7 +269,7 @@ def show_dashboardprim():
                             var_name="Niveau", 
                             value_name="Élèves")
             # Tracer la courbe
-            fig2= px.line(df_long, x="deleg", y="Élèves", color="Niveau", markers=True,
+            fig2= px.line(df_long, x="deleg", y="Élèves", color="Niveau",color_discrete_sequence="custom_palette", markers=True,
                         title=f"📚 Répartition des élèves par niveau (1ère à 6ème année)– {selected_year}")
 
             fig2.update_layout(
