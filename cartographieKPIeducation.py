@@ -190,7 +190,7 @@ def show_dashboardprim():
     ################
     #######################
     # Dashboard Main Panel
-    col = st.columns((4.0, 2.5), gap='large')
+    col = st.columns((4.0, 2.0), gap='large')
 
     with col[0]:
             st.markdown('#### Total élèves')
