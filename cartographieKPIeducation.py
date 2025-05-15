@@ -280,7 +280,7 @@ def show_dashboardprim():
 
     with col[1]:  
         st.markdown("""
-                <div style="background-color: #3f678c; padding: 60px; border-radius: 11px;">
+                <div style="background-color: #659db8; padding: 60px; border-radius: 11px;">
                     <h4 style="text-align:center;"> Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         🧮 établissements<br><strong style="color:#fefcfb;">{établissemnts}</strong>
@@ -512,7 +512,7 @@ def show_data_analysis_Secondaire():
     
     with col2:  
             st.markdown("""
-                <div style="background-color: #3f678c; padding: 26px; border-radius: 11px;">
+                <div style="background-color: #659db8; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🔢 Indicateurs Clés -Régionale</h4>
                     <div style="text-align:center; font-size: 26px; margin: 8px 0;">
                         🧮 établissements<br><strong style="color:#fefcfb;">{établissemnts}</strong>
@@ -780,7 +780,7 @@ def show_data_analysis_technique():
                 enseign=int(df_selected_tech ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
             st.markdown("""
-                <div style="background-color:#3f678c ; padding: 26px; border-radius: 11px;">
+                <div style="background-color:#659db8 ; padding: 26px; border-radius: 11px;">
                     <h4 style="text-align:center;">🚀 Indicateurs Clés -Par délégation</h4>{delegationaffichage}</strong>
                     <div style="text-align:center; font-size: 20px; margin: 8px 0;">
                         🧮 établissements<br><strong style="color:#f3f4fb;">{établissemnts}</strong>
