@@ -79,7 +79,14 @@ def login():
                     st.success("Bienvenue ! Vous êtes connecté ✅ ")
                 else:
                     st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
-    st.image("https://i.pinimg.com/originals/d7/64/c7/d764c70776b64e523cb4eea2f322db96.gif", use_container_width=True)
+    st.markdown(
+            """
+            <div style="text-align: center;">
+                <img src="https://i.pinimg.com/originals/d7/64/c7/d764c70776b64e523cb4eea2f322db96.gif" style="width:200%; max-width:1090px;">
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
          
 # === 4. Gestion de la session ===
 if "logged_in" not in st.session_state:
