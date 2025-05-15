@@ -269,7 +269,7 @@ def show_dashboardprim():
                             var_name="Niveau", 
                             value_name="Élèves")
             # Tracer la courbe
-            fig2= px.line(df_long, x="deleg", y="Élèves", color="Niveau",color_discrete_sequence="custom_palette", markers=True,
+            fig2= px.line(df_long, x="deleg", y="Élèves", color="Niveau",color_discrete_sequence=custom_palette, markers=True,
                         title=f"📚 Répartition des élèves par niveau (1ère à 6ème année)– {selected_year}")
 
             fig2.update_layout(
