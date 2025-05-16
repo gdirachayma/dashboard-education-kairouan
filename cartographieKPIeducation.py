@@ -129,14 +129,11 @@ def navigate():
             indices = np.linspace(1, len(palette) - 1, 6, dtype=int)  # évite les extrêmes
             custom_palette = [palette[i] for i in indices]
             st.sidebar.title("🧭 Navigation")
+            # Initialisation si nécessaire
             if "selected_button" not in st.session_state:
                 st.session_state.selected_button = False
-            if  st.session_state.selected_niveau:
-                st.session_state.selected_button = False
-            # Bouton dans la sidebar (booléen, pas string)
             if st.button("📍 Voir le GPS des établissements scolaires"):
                 st.session_state.selected_button = True
-            
            
         if st.session_state.selected_button:
             show_GPS_Etab()  # Affiche la carte GPS
@@ -821,6 +818,11 @@ def show_data_analysis_technique():
                 enseign=int(df_tech_del ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
 def show_GPS_Etab():
+    if st.button("🔙 Retour"):
+        st.session_state.selected_button = False
+        st.rerun()
+ 
+
     @st.cache_data
     def load_data():
         df = pd.read_csv('GPS.csv',
@@ -858,8 +860,10 @@ def show_GPS_Etab():
         ).add_to(map)
 
     st_folium(map, width=1000, height=600)
-
-
-            
+    if st.button("🔙 Retour"):
+        st.session_state.selected_button = False
+        st.rerun()
+ 
+           
 # === 7. Exécuter la navigation ===
 navigate()  # Démarre la fonction de navigation
