@@ -56,7 +56,7 @@ h1 {
 
 # === Simuler une base d'utilisateurs ===
 USER_CREDENTIALS = {
-    "admin": "pass123",
+    "admin": "pass12345",
     "kairouan": "education2025",
     "chaymaguedira":"290190Ch@yma"
 }
