@@ -145,12 +145,12 @@ def navigate():
 
 
  #######################
-# Load data  se fait en écrivant cette formule df=pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+# Load data  se fait en écrivant cette formule df=pd.read_csv('streambase .csv',sep=';',encoding='MacRoman')
 #mais on va l'ecrire comme ci dessous pour charger et automatiser le calcul sans retard
 
 @st.cache_data
 def load_data():
-    return pd.read_csv('streambase    .csv',sep=';',encoding='MacRoman')
+    return pd.read_csv('streambase .csv',sep=';',encoding='MacRoman')
 
 df = load_data()
 
