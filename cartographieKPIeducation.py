@@ -860,9 +860,7 @@ def show_GPS_Etab():
         ).add_to(map)
 
     st_folium(map, width=1000, height=600)
-    if st.button("🔙 Retour"):
-        st.session_state.selected_button = False
-        st.rerun()
+
  
            
 # === 7. Exécuter la navigation ===
