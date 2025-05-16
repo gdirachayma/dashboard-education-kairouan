@@ -774,8 +774,6 @@ def show_data_analysis_technique():
 
             # Affichage
         st.plotly_chart(fig2, use_container_width=True)
-
-
     with col[1]:
             st.markdown("""
                 <div style="background-color: #f3f4fb; padding: 26px; border-radius: 11px;">
@@ -823,56 +821,45 @@ def show_data_analysis_technique():
                 enseign=int(df_tech_del ['enseignant'].sum())
                 ), unsafe_allow_html=True) 
 def show_GPS_Etab():
-        @st.cache_data
-        def load_data():
-            return pd.read_csv('GPS1.csv', sep=';', encoding='MacRoman')
+    @st.cache_data
+    def load_data():
+        df = pd.read_csv('GPS.csv',
+            sep=';',
+            encoding='utf-8',
+            on_bad_lines='skip'
+        )
+        df['lat1'] = pd.to_numeric(df['lat1'], errors='coerce')
+        df['lon1'] = pd.to_numeric(df['lon1'], errors='coerce')
+        df = df.dropna(subset=['lat1', 'lon1'])
+        return df
 
-        df = load_data()
-        st.write("🧭 Colonnes dans le fichier GPS :", df.columns.tolist())  # Ajout temporaire pour debug
+    df = load_data()
 
-        # Nettoyage : convertir en float, gérer les erreurs
-        df["lat1"] = pd.to_numeric(df["lat1"], errors="coerce")
-        df["lon1"] = pd.to_numeric(df["lon1"], errors="coerce")
-        df_clean = df.dropna(subset=["lat1", "lon1"])
+    st.title("🗺️ Carte des établissements scolaires avec coordonnées GPS")
 
-        # Thème de couleur
-        selected_color = st.session_state.get("selected_color_theme", "Bleu")
-        color_theme_list = {
-            "Bleu": ("Blues", "blues"),
-            "Rouge": ("Reds", "reds"),
-            "Vert": ("Greens", "greens")
-        }
-        folium_palette, altair_palette = color_theme_list[selected_color]
+    # 📍 Filtre par délégation
+    delegations = ['Toutes les délégations'] + sorted(df['deleg1'].dropna().unique().tolist())
+    selected_deleg = st.selectbox("📍 Filtrer par délégation :", delegations)
 
-        # Colonnes layout
-        col1, col2 = st.columns((1.3, 5.0), gap='medium')
+    if selected_deleg != "Toutes les délégations":
+        df = df[df['deleg1'] == selected_deleg]
 
-        with col1:
-            map = folium.Map(location=[35.40, 10.06], zoom_start=7, scrollWheelZoom=False, tiles='CartoDB positron')
+    # 🌍 Carte Folium
+    map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
 
-            choropleth = folium.Choropleth(
-                geo_data='kai-deleg.json',
-                data=df,
-                columns=('ref_tn_cod1', 'deleg1'),
-                key_on='feature.properties.id',
-                legend_name="Nombre d'élèves",
-                fill_color=folium_palette,
-                highlight=True
-            )
-            choropleth.geojson.add_to(map)
+    for _, row in df.iterrows():
+        popup_text = f"""<strong>{row['nom']}</strong><br>
+        Délégation : {row['deleg1']}<br>
+        Code Établissement : {row['code_et']}"""
+        folium.Marker(
+            location=[row["lat1"], row["lon1"]],
+            popup=popup_text,
+            icon=folium.Icon(color="blue", icon="graduation-cap", prefix='fa')
+        ).add_to(map)
 
-            # Ajout des marqueurs GPS
-            for _, row in df_clean.iterrows():
-                folium.Marker(
-                    location=[row["lat1"], row["lon1"]],
-                    popup=row["deleg1"],
-                    icon=folium.Icon(color="blue", icon="info-sign")
-                ).add_to(map)
+    st_folium(map, width=1000, height=600)
 
-            st_folium(map, width=1000, height=500)
 
-        with col2:
-             st.image("470202910_1029942125839144_4726740988042572752_n.jpg")
-                    
+            
 # === 7. Exécuter la navigation ===
 navigate()  # Démarre la fonction de navigation
