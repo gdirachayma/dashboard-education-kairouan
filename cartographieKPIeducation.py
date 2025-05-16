@@ -867,7 +867,7 @@ def show_GPS_Etab():
         st_folium(map, width=1000, height=500)
 
     with col2:
-            st.image(""470202910_1029942125839144_4726740988042572752_n.jpg")
+            st.image("470202910_1029942125839144_4726740988042572752_n.jpg", use_container_width=True)
             
         
 # === 7. Exécuter la navigation ===
