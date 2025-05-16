@@ -603,9 +603,36 @@ def show_data_analysis_Secondaire():
         Choisissez le mode de visualisation :
     </p>
     """, unsafe_allow_html=True)
-    mode = st.radio("Choisissez le mode de visualisation :", ["🗺️ Carte", "📊 Diagramme empilé"])
+    mode = st.radio("Choisissez le mode de visualisation :", ["📊 Diagramme empilé","🗺️ Carte"])
+    if mode == "📊 Diagramme empilé":
+        st.subheader("Diagramme empilé des % d’orientation par section et par délégation")
+        df_long = df_seco_renamed.melt(
+                id_vars=["deleg"],
+                value_vars=["Math", "Science", "Technique", "Informatique", "Économie", "Sport"],
+                var_name="Section",
+                value_name="Pourcentage"
+            )
+        fig7 = px.bar(
+                df_long,
+                x="deleg",
+                y="Pourcentage",
+                color="Section",
+                title="Orientation des élèves par délégation et section (%)",
+                text="Pourcentage",
+                labels={"deleg": "Délégation", "Pourcentage": "%"},
+                color_discrete_sequence=["rgb(132,29,34)",  # Rouge foncé-math
+                             "rgb(205,66,68)",  # rouge moins foncé-science
+                             "rgb(221,93,54)",  # rouge orange-technique
+                             "rgb(255,203,117)",  # jaune -informatique
+                             "rgb(48,97,165)",  # bleue-economie
+                             "rgb(51,51,51)"]   # Gris anthracite (Dark)-sport
+            )  
         
-    if mode == "🗺️ Carte":
+        fig7.update_layout(barmode='stack')
+        fig7.update_traces(texttemplate='%{text:.1f}%', textposition='inside')
+
+        st.plotly_chart(fig7, use_container_width=True)
+    elif mode == "🗺️ Carte":
         st.subheader("Carte du taux moyen d’orientation (toutes sections) par délégation")
         # Moyenne du taux d’orientation toutes sections (optionnel)
         df_seco_renamed["Taux_moyen_orientation"] = df_seco_renamed[["Math", "Science", "Technique", "Informatique", "Économie", "Sport"]].mean(axis=1)
@@ -647,36 +674,6 @@ def show_data_analysis_Secondaire():
             ))
 
         st_folium(m, width=900, height=500)
-
-    elif mode == "📊 Diagramme empilé":
-        st.subheader("Diagramme empilé des % d’orientation par section et par délégation")
-
-        df_long = df_seco_renamed.melt(
-                id_vars=["deleg"],
-                value_vars=["Math", "Science", "Technique", "Informatique", "Économie", "Sport"],
-                var_name="Section",
-                value_name="Pourcentage"
-            )
-
-        fig7 = px.bar(
-                df_long,
-                x="deleg",
-                y="Pourcentage",
-                color="Section",
-                title="Orientation des élèves par délégation et section (%)",
-                text="Pourcentage",
-                labels={"deleg": "Délégation", "Pourcentage": "%"},
-                color_discrete_sequence=["rgb(132,29,34)",  # Rouge foncé-math
-                             "rgb(205,66,68)",  # rouge moins foncé-science
-                             "rgb(221,93,54)",  # rouge orange-technique
-                             "rgb(255,203,117)",  # jaune -informatique
-                             "rgb(48,97,165)",  # bleue-economie
-                             "rgb(51,51,51)"]   # Gris anthracite (Dark)-sport
-            )
-        fig7.update_layout(barmode='stack')
-        fig7.update_traces(texttemplate='%{text:.1f}%', textposition='inside')
-
-        st.plotly_chart(fig7, use_container_width=True)
           
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
