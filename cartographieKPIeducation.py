@@ -821,7 +821,7 @@ def show_data_analysis_technique():
 def show_GPS_Etab():
     @st.cache_data
     def load_data():
-        return pd.read_csv('GPS1.csv', sep=';', encoding='MacRoman')
+        return pd.read_csv('GPS.csv', sep=';', encoding='MacRoman')
 
     df = load_data()
     st.write("🧭 Colonnes dans le fichier GPS :", df.columns.tolist())  # Ajout temporaire pour debug
