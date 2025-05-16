@@ -117,11 +117,17 @@ def navigate():
             niveau_list_sorted=sorted(niveau_list,key=lambda x: ordre_personnalise.index(x) if x in ordre_personnalise else 999)
             st.session_state.selected_niveau = st.selectbox('💡 Select a cycle', niveau_list_sorted)
             df_selected_niveau = df[df.niveau== st.session_state.selected_niveau]
-            
+
+           
+
             color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
             st.session_state.selected_color_theme = st.selectbox('🖌️ Select a color theme', list(color_theme_list.keys()))
             color_theme_list =  {"Bleu": ("Blues", "blues"),  "Rouge": ("Reds", "reds"), "Vert": ("Greens", "greens")      }
             folium_palette, altair_palette = color_theme_list[ st.session_state.selected_color_theme]
+            palette = getattr(px.colors.sequential, folium_palette)
+            custom_palette = [palette[i] for i in [1, 2, 3, 4, 5, 6]]
+            indices = np.linspace(1, len(palette) - 1, 6, dtype=int)  # évite les extrêmes
+            custom_palette = [palette[i] for i in indices]
             st.sidebar.title("🧭 Navigation")
             if "selected_button" not in st.session_state:
                 st.session_state.selected_button = False
@@ -130,20 +136,18 @@ def navigate():
             # Bouton dans la sidebar (booléen, pas string)
             if st.button("📍 Voir le GPS des établissements scolaires"):
                 st.session_state.selected_button = True
-             
-        if st.session_state.selected_niveau == "Cycle Primaire":
+            
+           
+        if st.session_state.selected_button:
+            show_GPS_Etab()  # Affiche la carte GPS
+        elif st.session_state.selected_niveau == "Cycle Primaire":
             show_dashboardprim()
         elif st.session_state.selected_niveau == "Cycle Preparatoire(G)& Enseignement Secondaire":
-            show_data_analysis_Secondaire()  # Afficher une autre page (exemple: analyse des données)
+            show_data_analysis_Secondaire()
         elif st.session_state.selected_niveau == "Cycle Preparatoire(Tech)":
-            show_data_analysis_technique()  # Afficher une troisième page (exemple: rapports)
-        
+            show_data_analysis_technique()
 
-          
-#######
-
-
-
+         
  #######################
 # Load data  se fait en écrivant cette formule df=pd.read_csv('streambase .csv',sep=';',encoding='MacRoman')
 #mais on va l'ecrire comme ci dessous pour charger et automatiser le calcul sans retard
@@ -682,7 +686,7 @@ def show_data_analysis_Secondaire():
             ))
 
         st_folium(m, width=900, height=500)
-          
+       
 def show_data_analysis_technique():
     st.title("🧑🏻‍🔧 Analyse des Données de Cycle Préparatoire Technique")
     st.write("Ici on va  prendre le cycle préparatoire Technique en considération")
@@ -817,58 +821,58 @@ def show_data_analysis_technique():
                 eleves=int(df_tech_del ['student'].sum()),
                 classes=int(df_tech_del ['class'].sum()),
                 enseign=int(df_tech_del ['enseignant'].sum())
-                ), unsafe_allow_html=True)
+                ), unsafe_allow_html=True) 
 def show_GPS_Etab():
-    @st.cache_data
-    def load_data():
-        return pd.read_csv('GPS.csv', sep=';', encoding='MacRoman')
+        @st.cache_data
+        def load_data():
+            return pd.read_csv('GPS1.csv', sep=';', encoding='MacRoman')
 
-    df = load_data()
-    st.write("🧭 Colonnes dans le fichier GPS :", df.columns.tolist())  # Ajout temporaire pour debug
+        df = load_data()
+        st.write("🧭 Colonnes dans le fichier GPS :", df.columns.tolist())  # Ajout temporaire pour debug
 
-    # Nettoyage : convertir en float, gérer les erreurs
-    df["lat1"] = pd.to_numeric(df["lat1"], errors="coerce")
-    df["lon1"] = pd.to_numeric(df["lon1"], errors="coerce")
-    df_clean = df.dropna(subset=["lat1", "lon1"])
+        # Nettoyage : convertir en float, gérer les erreurs
+        df["lat1"] = pd.to_numeric(df["lat1"], errors="coerce")
+        df["lon1"] = pd.to_numeric(df["lon1"], errors="coerce")
+        df_clean = df.dropna(subset=["lat1", "lon1"])
 
-    # Thème de couleur
-    selected_color = st.session_state.get("selected_color_theme", "Bleu")
-    color_theme_list = {
-        "Bleu": ("Blues", "blues"),
-        "Rouge": ("Reds", "reds"),
-        "Vert": ("Greens", "greens")
-    }
-    folium_palette, altair_palette = color_theme_list[selected_color]
+        # Thème de couleur
+        selected_color = st.session_state.get("selected_color_theme", "Bleu")
+        color_theme_list = {
+            "Bleu": ("Blues", "blues"),
+            "Rouge": ("Reds", "reds"),
+            "Vert": ("Greens", "greens")
+        }
+        folium_palette, altair_palette = color_theme_list[selected_color]
 
-    # Colonnes layout
-    col1, col2 = st.columns((1.3, 5.0), gap='medium')
+        # Colonnes layout
+        col1, col2 = st.columns((1.3, 5.0), gap='medium')
 
-    with col1:
-        map = folium.Map(location=[35.40, 10.06], zoom_start=7, scrollWheelZoom=False, tiles='CartoDB positron')
-        choropleth = folium.Choropleth(
-            geo_data='kai-deleg.json',
-            data=df,
-            columns=('ref_tn_cod1', 'deleg1'),
-            key_on='feature.properties.id',
-            legend_name="Nombre d'élèves",
-            fill_color=folium_palette,
-            highlight=True
-        )
-        choropleth.geojson.add_to(map)
+        with col1:
+            map = folium.Map(location=[35.40, 10.06], zoom_start=7, scrollWheelZoom=False, tiles='CartoDB positron')
 
-        # Ajout des marqueurs GPS
-        for _, row in df_clean.iterrows():
-            folium.Marker(
-                location=[row["lat1"], row["lon1"]],
-                popup=row["deleg1"],
-                icon=folium.Icon(color="blue", icon="info-sign")
-            ).add_to(map)
+            choropleth = folium.Choropleth(
+                geo_data='kai-deleg.json',
+                data=df,
+                columns=('ref_tn_cod1', 'deleg1'),
+                key_on='feature.properties.id',
+                legend_name="Nombre d'élèves",
+                fill_color=folium_palette,
+                highlight=True
+            )
+            choropleth.geojson.add_to(map)
 
-        st_folium(map, width=1000, height=500)
+            # Ajout des marqueurs GPS
+            for _, row in df_clean.iterrows():
+                folium.Marker(
+                    location=[row["lat1"], row["lon1"]],
+                    popup=row["deleg1"],
+                    icon=folium.Icon(color="blue", icon="info-sign")
+                ).add_to(map)
 
-    with col2:
-            st.image("470202910_1029942125839144_4726740988042572752_n.jpg", use_container_width=True)
-            
-        
+            st_folium(map, width=1000, height=500)
+
+        with col2:
+             st.image("470202910_1029942125839144_4726740988042572752_n.jpg")
+                    
 # === 7. Exécuter la navigation ===
 navigate()  # Démarre la fonction de navigation
