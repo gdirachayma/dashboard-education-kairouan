@@ -840,7 +840,7 @@ def show_GPS_Etab():
     st.title("🗺️ Carte des établissements scolaires avec coordonnées GPS")
 
     # 📍 Filtre par délégation
-    delegations = ['Toutes les délégations'] + sorted(df['deleg1'].dropna().unique()[::1].tolist())
+    delegations = ['Toutes les délégations'] + df['deleg1'].dropna().unique()[::1].tolist()
     
     selected_deleg = st.selectbox("📍 Filtrer par délégation :", delegations)
 
@@ -848,19 +848,33 @@ def show_GPS_Etab():
         df = df[df['deleg1'] == selected_deleg]
 
     # 🌍 Carte Folium
-    map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
+    col1, col2 = st.columns((4.3, 3.0), gap='medium')
 
-    for _, row in df.iterrows():
-        popup_text = f"""<strong>{row['nature']}</strong><br>
-        Délégation : {row['deleg1']}<br>
-        Code Établissement : {row['code_et']}"""
-        folium.Marker(
-            location=[row["lat1"], row["lon1"]],
-            popup=popup_text,
-            icon=folium.Icon(color="blue", icon="graduation-cap", prefix='fa')
-        ).add_to(map)
+    with col1:
+        map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
+        for _, row in df.iterrows():
+            popup_text = f"""<strong>{row['nature']}</strong><br>
+            Délégation : {row['deleg1']}<br>
+            Code Établissement : {row['code_et']}"""
+            folium.Marker(
+                location=[row["lat1"], row["lon1"]],
+                popup=popup_text,
+                icon=folium.Icon(color="blue", icon="graduation-cap", prefix='fa')
+            ).add_to(map)
+        
+        st_folium(map, width=1000, height=600)
+    with col2:
+        st.subheader("📋 Détails d’un établissement")
+        
+        # Selectbox pour filtrer les écoles
+        etab_list = df["code_et"].dropna().unique().tolist()
+        selected_etab = st.selectbox("Sélectionnez un établissement", sorted(etab_list))
 
-    st_folium(map, width=1000, height=600)
+        # Affiche les infos
+        if selected_etab:
+            df_selected = df[df["code_et"] == selected_etab]
+            st.dataframe(df_selected.drop(columns=["lat1", "lon1"]))  # Cache coords si tu veux  
+           
 
     
 
