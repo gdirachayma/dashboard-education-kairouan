@@ -840,7 +840,8 @@ def show_GPS_Etab():
     st.title("🗺️ Carte des établissements scolaires avec coordonnées GPS")
 
     # 📍 Filtre par délégation
-    delegations = ['Toutes les délégations'] + sorted(df['deleg1'].dropna().unique().tolist())
+    delegations = ['Toutes les délégations'] + sorted(df['deleg1'].dropna().unique()[::1].tolist())
+    
     selected_deleg = st.selectbox("📍 Filtrer par délégation :", delegations)
 
     if selected_deleg != "Toutes les délégations":
@@ -850,7 +851,7 @@ def show_GPS_Etab():
     map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
 
     for _, row in df.iterrows():
-        popup_text = f"""<strong>{row['nom']}</strong><br>
+        popup_text = f"""<strong>{row['nature']}</strong><br>
         Délégation : {row['deleg1']}<br>
         Code Établissement : {row['code_et']}"""
         folium.Marker(
@@ -858,6 +859,8 @@ def show_GPS_Etab():
             popup=popup_text,
             icon=folium.Icon(color="blue", icon="graduation-cap", prefix='fa')
         ).add_to(map)
+
+    st_folium(map, width=1000, height=600)
 
     st_folium(map, width=1000, height=600)
 
