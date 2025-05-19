@@ -856,12 +856,24 @@ def show_GPS_Etab():
             popup_text = f"""<strong>{row['nature']}</strong><br>
             Délégation : {row['deleg1']}<br>
             Code Établissement : {row['code_et']}"""
-            folium.Marker(
+                # Déterminer la couleur de l'icône selon le type
+            if row["nature"].strip() == "college et lycee":
+                icon_color = "blue"
+                folium.Marker(
                 location=[row["lat1"], row["lon1"]],
                 popup=popup_text,
-                icon=folium.Icon(color="blue", icon="graduation-cap", prefix='fa')
+                icon=folium.Icon(color=icon_color, icon="university", prefix='fa')
             ).add_to(map)
-        
+            else:
+                icon_color = "red"
+                folium.Marker(
+                location=[row["lat1"], row["lon1"]],
+                popup=popup_text,
+                icon=folium.Icon(color=icon_color, icon="school", prefix='fa')
+            ).add_to(map)
+
+            
+           
         st_folium(map, width=1000, height=600)
     with col2:
         st.subheader("📋 Détails d’un établissement")
@@ -873,9 +885,7 @@ def show_GPS_Etab():
         # Affiche les infos
         if selected_etab:
             df_selected = df[df["code_et"] == selected_etab]
-            st.dataframe(df_selected.drop(columns=["lat1", "lon1"]))  # Cache coords si tu veux  
-           
-
+            st.dataframe(df_selected.drop(columns=["lat1", "lon1"]))  # Cache coords si tu veux 
     
 
  
