@@ -862,7 +862,7 @@ def show_GPS_Etab():
 
     st_folium(map, width=1000, height=600)
 
-    st_folium(map, width=1000, height=600)
+    
 
  
            
