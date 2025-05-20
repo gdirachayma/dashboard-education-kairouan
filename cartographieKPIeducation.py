@@ -822,12 +822,11 @@ def show_GPS_Etab():
         st.session_state.selected_button = False
         st.rerun()
  
-
     @st.cache_data
     def load_data():
         df = pd.read_csv('GPS.csv',
             sep=';',
-            encoding='utf-8',
+            encoding= 'ISO-8859-1',
             on_bad_lines='skip'
         )
         df['lat1'] = pd.to_numeric(df['lat1'], errors='coerce')
@@ -840,52 +839,84 @@ def show_GPS_Etab():
     st.title("🗺️ Carte des établissements scolaires avec coordonnées GPS")
 
     # 📍 Filtre par délégation
-    delegations = ['Toutes les délégations'] + df['deleg1'].dropna().unique()[::1].tolist()
-    
-    selected_deleg = st.selectbox("📍 Filtrer par délégation :", delegations)
+    df['deleg1'] = df['deleg1'].str.strip()
+    df['code_et'] = df['code_et'].astype(str).str.strip()
 
-    if selected_deleg != "Toutes les délégations":
-        df = df[df['deleg1'] == selected_deleg]
+    # -------------------
+    # 1️⃣ Choix de délégation
+    delegations = df['deleg1'].dropna().unique().tolist()
+    selected_deleg = st.selectbox("📍 Filtrer par délégation :", ["Toutes les délégations"] + sorted(delegations))
+
+    # -------------------
+    # 2️⃣ Filtrage des établissements selon la délégation sélectionnée
+    if selected_deleg == "Toutes les délégations":
+        filtered_df = df
+    else:
+        filtered_df = df[df["deleg1"] == selected_deleg]
+
+    # Liste des établissements filtrés
+    etablissements = filtered_df["code_et"].dropna().unique().tolist()
+    selected_etab = st.selectbox("🏫 Sélectionnez un établissement", ["Tous les établissements"] + sorted(etablissements))
+
+    # -------------------
+    # 3️⃣ Application du filtre final
+    if selected_etab != "Tous les établissements":
+        filtered_df = filtered_df[filtered_df["code_et"] == selected_etab]
 
     # 🌍 Carte Folium
     col1, col2 = st.columns((4.3, 3.0), gap='medium')
 
     with col1:
         map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
+        
         for _, row in df.iterrows():
+            nature_c = row["nature"].strip().lower()  # normalisation
             popup_text = f"""<strong>{row['nature']}</strong><br>
             Délégation : {row['deleg1']}<br>
-            Code Établissement : {row['code_et']}"""
-                # Déterminer la couleur de l'icône selon le type
-            if row["nature"].strip() == "college et lycee":
+            Établissement : {row['nom']}"""
+            if nature_c == "lycee":
                 icon_color = "blue"
+                icon_name = "university"
                 folium.Marker(
                 location=[row["lat1"], row["lon1"]],
                 popup=popup_text,
-                icon=folium.Icon(color=icon_color, icon="university", prefix='fa')
+                icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
             ).add_to(map)
-            else:
+            elif nature_c == "college":
                 icon_color = "red"
+                icon_name = "school"
                 folium.Marker(
                 location=[row["lat1"], row["lon1"]],
                 popup=popup_text,
-                icon=folium.Icon(color=icon_color, icon="school", prefix='fa')
+                icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
+            ).add_to(map)
+            elif nature_c == "mixte":
+                icon_color = "orange"
+                icon_name = "book"
+                folium.Marker(
+                location=[row["lat1"], row["lon1"]],
+                popup=popup_text,
+                icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
+            ).add_to(map)
+            else:  # par défaut (ex: école primaire)
+                icon_color = "green"
+                icon_name = "child"
+                folium.Marker(
+                location=[row["lat1"], row["lon1"]],
+                popup=popup_text,
+                icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
             ).add_to(map)
 
+         
             
            
         st_folium(map, width=1000, height=600)
     with col2:
         st.subheader("📋 Détails d’un établissement")
-        
-        # Selectbox pour filtrer les écoles
-        etab_list = df["code_et"].dropna().unique().tolist()
-        selected_etab = st.selectbox("Sélectionnez un établissement", sorted(etab_list))
-
         # Affiche les infos
         if selected_etab:
             df_selected = df[df["code_et"] == selected_etab]
-            st.dataframe(df_selected.drop(columns=["lat1", "lon1"]))  # Cache coords si tu veux 
+            st.dataframe(df_selected.drop(columns=["lat1", "lon1","ref_tn_cod1","codedel1"]))  # Cache coords si tu veux 
     
 
  
