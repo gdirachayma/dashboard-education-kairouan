@@ -882,7 +882,7 @@ def show_GPS_Etab():
                 popup=popup_text,
                 icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
             ).add_to(map)
-            elif nature_c == "college":
+            elif nature_c == "college" or nature_c == "mixte":
                 icon_color = "red"
                 icon_name = "school"
                 folium.Marker(
@@ -890,7 +890,7 @@ def show_GPS_Etab():
                 popup=popup_text,
                 icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
             ).add_to(map)
-            elif nature_c == "mixte":
+            elif nature_c == "College Technique":
                 icon_color = "orange"
                 icon_name = "book"
                 folium.Marker(
@@ -914,12 +914,10 @@ def show_GPS_Etab():
     with col2:
         st.subheader("📋 Détails d’un établissement")
         # Affiche les infos
-        if selected_etab:
-            df_selected = df[df["code_et"] == selected_etab]
-            st.dataframe(df_selected.drop(columns=["lat1", "lon1","ref_tn_cod1","codedel1"]))  # Cache coords si tu veux 
-    
+        
+        st.dataframe( filtered_df.drop(columns=["lat1", "lon1","ref_tn_cod1","codedel1"]))  # Cache coords si tu veux 
 
- 
+  
            
 # === 7. Exécuter la navigation ===
 navigate()  # Démarre la fonction de navigation
