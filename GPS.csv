@@ -1,391 +1,391 @@
-codedel1;deleg1;nature;ref_tn_cod1;code_et;lat1;lon1;nom
-8122;Kairouan Sud;Lycee;TN412;812101;35.6539519;10.0846852;Lycee Okba Ibn nafaa
-8122;Kairouan Sud;Lycee;TN412;812102;35.674892;10.1035545;Lycee Ibn Rachik 
-8122;Kairouan Sud;Lycee;TN412;812103;35.6697;10.10594;Lycee Chedli Atala Kairouan
-8122;Kairouan Sud;College;TN412;812104;35.6745548;10.1050551;College 02 Mars 1934 Kairouan
-8122;Kairouan Sud;Lycee;TN412;812105;35.61186;10.0673;Lycee Rakkada Kairouan
-8122;Kairouan Sud;College;TN412;812107;35.6103277;10.0666375;College Rakkada Kairouan
-8121;Kairaouan Nord;Lycee;TN411;812108;35.6943323;10.0874538; Lycee ˝Pilote Kairouan
-8121;Kairaouan Nord;College;TN411;812109;35.697923;10.101591;College El manarKairouan
-8121;Kairaouan Nord;College;TN411;812112;35.673538;10.0948047;CollegeEl hossari Kairouan
-8122;Kairouan Sud;Lycee;TN412;812113;35.6550744;10.0834004;LyceeIbn Jazzar Kairouan
-8121;Kairaouan Nord;Lycee;TN411;812114;35.690396;10.0820389;Lycee Dar el Amen Kairouan
-8122;Kairouan Sud;College;TN412;812115;35.6532396;10.0830999;College  El Mansoura Kairouan
-8121;Kairaouan Nord;College;TN411;812116;35.690882694586875†;10.08402596;College Dar el Amen Kairouan
-8121;Kairaouan Nord;Lycee;TN411;812117;35.6799782;10.0728529;Lycee  Aghalaba Kairouan
-8121;Kairaouan Nord;College;TN411;812118;35.6754761;10.104603;College Ibn charaf Kairouan
-8121;Kairaouan Nord;College;TN411;812119;35.712064;9.993921;College Batten Kairouan
-8121;Kairaouan Nord;College;TN411;812120;35.685538;10.078306;College sahabi Abou zamaa Balaoui Kairouan
-8121;Kairaouan Nord;Lycee;TN411;812121;35.7128393;9.9963243;Lycee El Batten Kairouan
-8121;Kairaouan Nord;Lycee;TN411;812122;35.6763774;10.1071734;Lycee Sportif  Kairouan
-8122;Kairouan Sud;College;TN412;812201;35.6659059;10.0731819;College Ibn hani Kairouan
-8122;Kairouan Sud;College;TN412;812202;35.66367;10.11041;College Assad Ibn Fourate Kairouan
-8122;Kairouan Sud;Lycee;TN412;812203;35.66491;10.07558;Lycee Kairouan
-8122;Kairouan Sud;College;TN412;812204;35.65785;10.08184;College Beit Elhikma Kairouan
-8122;Kairouan Sud;College;TN412;812205;35.6553011;10.0796908;College Pilote Kairouan
-8122;Kairouan Sud;College;TN412;812206;35.4898006;9.9588087;College Khadhra
-8123;Echbika;College;TN413;812301;35.61851031656047;9.922166393;College Echbika
-8123;Echbika;Lycee;TN413;812302;35.61712;9.92528;Lycee Nahj Ibn Arafa Echbika
-8123;Echbika;College;TN413;812303;35.58618937049409;9.907434591;CollegeSidi Ali Ben Salem
-8126;Sebikha;College;TN414;812603;35.934979;10.0265879;College Monji Selim Sebikha
-8126;Sebikha;College;TN414;812604;35.9284214;10.0255257;College Ibn Roched Sebikha
-8126;Sebikha;College;TN414;812605;35.9301991;10.0252835;College Sebikha
-8126;Sebikha;Lycee;TN414;812606;35.91453;10.12588;Lycee Sebikha
-8126;Sebikha;College;TN414;812607;36.02463;10.18474;College Dar Eljamaya Sebikha
-8126;Sebikha;Lycee;TN414;812608;35.9427211;10.0202272;Lycee Mahmoud Messaadi Sebikha
-8131;El  Oueslatia;College;TN415;813105;35.8481337;9.5921938;College Abou Kacem Chebbi El  Oueslatia
-8131;El  Oueslatia;Lycee;TN415;813106;35.8518892;9.5947126;Lycee Ibn Kholdoun El  Oueslatia
-8131;El  Oueslatia;Lycee;TN415;813107;35.8461907;9.5994075;Lycee El  Oueslatia
-8131;El  Oueslatia;College;TN415;813108;35.848993;9.59075;College El  Oueslatia
-8132;Ain jloula;College;TN420;813109;35.80667;9.819166666;College Ain jloula
-8131;El  Oueslatia;Mixte;TN415;813110;36.0313048;9.6897237;College Kssar Lamsa
-8132;Ain jloula;Lycee;TN420;813201;35.80205;9.80308;Lycee Ain jloula ˝
-8134;El Ala;Lycee;TN417;813401;35.6153509;9.564334;Lycee El Ala
-8134;El Ala;Mixte;TN417;813402;35.680463;9.533388;College Msaad El Ala
-8134;El Ala;College;TN417;813403;35.6181285;9.5634063;College El Ala
-8134;El Ala;College;TN417;813404;35.6607053;9.4123322;College Dhhibate El Ala
-8134;El Ala;College;TN417;813405;35.6123333;9.5602845;College El Ala Habib
-8134;El Ala;Lycee;TN417;813406;35.6142789;9.5711736;Lycee El Ala 2
-8136;Haffouz;College;TN416;813607;35.6372357;9.6731598;College  Hay zayatine Haffouz
-8136;Haffouz;Lycee;TN416;813608;35.633;9.678;Lycee Haffouz
-8136;Haffouz;College;TN416;813609;35.6415421;9.6698803;College Haffouz
-8136;Haffouz;College;TN416;813611;35.4970096;9.7002244;College  Zamla Haffouz
-8136;Haffouz;Lycee;TN416;813612;35.62577;9.6764;Lycee Farhat hachad Haffouz
-8141;Hajeb El Ayoun;Lycee;TN418;814108;35.3967084;9.5481448;Lycee  Abou Kacem Chabi Hajeb El Ayoun
-8141;Hajeb El Ayoun;Lycee;TN418;814109;35.44368;9.62633;Lycee Ali zouaoui Hajeb El Ayoun˝
-8141;Hajeb El Ayoun;College;TN418;814110;35.388635;9.551166;College  Ibn abi dhiyef Hajeb El Ayoun˝˝
-8141;Hajeb El Ayoun;College;TN418;814111;35.3891417;9.5442926;College Hajeb El Ayoun
-8141;Hajeb El Ayoun;Mixte;TN418;814112;35.566;9.4728;College Elsarja Hajeb El Ayoun
-8146;Nasrallah;Lycee;TN419;814607;35.361459;9.8402845;Lycee Ibn sina Nasrallah
-8146;Nasrallah;College;TN419;814608;35.3626063;9.8389146;College Nasrallah
-8146;Nasrallah;Lycee;TN419;814610;35.3569954;9.8262114;Lycee Nasrallah
-8146;Nasrallah;College;TN419;814611;35.18419318445972;9.819201071;College Kabara Nasrallah
-8147;Manzel mhiri;College;TN421;814620;35.42488178370376;9.854831165;College Manzel mhiri
-8147;Manzel mhiri;Lycee;TN421;814621;35.4210541;9.8562485;Lycee Manzel mhiri
-8146;Nasrallah;College;TN419;814622;35.236866;9.7754656;College Manara Nasrallah
-8146;Nasrallah;College;TN419;814623;35.38443800671433;9.748441302;College  Sidi Saad Nasrallah
-8151;Bouhajla;Lycee;TN41B;815111;35.3948784;10.0496399;Lycee Bouhajla
-8151;Bouhajla;Mixte;TN41B;815112;35.39416;10.03684;College Imem sohnoun Bouhajla
-8151;Bouhajla;Mixte;TN41B;815113;35.3093523;9.9608995;College Jhina -Bouhajla
-8151;Bouhajla;College;TN41B;815114;35.3994777;10.0483822;College  Bouhajla Centre
-8151;Bouhajla;College;TN41B;815115;35.3927407;10.0485663;College Bouhajla
-8151;Bouhajla;Lycee;TN41B;815116;35.3888102;10.0513556;Lycee Tahar Hadad Bouhajla ˝
-8156;Echrarda;Lycee;TN41A;815601;35.13602859364881;10.03506915;Lycee Echrarda
-8156;Echrarda;Mixte;TN41A;815602;35.2017107;10.1555496;College Bir wessfen
-8156;Echrarda;College;TN41A;815603;35.119;10.026;College chrarda
-8156;Echrarda;College;TN41A;815604;35.2007357;10.0381775;College Chwayhiya
-8122;Kairouan Sud;College Technique;TN412;812106;35.6651805;10.0956385;College Technique Nahej Fess Kairouan
-8136;Haffouz;College Technique;TN416;813610;35.63276;9.6783085;College Technique Haffouz
-8146;Nasrallah;College Technique;TN419;814609;35.360748666382;9.835864853;College Technique Nasrallah
-8151;Bouhajla;College Technique;TN41B;815110;35.3937739;10.0499161;College Technique Bouhajla
-8121;Kairaouan Nord;Ecole Primaire;TN411;812101;35.675647;10.1040589;E.P. «· ÿ»ÌﬁÌ… «·√”Ê«—
-8121;Kairaouan Nord;Ecole Primaire;TN411;812103;35.6788193;10.090657;E.P. €—»Ì «·ﬁÌ—Ê«‰
-8121;Kairaouan Nord;Ecole Primaire;TN411;812107;35.6730833;10.0944973;E.P. «·ÂœÏ
-8121;Kairaouan Nord;Ecole Primaire;TN411;812108;35.679752;10.097853;E.P. «»‰ «·Ã“«— «·—Õ»…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812109;35.68250392753854;10.1012847438968;E.P. √Ê·«œ ›—Õ«‰˝˝
-8121;Kairaouan Nord;Ecole Primaire;TN411;812116;35.6786064;10.0775362;E.P. ElMenchia 1
-8121;Kairaouan Nord;Ecole Primaire;TN411;812120;35.6746173;10.0856965;E.P. «·√€«·»…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812125;35.7125426;10.0009277;E.P. Batten
-8121;Kairaouan Nord;Ecole Primaire;TN411;812127;35.7369383;10.1021755;E.P. –—«⁄ «· „«—
-8121;Kairaouan Nord;Ecole Primaire;TN411;812128;35.7339409;10.1531244;E.P. «·€«»« 
-8121;Kairaouan Nord;Ecole Primaire;TN411;812131;35.7899071;10.1442349;E.P. «·„ »”ÿ…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812137;35.7532198;10.0561592;E.P. «·ﬁÿ—«‰Ì…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812139;35.6939342;10.082029;E.P. œ«— «·√„«‰
-8121;Kairaouan Nord;Ecole Primaire;TN411;812141;35.6969746;10.1988184;E.P. «·„—«“Ìﬁ
-8121;Kairaouan Nord;Ecole Primaire;TN411;812142;35.6828756;10.082098;E.P. √»Ê “„⁄… «·»·ÊÌ
-8121;Kairaouan Nord;Ecole Primaire;TN411;812145;35.6716188;10.0820721;E.P. ⁄ﬁ»… «»‰ ‰«›⁄
-8121;Kairaouan Nord;Ecole Primaire;TN411;812146;35.6689159;10.0766613;E.P. «»‰ ⁄—›… ÕÌ ⁄ﬁ»…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812147;35.6753427;10.0797676;E.P. ElMenchia2
-8121;Kairaouan Nord;Ecole Primaire;TN411;812148;35.6850439;10.084403;E.P. Sahabi 2
-8121;Kairaouan Nord;Ecole Primaire;TN411;812149;35.7307687;10.2073723;E.P. √Ê·«œ Õ„Êœ…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812150;35.6753229;10.0746207;E.P. ÕÌ «·‰Ê—
-8121;Kairaouan Nord;Ecole Primaire;TN411;812151;35.7857757;10.073219;E.P. „«Ã· «·”⁄«ÌœÌ…
-8121;Kairaouan Nord;Ecole Primaire;TN411;812152;35.6926929;10.0932731;E.P. Sahabi4
-8122;Kairouan Sud;Ecole Primaire;TN412;812201;35.6724879;10.1045574;E.P. «· ÿ»ÌﬁÌ… ÿ«—ﬁ «»‰ “Ì«œ
-8122;Kairouan Sud;Ecole Primaire;TN412;812205;35.6669724;10.1001039;E.P. «· —»Ì…
-8122;Kairouan Sud;Ecole Primaire;TN412;812206;35.66224;10.08907;E.P. «·„‰’Ê—…
-8122;Kairouan Sud;Ecole Primaire;TN412;812207;35.6585432;10.0909034;E.P. ’»—…
-8122;Kairouan Sud;Ecole Primaire;TN412;812208;35.6726798;10.1037227;E.P. «· ÿ»ÌﬁÌ… «·ÿÌ» «·„ÂÌ—Ì
-8122;Kairouan Sud;Ecole Primaire;TN412;812209;35.6695807;10.0852246;E.P. ÕÌ «·‰’—
-8122;Kairouan Sud;Ecole Primaire;TN412;812210;35.6528068;10.0863991;E.P. 2 Mars  34 «·ﬁÌ—Ê«‰˝
-8122;Kairouan Sud;Ecole Primaire;TN412;812211;35.5602873;10.1130132;E.P. Sidi ⁄„— «·ﬂ‰«‰Ì
-8122;Kairouan Sud;Ecole Primaire;TN412;812212;35.6365671;9.9799446;E.P. „—ﬁ «··Ì·
-8122;Kairouan Sud;Ecole Primaire;TN412;812213;35.4642884;9.9220699;E.P. »—Ìﬂ«  «·⁄—ﬁÊ»
-8122;Kairouan Sud;Ecole Primaire;TN412;812214;35.629696;10.2120929;E.P. ⁄Ì‰ «·Œ“«“Ì…
-8122;Kairouan Sud;Ecole Primaire;TN412;812215;35.681199;10.1749213;E.P. «·‘—ﬁÌ…
-8122;Kairouan Sud;Ecole Primaire;TN412;812216;35.5040641;9.9483952;E.P. ElKhadhra
-8122;Kairouan Sud;Ecole Primaire;TN412;812217;35.5908689;10.1914794;E.P. El Makhsouma
-8122;Kairouan Sud;Ecole Primaire;TN412;812218;35.5208384;10.2085096;E.P. «·‰»‘
-8122;Kairouan Sud;Ecole Primaire;TN412;812219;35.6109431;10.0647745;E.P. Rakkada
-8122;Kairouan Sud;Ecole Primaire;TN412;812220;35.5329913;10.0557576;E.P. “⁄›—«‰…
-8122;Kairouan Sud;Ecole Primaire;TN412;812221;35.62677;10.16845;E.P. √Ê·«œ ‰Â«—
-8122;Kairouan Sud;Ecole Primaire;TN412;812222;35.5103548;10.0118977;E.P. Â‰‘Ì— »Ì‘Ì
-8122;Kairouan Sud;Ecole Primaire;TN412;812223;35.6045711;10.2577875;E.P. «·Õ‰»«“
-8122;Kairouan Sud;Ecole Primaire;TN412;812224;35.6616526;10.1102713;E.P. ElTebban 1
-8122;Kairouan Sud;Ecole Primaire;TN412;812225;35.5358192;9.9591229;E.P. «·Õ„«„
-8122;Kairouan Sud;Ecole Primaire;TN412;812226;35.4943076;10.2255244;E.P. «·ﬁÊ«”„˝
-8122;Kairouan Sud;Ecole Primaire;TN412;812228;35.6590571444776;10.1088810130823;E.P. ElTebban 2
-8122;Kairouan Sud;Ecole Primaire;TN412;812229;35.6487676;10.0906473;E.P. «»‰ «·Ã“«— 2
-8122;Kairouan Sud;Ecole Primaire;TN412;812230;35.6638022;10.0829959;E.P. ÕÌ «·”·«„˝
-8122;Kairouan Sud;Ecole Primaire;TN412;812231;35.6743122;10.1181352;E.P. «·«„«„ ”Õ‰Ê‰
-8123;Echbika;Ecole Primaire;TN413;812303;35.56789802933159;9.77019787602612;E.P. ﬁ—Ì… «·ÂÊ«—»˝
-8123;Echbika;Ecole Primaire;TN413;812304;35.7633626;9.8881276;E.P. ›Ã «·—ÊÌ”« 
-8123;Echbika;Ecole Primaire;TN413;812305;35.5878378;10.0037742;E.P. ⁄»Ìœ… «·‘—ﬁÌ…
-8123;Echbika;Ecole Primaire;TN413;812309;35.61776;9.92977;E.P. «·‘»Ìﬂ… «·„—ﬂ“
-8123;Echbika;Ecole Primaire;TN413;812310;35.5200153;9.8438721;E.P. –—«⁄ ⁄›«‰
-8123;Echbika;Ecole Primaire;TN413;812311;35.5179615;9.908665;E.P. ⁄»Ìœ… «·€—»Ì…
-8123;Echbika;Ecole Primaire;TN413;812314;35.62765;9.87229;E.P. «·ﬁ—Ì‰
-8123;Echbika;Ecole Primaire;TN413;812315;35.5636163;9.8410981;E.P. «·ﬂ—„…
-8123;Echbika;Ecole Primaire;TN413;812316;35.6963642;9.9268835;E.P. «·ÃÊ«Êœ… «·Âœ«Ì…
-8123;Echbika;Ecole Primaire;TN413;812321;35.633793;9.9480976;E.P. Ê—›·…
-8123;Echbika;Ecole Primaire;TN413;812323;35.7655981;9.917652;E.P. «·—ÊÌ”« 
-8123;Echbika;Ecole Primaire;TN413;812324;35.5863726;9.9086161;E.P. Sidi ⁄·Ì »‰ ”«·„
-8123;Echbika;Ecole Primaire;TN413;812326;35.6745076572598;9.97906592904352;E.P. «·⁄Ê«„—Ì…
-8123;Echbika;Ecole Primaire;TN413;812329;35.5391319;9.9990859;E.P. «·›—«Ã‰Ì…
-8123;Echbika;Ecole Primaire;TN413;812330;35.8053774;9.9229798;E.P. Sidi „Õ„Êœ
-8123;Echbika;Ecole Primaire;TN413;812331;35.72776;9.88403;E.P. ›‰œ—…˝
-8123;Echbika;Ecole Primaire;TN413;812332;35.5364145;9.8861984;E.P. «·‰Ã‹‹«Õ˝˝˝˝˝
-8123;Echbika;Ecole Primaire;TN413;812333;35.65381;9.96046;E.P. «·„ÃœÊ»˝
-8123;Echbika;Ecole Primaire;TN413;812334;35.5939241;9.9371533;E.P. «·„·«·”…
-8123;Echbika;Ecole Primaire;TN413;812335;35.559388;9.963609;E.P. «·’Ê«·ÕÌ…
-8123;Echbika;Ecole Primaire;TN413;812336;35.7002953774543;9.88840164129724;E.P. «·ﬁÊ«“Ì‰
-8123;Echbika;Ecole Primaire;TN413;812337;35.6234876;9.9240983;E.P. «·‘»Ì‹ﬂ… 2 ÕÌ ’«»—Ì‰
-8123;Echbika;Ecole Primaire;TN413;812338;35.591616;9.98141;E.P. «·Õ„Ìœ«  «·√„·˝˝
-8123;Echbika;Ecole Primaire;TN413;812339;35.68323;9.90692;E.P. «·—„«÷‰Ì… «·√„·˝
-8126;Sebikha;Ecole Primaire;TN414;812601;35.92937;10.0216;E.P. ›—Õ«  Õ‘«œ
-8126;Sebikha;Ecole Primaire;TN414;812602;35.9617296;9.9614962;E.P. ⁄Ì‰ »Ê„—…
-8126;Sebikha;Ecole Primaire;TN414;812603;36.0212252;9.8754049;E.P. ⁄Ì‰ œ»«»
-8126;Sebikha;Ecole Primaire;TN414;812604;35.9120937;10.0504559;E.P. «·⁄·„
-8126;Sebikha;Ecole Primaire;TN414;812605;36.00118;10.20895;E.P. «·⁄ÊÌÀ…
-8126;Sebikha;Ecole Primaire;TN414;812606;35.91453;10.12588;E.P. «·»·«ÿ…
-8126;Sebikha;Ecole Primaire;TN414;812607;35.93096;9.9040546;E.P. ”—œÌ«‰…
-8126;Sebikha;Ecole Primaire;TN414;812608;35.84919;9.93341;E.P. «·‘—›…
-8126;Sebikha;Ecole Primaire;TN414;812609;36.00645;10.15578;E.P. œ«— »‰ ⁄«∆‘…
-8126;Sebikha;Ecole Primaire;TN414;812610;36.0340706;10.1943971;E.P. œ«— «·Ã„⁄Ì…˝
-8126;Sebikha;Ecole Primaire;TN414;812611;35.973202;10.154969;E.P. «·–—Ì⁄« 
-8126;Sebikha;Ecole Primaire;TN414;812612;35.90031;10.01093;E.P. «·œŒÌ·…
-8126;Sebikha;Ecole Primaire;TN414;812613;36.0625868;10.1404194;E.P. «·ﬁ›Ì˝
-8126;Sebikha;Ecole Primaire;TN414;812614;36.0013894;10.0921927;E.P. Â‰œÌ «·“Ì Ê‰…
-8126;Sebikha;Ecole Primaire;TN414;812615;35.8885462;9.8861835;E.P. «·”»«—…
-8126;Sebikha;Ecole Primaire;TN414;812616;35.991055;9.855719;E.P. Sidi „”⁄Êœ
-8126;Sebikha;Ecole Primaire;TN414;812618;35.81776;9.98847;E.P. ›ÿ‰«”…˝
-8126;Sebikha;Ecole Primaire;TN414;812619;36.1201659;10.1500629;E.P. ‰›« 
-8126;Sebikha;Ecole Primaire;TN414;812620;36.0050815;9.9658079;E.P. Â„«œ
-8126;Sebikha;Ecole Primaire;TN414;812621;36.03922;10.172;E.P. «·”Ê«ﬂ ˝
-8126;Sebikha;Ecole Primaire;TN414;812622;35.936996;10.0236682;E.P. «·„‰ÃÌ ”·Ì„
-8126;Sebikha;Ecole Primaire;TN414;812623;35.8974386;10.0824198;E.P. «·œ·Ê”Ì
-8126;Sebikha;Ecole Primaire;TN414;812624;35.9901406;10.0357121;E.P. «·Œ÷—˝
-8126;Sebikha;Ecole Primaire;TN414;812625;35.8661475;9.9086882;E.P. «· ›Ê¯ﬁ˝
-8126;Sebikha;Ecole Primaire;TN414;812626;35.94821;10.10539;E.P. «·„⁄—«ÃÌ˝˝
-8126;Sebikha;Ecole Primaire;TN414;812627;36.0591908;10.1869489;E.P. «·ÃÊ«Êœ… «·ﬁ›Ì
-8126;Sebikha;Ecole Primaire;TN414;812628;35.8295859;9.8611251;E.P. Sidi «»—«ÂÌ„ «·“Â«—˝˝˝˝
-8126;Sebikha;Ecole Primaire;TN414;812630;35.9361339;10.0172895;E.P. ÕÌ «·—Ì«÷
-8126;Sebikha;Ecole Primaire;TN414;812631;35.9523974;9.9263653;E.P. «·”⁄«ÌœÌ…
-8126;Sebikha;Ecole Primaire;TN414;812632;36.0506542;10.104252;E.P. Ê«œÌ «·Œ—ÌÊ⁄
-8126;Sebikha;Ecole Primaire;TN414;812633;35.87178;9.83537;E.P. √Ê·«œ ‘ÂÌ»
-8126;Sebikha;Ecole Primaire;TN414;812634;35.950879;10.1317884;E.P. «·ÿ—«»·”Ì…
-8126;Sebikha;Ecole Primaire;TN414;812635;35.9167433;9.9472616;E.P. ›—ÌÕÌ‰…
-8126;Sebikha;Ecole Primaire;TN414;812636;35.9603224;9.9756195;E.P. «·›—ÌÊ« 
-8126;Sebikha;Ecole Primaire;TN414;812637;36.0924968;10.1509711;E.P.›÷·Ê‰˝˝˝˝˝
-8126;Sebikha;Ecole Primaire;TN414;812638;35.9814104;10.1023476;«·—Ê«Ê‰…E.P.
-8131;El  Oueslatia;Ecole Primaire;TN415;813101;35.8488995;9.5898516;E.P. Õ‘«œ
-8132;Ain jloula;Ecole Primaire;TN420;813102;35.7971801;9.804199;E.P. ⁄Ì‰ Ã·Ê·…
-8131;El  Oueslatia;Ecole Primaire;TN415;813103;35.7768051;9.6730129;E.P. Bir €—“«‰
-8132;Ain jloula;Ecole Primaire;TN420;813104;35.7617356;9.7634644;E.P. «·‰Õ«·…
-8131;El  Oueslatia;Ecole Primaire;TN415;813105;35.8893423;9.5542327;E.P. «·ﬁ„»Ê—…
-8131;El  Oueslatia;Ecole Primaire;TN415;813106;35.9737432;9.6873485;E.P. «·Õ„«·…
-8131;El  Oueslatia;Ecole Primaire;TN415;813107;36.0349993;9.6915071;E.P. ﬁ’— «··„”…
-8132;Ain jloula;Ecole Primaire;TN420;813108;35.7927876;9.7315482;E.P. „ﬁ—…
-8131;El  Oueslatia;Ecole Primaire;TN415;813109;35.7541801;9.5841353;E.P. «·„—ﬁ»
-8131;El  Oueslatia;Ecole Primaire;TN415;813110;35.9234272;9.7201908;E.P. «·√»Ì—…
-8131;El  Oueslatia;Ecole Primaire;TN415;813111;36.04823;9.7634224;E.P. Ê«œÌ «·ﬁ’»˝˝
-8131;El  Oueslatia;Ecole Primaire;TN415;813112;35.91714526053495;9.64863444837769;E.P. «·’⁄«‰Ì‰˝
-8131;El  Oueslatia;Ecole Primaire;TN415;813113;35.8258669;9.5368145;E.P. Sidi ⁄„«—…
-8132;Ain jloula;Ecole Primaire;TN420;813114;35.8530365;9.7318463;E.P. «·ÿ›Ì›Ì·…˝
-8131;El  Oueslatia;Ecole Primaire;TN415;813116;36.0048;9.78511;E.P. √Ê·«œ ⁄Ì«—
-8132;Ain jloula;Ecole Primaire;TN420;813117;35.8468411;9.8105779;E.P. «·Õ”Ì«‰˝
-8131;El  Oueslatia;Ecole Primaire;TN415;813118;35.7527761;9.5359811;E.P. Sidi «·—Ì„«‰Ì
-8131;El  Oueslatia;Ecole Primaire;TN415;813119;35.848243;9.5901976;E.P. «·”—Ã
-8131;El  Oueslatia;Ecole Primaire;TN415;813120;35.9529661;9.7330169;E.P. “€œÊœ
-8131;El  Oueslatia;Ecole Primaire;TN415;813121;35.71872;9.55465;E.P. «·„⁄«“Ì·
-8131;El  Oueslatia;Ecole Primaire;TN415;813122;35.8476077;9.5858951;E.P.«·Õ—Ì…
-8131;El  Oueslatia;Ecole Primaire;TN415;813123;35.7476217;9.6617832;E.P. —√” «·⁄ÌÀ…
-8131;El  Oueslatia;Ecole Primaire;TN415;813124;35.850765;9.5960504;E.P. ÕÌ «·’‰Ê»—
-8131;El  Oueslatia;Ecole Primaire;TN415;813125;35.9148231;9.5748893;E.P. «·ﬁ·Ì⁄…
-8131;El  Oueslatia;Ecole Primaire;TN415;813126;35.877382;9.5998458;E.P. «»‰ ”Ì‰«
-8131;El  Oueslatia;Ecole Primaire;TN415;813127;35.9057871;9.5991843;E.P. √Ê·«œ »«„—
-8131;El  Oueslatia;Ecole Primaire;TN415;813128;35.8407441;9.6814881;E.P. «·”·«„
-8131;El  Oueslatia;Ecole Primaire;TN415;813129;35.7932;9.64382;E.P. «·’œ«—…
-8131;El  Oueslatia;Ecole Primaire;TN415;813130;35.8800124;9.5282189;E.P. «·⁄À„«‰Ì…
-8131;El  Oueslatia;Ecole Primaire;TN415;813131;35.99844524;9.7311363;E.P. «·ÿ«Ê”…
-8131;El  Oueslatia;Ecole Primaire;TN415;813132;35.8516622;9.589408;E.P. «·«„ Ì«“
-8134;El Ala;Ecole Primaire;TN417;813401;35.6131354;9.56286;E.P. «·⁄·« «·„—ﬂ“˝˝
-8134;El Ala;Ecole Primaire;TN417;813402;35.6378565;9.4530156;E.P. «·»ÕÌ—…
-8134;El Ala;Ecole Primaire;TN417;813403;35.6127188;9.4078063;E.P. «·ÃÊ«„⁄Ì…
-8134;El Ala;Ecole Primaire;TN417;813404;35.6577271;9.418354;E.P. «·Â‰«‘Ì—
-8134;El Ala;Ecole Primaire;TN417;813405;35.7052505;9.5110281;E.P. «·„”«⁄Ìœ
-8134;El Ala;Ecole Primaire;TN417;813406;35.6270797;9.3702171;E.P. «·—ﬁÌ
-8134;El Ala;Ecole Primaire;TN417;813407;35.6787347;9.3763246;E.P. «·ÿÊ«·
-8134;El Ala;Ecole Primaire;TN417;813408;35.6131334;9.5621949;E.P. «·⁄·« «·Õ»Ì»
-8134;El Ala;Ecole Primaire;TN417;813409;35.6149073;9.5210312;E.P. «·„—Ìﬁ»
-8134;El Ala;Ecole Primaire;TN417;813410;35.6784576;9.531694;E.P. 1 Ã«‰›Ì ›—Õ«  Õ‘«œ - √Ê·«œ ⁄„—
-8134;El Ala;Ecole Primaire;TN417;813411;35.6768239;9.5368625;E.P. 20 Mars  «·œ»«»‘…
-8134;El Ala;Ecole Primaire;TN417;813412;35.61483;9.48104;E.P. «·‰ﬁ«“
-8134;El Ala;Ecole Primaire;TN417;813413;35.671049;9.522885;E.P. 3 Aout √Ê·«œ ⁄„—˝
-8134;El Ala;Ecole Primaire;TN417;813414;35.6137301;9.56454;E.P. «·€—«»…˝
-8134;El Ala;Ecole Primaire;TN417;813415;35.58876;9.53092;E.P. «·⁄—Ì»…
-8134;El Ala;Ecole Primaire;TN417;813416;35.69698;9.348;E.P. «·„⁄„—Ì…
-8134;El Ala;Ecole Primaire;TN417;813417;35.6296543531804;9.54539715666534;E.P. «·›Ã«Ã—Ì…
-8134;El Ala;Ecole Primaire;TN417;813419;35.6014698;9.5764783;E.P. «·ÿ«Â— ’›—
-8134;El Ala;Ecole Primaire;TN417;813420;35.638;9.53086;E.P. «·„Õ«›ÌŸ «·ﬁÿ«—
-8134;El Ala;Ecole Primaire;TN417;813421;35.709675;9.473729;E.P. «·Ã·«·»… «·“⁄Ì—« 
-8134;El Ala;Ecole Primaire;TN417;813422;35.59636;9.42672;E.P. «·»—«Â„Ì…˝
-8134;El Ala;Ecole Primaire;TN417;813423;35.65651;9.4918;E.P. „’‹‹—«ÿ…˝
-8134;El Ala;Ecole Primaire;TN417;813424;35.5712637;9.5522746;E.P. ÿ—“… «·‘„«·Ì…
-8134;El Ala;Ecole Primaire;TN417;813425;35.62737;9.5731973;E.P. √Ê·«œ ”⁄Ìœ«‰
-8134;El Ala;Ecole Primaire;TN417;813426;35.6567392;9.3679062;E.P. ’Ì«œ… «·‘„«·Ì…
-8136;Haffouz;Ecole Primaire;TN416;813601;35.6328777;9.6758548;E.P. Õ›Ê“ «·„—ﬂ“
-8136;Haffouz;Ecole Primaire;TN416;813602;35.5234386;9.7235833;E.P. ⁄Ì‰ «·»Ì÷«¡
-8136;Haffouz;Ecole Primaire;TN416;813603;35.5864825;9.7337725;E.P. ⁄Ì‰ €—«»˝
-8136;Haffouz;Ecole Primaire;TN416;813604;35.6493226;9.7387716;E.P. ⁄Ì‰ “«‰…˝
-8136;Haffouz;Ecole Primaire;TN416;813605;35.72934;9.60593;E.P. «·⁄«·Ì…
-8136;Haffouz;Ecole Primaire;TN416;813606;35.66653;9.80853;E.P. «·‘—Ì‘Ì—…
-8136;Haffouz;Ecole Primaire;TN416;813607;35.5993696;9.7791581;E.P. «·ÕÊ›Ì…
-8136;Haffouz;Ecole Primaire;TN416;813608;35.4959422;9.7370689;E.P. «·Œÿ«ÿ›…
-8136;Haffouz;Ecole Primaire;TN416;813609;35.7075618;9.6312972;E.P. ŒÌÿ «·Ê«œÌ 1
-8136;Haffouz;Ecole Primaire;TN416;813610;35.64707;9.5687;E.P. Ê«œÌ «·Ã»«”
-8136;Haffouz;Ecole Primaire;TN416;813612;35.5260056;9.7881964;E.P. √Ê·«œ Œ·› «··Â
-8136;Haffouz;Ecole Primaire;TN416;813613;35.52554;9.61187;E.P. ÿ—“… «·Ã‰Ê»Ì…˝
-8136;Haffouz;Ecole Primaire;TN416;813614;35.70246;9.80703;E.P. «·“—ﬁ
-8136;Haffouz;Ecole Primaire;TN416;813616;35.66295;9.61941;E.P. «·ﬂ Ì›« 
-8136;Haffouz;Ecole Primaire;TN416;813617;35.707422284371;9.66959416866302;E.P. ⁄Ì‰ «·ﬂœÌ…
-8136;Haffouz;Ecole Primaire;TN416;813618;35.56694;9.6523;E.P. «·Õ—‘…
-8136;Haffouz;Ecole Primaire;TN416;813619;35.6366523;9.6735971;E.P. ÕÌ «·“Ì« Ì‰
-8136;Haffouz;Ecole Primaire;TN416;813620;35.50034;9.78691;E.P. √Ê·«œ Œ·Ì›˝
-8136;Haffouz;Ecole Primaire;TN416;813621;35.49908;9.6992;E.P. «·“„·…
-8136;Haffouz;Ecole Primaire;TN416;813622;35.6003489;9.6837195;E.P. «·„—«ÌÕÌ…
-8136;Haffouz;Ecole Primaire;TN416;813623;35.6901769;9.5905534;E.P. «·⁄‰ﬁ
-8136;Haffouz;Ecole Primaire;TN416;813624;35.5436083333333;9.70186833333333;E.P. «·“»«—…
-8136;Haffouz;Ecole Primaire;TN416;813625;35.7302996;9.6464462;E.P. ŒÌÿ «·Ê«œÌ 2/Õ«Ã ⁄„«—
-8136;Haffouz;Ecole Primaire;TN416;813626;35.64629;9.5979;E.P. √Ê·«œ «·⁄Ì”«ÊÌ
-8136;Haffouz;Ecole Primaire;TN416;813627;35.59425;9.6382687;E.P. Õ„«„ ÿ—“…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814101;35.3945950953852;9.54509675502777;E.P. 2 Mars  34 «·Õ«Ã»
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814102;35.3686283;9.5696107;E.P. „Õÿ… «·Õ«Ã»
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814103;35.3982897;9.5428761;E.P. «·„»Ì 
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814104;35.4727296;9.6808099;E.P. ⁄Ì‰ „ÃÊ‰…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814105;35.54673;9.5114584;E.P. «·‘Ê«‘Ì ⁄‰ «·⁄·«
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814106;35.5644262;9.4725574;E.P. «·”—Ã… ⁄‰ «·⁄·«˝
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814107;35.4926844;9.5124612;E.P. «·À·«Ã…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814108;35.4350493;9.5136151;E.P. «·ﬁ‰ÿ—…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814109;35.44368;9.62633;E.P. ﬁ’— «·”ÊÌ”Ì‰
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814110;35.2875529865238;9.63299963447498;E.P. «·„‰«”…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814111;35.3651308;9.4992881;E.P. √Ê·«œ ⁄»«”
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814112;35.48794;9.63938;E.P. √Ê·«œ ⁄«„—
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814113;35.4417824;9.5846324;E.P. «·—ÕÌ„…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814114;35.37501;9.63318;E.P. œ«— «·Œ—Ì›
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814115;35.29242;9.56508;E.P. «·œ€Ì„…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814116;35.3869089;9.58757;E.P. «·⁄‰Ì“« 
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814117;35.5640085;9.4727974;E.P. «·ÕÃ«Ã˝˝˝
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814118;35.3243412;9.613469;E.P. ⁄ÌÀ… «·‰”«¡
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814119;35.3921984;9.5520737;E.P. ÕÌ «·”⁄«œ…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814120;35.51643;9.46475;E.P. «·”Êœ«‰
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814121;35.3173751;9.6549207;E.P. œÊ«— «·›—«Õ Ì…
-8141;Hajeb El Ayoun;Ecole Primaire;TN418;814122;35.42455;9.64196;E.P. «·›«—”Ì…
-8146;Nasrallah;Ecole Primaire;TN419;814601;35.35274;9.82652;E.P. Sidi ⁄·Ì »‰ ‰’— «··Â
-8146;Nasrallah;Ecole Primaire;TN419;814602;35.2473143;9.8592854;E.P. «·⁄Ã«»‰…
-8147;Manzel mhiri;Ecole Primaire;TN421;814603;35.4045285;9.8998347;E.P. «·›·«Ì·Ì…
-8146;Nasrallah;Ecole Primaire;TN419;814604;35.357247;9.873632;E.P. Bir «·”·«Ì„Ì…
-8146;Nasrallah;Ecole Primaire;TN419;814605;35.28833;9.87943;E.P. ›—Õ«  Õ‘«œ/Â‰‘Ì— «·Â«„·
-8146;Nasrallah;Ecole Primaire;TN419;814606;35.1841;9.81776;E.P. «·ﬂ»«—…
-8147;Manzel mhiri;Ecole Primaire;TN421;814607;35.472709;9.847172;E.P. «·Õ„Ìœ« 
-8146;Nasrallah;Ecole Primaire;TN419;814608;35.304083;9.735334;E.P. «·Œ»‰…
-8147;Manzel mhiri;Ecole Primaire;TN421;814609;35.4242417;9.8526026;E.P. Manzel mhiri 1
-8146;Nasrallah;Ecole Primaire;TN419;814610;35.2371554;9.7759888;E.P. «·—ﬁÊ»… «·Õ„—«¡˝
-8147;Manzel mhiri;Ecole Primaire;TN421;814611;35.417436;9.803334;E.P. —ﬁÊ»… ⁄·Ì »‰ ”⁄œ
-8147;Manzel mhiri;Ecole Primaire;TN421;814612;35.3885541;9.75792;E.P. „Õÿ… Sidi ”⁄œ˝˝
-8146;Nasrallah;Ecole Primaire;TN419;814613;35.318225;9.9024132;E.P. «·”·«Ì„Ì…˝
-8147;Manzel mhiri;Ecole Primaire;TN421;814614;35.443177;9.7475198;E.P. «·ÿÊÌ·…
-8147;Manzel mhiri;Ecole Primaire;TN421;814615;35.381937975925474;9.7176080864853;E.P. ”œ »Ê—ﬁÌ»…˝
-8147;Manzel mhiri;Ecole Primaire;TN421;814616;35.4676992;9.7951476;E.P. «·⁄“«⁄“…˝
-8146;Nasrallah;Ecole Primaire;TN419;814617;35.2531569;9.938458;E.P. «·»—Ìﬂ«  ‰’— «··Â˝
-8146;Nasrallah;Ecole Primaire;TN419;814618;35.2019;9.87392;E.P. À«„—
-8146;Nasrallah;Ecole Primaire;TN419;814619;35.3472482;9.8376143;E.P. ÕÌ «·‰”Ì„
-8146;Nasrallah;Ecole Primaire;TN419;814620;35.2085639;9.9291575;E.P. «·‰Ê—
-8146;Nasrallah;Ecole Primaire;TN419;814621;35.2983532;9.7707787;E.P. √»Ê «·ﬁ«”„ «·‘«»Ì
-8147;Manzel mhiri;Ecole Primaire;TN421;814622;35.45301;9.88219;E.P. Â‰‘Ì— «·„” Ì—Ì
-8146;Nasrallah;Ecole Primaire;TN419;814623;35.2305118;9.7308866;E.P. Œ»‰… «·ÿ„«„…
-8146;Nasrallah;Ecole Primaire;TN419;814624;35.21581;9.81902;E.P. «·‰Ã«Õ˝
-8146;Nasrallah;Ecole Primaire;TN419;814625;35.20465;9.78677;E.P. «·Ã„«·
-8147;Manzel mhiri;Ecole Primaire;TN421;814626;35.4186287;9.845926;E.P. Manzel mhiri 2
-8146;Nasrallah;Ecole Primaire;TN419;814627;35.36384;9.83528;E.P. ÕÌ «·⁄“«⁄“…˝
-8146;Nasrallah;Ecole Primaire;TN419;814630;35.2972429;9.8529664;E.P. «·—Ì«Ì‘…
-8147;Manzel mhiri;Ecole Primaire;TN421;814631;35.4914656;9.8752033;E.P. «·Õ„Ìœ«  «·‘—ﬁÌ… 2
-8146;Nasrallah;Ecole Primaire;TN419;814632;35.2469742;9.8048632;E.P. «·»‘«Ì—Ì…
-8146;Nasrallah;Ecole Primaire;TN419;814633;35.18129;9.84585;E.P. «·⁄Ê«Ì‰Ì…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815101;35.4000101;10.0489162;E.P. Bouhajla«·„—ﬂ“˝
-8151;Bouhajla;Ecole Primaire;TN41B;815102;35.3950537;10.0982938;E.P. «·› Õ Sidi ⁄„—˝
-8151;Bouhajla;Ecole Primaire;TN41B;815103;35.4759982;10.0537257;E.P. »‰ Ê‰Ì”
-8151;Bouhajla;Ecole Primaire;TN41B;815105;35.3573634;10.1285826;E.P. Bir ⁄·Ì »‰ ⁄„«—…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815106;35.3710595;9.9403496;E.P. Bir «Õ„œ
-8151;Bouhajla;Ecole Primaire;TN41B;815107;35.2868625;10.0525124;E.P. Bir «·‘—›«¡
-8151;Bouhajla;Ecole Primaire;TN41B;815108;35.26197;10.0298;E.P. Bir «·œÊ·…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815109;35.3413759;10.0368917;E.P. Bir «·ÃœÌœ˝
-8151;Bouhajla;Ecole Primaire;TN41B;815111;35.4602047;10.0697911;E.P. Bir „”ÌﬂÌ‰
-8151;Bouhajla;Ecole Primaire;TN41B;815114;35.1912708;10.0022782;E.P. –—«⁄ »Êﬂ›˝˝˝
-8151;Bouhajla;Ecole Primaire;TN41B;815115;35.4001049;10.131983;E.P. –—«⁄ „—Ì—…
-8151;Bouhajla;Ecole Primaire;TN41B;815117;35.4148826;9.9370917;E.P. «·ﬁÿÌ›…
-8151;Bouhajla;Ecole Primaire;TN41B;815118;35.4632632;9.9997365;E.P. Â‰‘Ì— ÿ—«œ
-8151;Bouhajla;Ecole Primaire;TN41B;815119;35.3533275;9.926146;E.P. «·«“œÂ«—
-8151;Bouhajla;Ecole Primaire;TN41B;815120;35.3592183;9.995666;E.P. «·ÃÂÌ‰« ˝
-8151;Bouhajla;Ecole Primaire;TN41B;815121;35.392552;9.96881;E.P. Œ·Ê… «·„ÊÌ”« 
-8151;Bouhajla;Ecole Primaire;TN41B;815123;35.2538;10.1366483;E.P. «·ÊœÌ˝
-8151;Bouhajla;Ecole Primaire;TN41B;815124;35.3108984;10.1284613;E.P. √Ê·«œ ⁄«‘Ê—˝
-8151;Bouhajla;Ecole Primaire;TN41B;815125;35.4555314;10.1349003;E.P. √Ê·«œ ‰’Ì—
-8151;Bouhajla;Ecole Primaire;TN41B;815129;35.3946;10.0463579;E.P. «»‰ Œ·œÊ‰
-8151;Bouhajla;Ecole Primaire;TN41B;815131;35.3370512;10.0938774;E.P. «··»Ì…
-8151;Bouhajla;Ecole Primaire;TN41B;815133;35.2805599;10.0959146;E.P. «·“ﬁ»
-8151;Bouhajla;Ecole Primaire;TN41B;815134;35.2217613;10.1767893;E.P. «·—„«÷‹‹‹‰Ì…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815138;35.3087696;9.9597018;E.P. ÃÂÌ‰…
-8151;Bouhajla;Ecole Primaire;TN41B;815139;35.2472576;10.0612027;E.P. 20 Mars  56
-8151;Bouhajla;Ecole Primaire;TN41B;815140;35.4172108;9.9947621;E.P. Bir «·⁄—»Ì
-8151;Bouhajla;Ecole Primaire;TN41B;815141;35.4477369;9.9484854;E.P. √Ê·«œ ›—Õ
-8151;Bouhajla;Ecole Primaire;TN41B;815142;35.3362432;9.9595709;E.P. 24 Ã«‰›Ì 52
-8151;Bouhajla;Ecole Primaire;TN41B;815143;35.4336295;10.0807901;E.P. Sidi «Õ„œ˝
-8151;Bouhajla;Ecole Primaire;TN41B;815144;35.335343;10.016895;E.P. «·⁄Ê«ﬁ»Ì…
-8151;Bouhajla;Ecole Primaire;TN41B;815148;35.35796396652057;10.1364129786551;E.P. ›—ﬁ «·’ÌÊœ…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815149;35.400659;10.0483664;E.P. «·„⁄—›…
-8151;Bouhajla;Ecole Primaire;TN41B;815150;35.3075624;10.0640989;E.P. «·›Ê“ «·Õœ«ÌœÌ…
-8151;Bouhajla;Ecole Primaire;TN41B;815151;35.3816022;10.0152867;E.P. «·”Â«Ì·Ì…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815152;35.3912514;9.9923396;E.P. √Ê·«œ „»«—ﬂ
-8151;Bouhajla;Ecole Primaire;TN41B;815153;35.29793;10.15758;E.P. ﬁ’— «·œ»«‘
-8151;Bouhajla;Ecole Primaire;TN41B;815154;35.3766487;10.0614594;E.P. «·”Ê«·„Ì…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815156;35.2245412;10.1310958;E.P. «·⁄Ê«Ì‰Ì…˝
-8151;Bouhajla;Ecole Primaire;TN41B;815157;35.4834581;10.0898607;E.P. √Ê·«œ »ÊÕÊ‘
-8151;Bouhajla;Ecole Primaire;TN41B;815158;35.3251795;9.9859612;E.P. Bir »—«ﬁ…
-8151;Bouhajla;Ecole Primaire;TN41B;815160;35.4393208;10.0642929;E.P. «·ﬁ’⁄« 
-8151;Bouhajla;Ecole Primaire;TN41B;815161;35.4681919;10.0201885;„ ≈ «·ŸÊ«Â—
-8156;Echrarda;Ecole Primaire;TN41A;815601;35.11616043784355;10.0326435420362;E.P. Bir «·„«·Õ Echrarda «·„—ﬂ“˝
-8156;Echrarda;Ecole Primaire;TN41A;815602;35.216339;9.9644957;E.P. Bir ÂÊÌœÌ˝
-8156;Echrarda;Ecole Primaire;TN41A;815603;35.04824;10.04027;E.P. «·⁄Ê«Ìœ˝
-8156;Echrarda;Ecole Primaire;TN41A;815604;35.139;10.065;E.P. Õ”Ì‰ «·€—”·«ÊÌ/Bir«·Õ·Ê
-8156;Echrarda;Ecole Primaire;TN41A;815605;35.2027;10.15025;E.P. Bir «·Ê’›«‰
-8156;Echrarda;Ecole Primaire;TN41A;815606;35.18345;10.08947;E.P. «·‘—«ÌÿÌ… «·Ã‰Ê»Ì…˝
-8156;Echrarda;Ecole Primaire;TN41A;815607;35.11289;10.000851;E.P. «· ﬁœ„
-8156;Echrarda;Ecole Primaire;TN41A;815608;35.2809538;9.9653592;E.P.«·«œÊ«“ („—“Êﬁ «·›—Œ)˝
-8156;Echrarda;Ecole Primaire;TN41A;815609;35.165758;10.04452;E.P. «·⁄Ê«ﬁ»Ì…
-8156;Echrarda;Ecole Primaire;TN41A;815610;35.17102;10.04049;E.P. «»‰ “·Ê‘
-8156;Echrarda;Ecole Primaire;TN41A;815611;35.1067452;10.0930057;E.P. «·„”«⁄œÌ… «·Ã‰Ê»Ì…
-8156;Echrarda;Ecole Primaire;TN41A;815612;35.12029;10.02127;E.P.  Ì”Ì— «·‘Ê«ÌÕÌ…˝˝˝
-8156;Echrarda;Ecole Primaire;TN41A;815613;35.15943532521248;10.1752441865404;E.P. Bir «·›Ì÷˝
-8156;Echrarda;Ecole Primaire;TN41A;815614;35.2319305;9.9973214;E.P. Bir “—Êﬁ
-8156;Echrarda;Ecole Primaire;TN41A;815615;35.09029;10.03331;E.P. «·√„·
-8156;Echrarda;Ecole Primaire;TN41A;815616;35.116864;10.072521;E.P. «·Õ—«Ì—Ì…˝˝˝˝
-8156;Echrarda;Ecole Primaire;TN41A;815617;35.0889432;10.0659217;E.P. «·⁄»«ÌœÌ…
-8156;Echrarda;Ecole Primaire;TN41A;815618;35.10049;10.07008;E.P. «·‘Ê«‘‰Ì…
-8156;Echrarda;Ecole Primaire;TN41A;815619;35.17652;10.12032;E.P. «·„“«ÂœÌ…
-8156;Echrarda;Ecole Primaire;TN41A;815620;35.139055;10.0363398;E.P. «·ÿÌ» «·„ÂÌ—Ì
-8156;Echrarda;Ecole Primaire;TN41A;815621;35.15938;10.0089;E.P. «·⁄Âœ «·ÃœÌœ
-8156;Echrarda;Ecole Primaire;TN41A;815622;35.20302;10.125691;E.P. «·Õœ«ÌœÌ…
-8156;Echrarda;Ecole Primaire;TN41A;815623;35.2549791;10.0064666;E.P. √Ê·«œ ·Õ„‹‹—
-8156;Echrarda;Ecole Primaire;TN41A;815624;35.2023976;9.984996;E.P. «·ÂÊ«‰Ì
-8156;Echrarda;Ecole Primaire;TN41A;815626;35.1890991;10.1887864;E.P. Elmanar
+codedel1;deleg1;nature;ref_tn_cod1;code_et;lat1;lon1;nom;eleve;classe24/25;CP
+8122;Kairouan Sud;Lycee;TN412;812101;35.6539519;10.0846852;Lycee Okba Ibn nafaa;671;30;0
+8122;Kairouan Sud;Lycee;TN412;812102;35.674892;10.1035545;Lycee Ibn Rachik ;1424;50;0
+8122;Kairouan Sud;Lycee;TN412;812103;35.6697;10.10594;Lycee Chedli Atala Kairouan;671;28;0
+8122;Kairouan Sud;College;TN412;812104;35.6745548;10.1050551;College 02 Mars 1934 Kairouan;457;19;0
+8122;Kairouan Sud;Lycee;TN412;812105;35.61186;10.0673;Lycee Rakkada Kairouan;489;22;0
+8122;Kairouan Sud;College;TN412;812107;35.6103277;10.0666375;College Rakkada Kairouan;707;24;0
+8121;Kairaouan Nord;Lycee;TN411;812108;35.6943323;10.0874538; Lycee ˝Pilote Kairouan;823;31;0
+8121;Kairaouan Nord;College;TN411;812109;35.697923;10.101591;College El manarKairouan;460;17;0
+8121;Kairaouan Nord;College;TN411;812112;35.673538;10.0948047;CollegeEl hossari Kairouan;467;23;0
+8122;Kairouan Sud;Lycee;TN412;812113;35.6550744;10.0834004;LyceeIbn Jazzar Kairouan;1250;46;0
+8121;Kairaouan Nord;Lycee;TN411;812114;35.690396;10.0820389;Lycee Dar el Amen Kairouan;1461;43;0
+8122;Kairouan Sud;College;TN412;812115;35.6532396;10.0830999;College  El Mansoura Kairouan;475;20;0
+8121;Kairaouan Nord;College;TN411;812116;35.690882694586875†;10.08402596;College Dar el Amen Kairouan;651;25;0
+8121;Kairaouan Nord;Lycee;TN411;812117;35.6799782;10.0728529;Lycee  Aghalaba Kairouan;394;17;0
+8121;Kairaouan Nord;College;TN411;812118;35.6754761;10.104603;College Ibn charaf Kairouan;754;24;0
+8121;Kairaouan Nord;College;TN411;812119;35.712064;9.993921;College Batten Kairouan;490;16;0
+8121;Kairaouan Nord;College;TN411;812120;35.685538;10.078306;College sahabi Abou zamaa Balaoui Kairouan;594;22;0
+8121;Kairaouan Nord;Lycee;TN411;812121;35.7128393;9.9963243;Lycee El Batten Kairouan;319;12;0
+8121;Kairaouan Nord;Lycee;TN411;812122;35.6763774;10.1071734;Lycee Sportif  Kairouan;304;13;0
+8122;Kairouan Sud;College;TN412;812201;35.6659059;10.0731819;College Ibn hani Kairouan;630;25;0
+8122;Kairouan Sud;College;TN412;812202;35.66367;10.11041;College Assad Ibn Fourate Kairouan;866;27;0
+8122;Kairouan Sud;Lycee;TN412;812203;35.66491;10.07558;Lycee Kairouan;551;24;0
+8122;Kairouan Sud;College;TN412;812204;35.65785;10.08184;College Beit Elhikma Kairouan;573;20;0
+8122;Kairouan Sud;College;TN412;812205;35.6553011;10.0796908;College Pilote Kairouan;571;21;0
+8122;Kairouan Sud;College;TN412;812206;35.4898006;9.9588087;College Khadhra;305;11;0
+8123;Echbika;College;TN413;812301;35.61851031656047;9.922166393;College Echbika;1012;34;0
+8123;Echbika;Lycee;TN413;812302;35.61712;9.92528;Lycee Nahj Ibn Arafa Echbika;995;35;0
+8123;Echbika;College;TN413;812303;35.58618937049409;9.907434591;CollegeSidi Ali Ben Salem;400;12;0
+8126;Sebikha;College;TN414;812603;35.934979;10.0265879;College Monji Selim Sebikha;654;20;0
+8126;Sebikha;College;TN414;812604;35.9284214;10.0255257;College Ibn Roched Sebikha;811;27;0
+8126;Sebikha;College;TN414;812605;35.9301991;10.0252835;College Sebikha;992;31;0
+8126;Sebikha;Lycee;TN414;812606;35.91453;10.12588;Lycee Sebikha;1247;44;0
+8126;Sebikha;College;TN414;812607;36.02463;10.18474;College Dar Eljamaya Sebikha;743;28;0
+8126;Sebikha;Lycee;TN414;812608;35.9427211;10.0202272;Lycee Mahmoud Messaadi Sebikha;864;32;0
+8131;El  Oueslatia;College;TN415;813105;35.8481337;9.5921938;College Abou Kacem Chebbi El  Oueslatia;573;18;0
+8131;El  Oueslatia;Lycee;TN415;813106;35.8518892;9.5947126;Lycee Ibn Kholdoun El  Oueslatia;647;26;0
+8131;El  Oueslatia;Lycee;TN415;813107;35.8461907;9.5994075;Lycee El  Oueslatia;494;19;0
+8131;El  Oueslatia;College;TN415;813108;35.848993;9.59075;College El  Oueslatia;624;23;0
+8132;Ain jloula;College;TN420;813109;35.80667;9.819166666;College Ain jloula;362;13;0
+8131;El  Oueslatia;Mixte;TN415;813110;36.0313048;9.6897237;College Kssar Lamsa;332;12;0
+8132;Ain jloula;Lycee;TN420;813201;35.80205;9.80308;Lycee Ain jloula ˝;282;14;0
+8134;El Ala;Lycee;TN417;813401;35.6153509;9.564334;Lycee El Ala;627;26;0
+8134;El Ala;Mixte;TN417;813402;35.680463;9.533388;College Msaad El Ala;334;12;0
+8134;El Ala;College;TN417;813403;35.6181285;9.5634063;College El Ala;701;22;0
+8134;El Ala;College;TN417;813404;35.6607053;9.4123322;College Dhhibate El Ala;250;9;0
+8134;El Ala;College;TN417;813405;35.6123333;9.5602845;College El Ala Habib;223;8;0
+8134;El Ala;Lycee;TN417;813406;35.6142789;9.5711736;Lycee El Ala 2;323;13;0
+8136;Haffouz;College;TN416;813607;35.6372357;9.6731598;College  Hay zayatine Haffouz;743;24;0
+8136;Haffouz;Lycee;TN416;813608;35.633;9.678;Lycee Haffouz;1015;38;0
+8136;Haffouz;College;TN416;813609;35.6415421;9.6698803;College Haffouz;1021;33;0
+8136;Haffouz;College;TN416;813611;35.4970096;9.7002244;College  Zamla Haffouz;515;18;0
+8136;Haffouz;Lycee;TN416;813612;35.62577;9.6764;Lycee Farhat hachad Haffouz;665;26;0
+8141;Hajeb El Ayoun;Lycee;TN418;814108;35.3967084;9.5481448;Lycee  Abou Kacem Chabi Hajeb El Ayoun;469;19;0
+8141;Hajeb El Ayoun;Lycee;TN418;814109;35.44368;9.62633;Lycee Ali zouaoui Hajeb El Ayoun˝;1219;43;0
+8141;Hajeb El Ayoun;College;TN418;814110;35.388635;9.551166;College  Ibn abi dhiyef Hajeb El Ayoun˝˝;638;22;0
+8141;Hajeb El Ayoun;College;TN418;814111;35.3891417;9.5442926;College Hajeb El Ayoun;759;24;0
+8141;Hajeb El Ayoun;Mixte;TN418;814112;35.566;9.4728;College Elsarja Hajeb El Ayoun;554;17;0
+8146;Nasrallah;Lycee;TN419;814607;35.361459;9.8402845;Lycee Ibn sina Nasrallah;343;16;0
+8146;Nasrallah;College;TN419;814608;35.3626063;9.8389146;College Nasrallah;615;20;0
+8146;Nasrallah;Lycee;TN419;814610;35.3569954;9.8262114;Lycee Nasrallah;634;24;0
+8146;Nasrallah;College;TN419;814611;35.18419318445972;9.819201071;College Kabara Nasrallah;247;9;0
+8147;Manzel mhiri;College;TN421;814620;35.42488178370376;9.854831165;College Manzel mhiri;594;20;0
+8147;Manzel mhiri;Lycee;TN421;814621;35.4210541;9.8562485;Lycee Manzel mhiri;626;23;0
+8146;Nasrallah;College;TN419;814622;35.236866;9.7754656;College Manara Nasrallah;196;7;0
+8146;Nasrallah;College;TN419;814623;35.38443800671433;9.748441302;College  Sidi Saad Nasrallah;222;8;0
+8151;Bouhajla;Lycee;TN41B;815111;35.3948784;10.0496399;Lycee Bouhajla;1257;46;0
+8151;Bouhajla;Mixte;TN41B;815112;35.39416;10.03684;College Imem sohnoun Bouhajla;999;35;0
+8151;Bouhajla;Mixte;TN41B;815113;35.3093523;9.9608995;College Jhina -Bouhajla;277;12;0
+8151;Bouhajla;College;TN41B;815114;35.3994777;10.0483822;College  Bouhajla Centre;973;32;0
+8151;Bouhajla;College;TN41B;815115;35.3927407;10.0485663;College Bouhajla;1046;30;0
+8151;Bouhajla;Lycee;TN41B;815116;35.3888102;10.0513556;Lycee Tahar Hadad Bouhajla ˝;969;33;0
+8156;Echrarda;Lycee;TN41A;815601;35.13602859364881;10.03506915;Lycee Echrarda;848;33;0
+8156;Echrarda;Mixte;TN41A;815602;35.2017107;10.1555496;College Bir wessfen;331;13;0
+8156;Echrarda;College;TN41A;815603;35.119;10.026;College chrarda;934;29;0
+8156;Echrarda;College;TN41A;815604;35.2007357;10.0381775;College Chwayhiya;409;14;0
+8122;Kairouan Sud;College Technique;TN412;812106;35.6651805;10.0956385;College Technique Nahej Fess Kairouan;227;7;0
+8136;Haffouz;College Technique;TN416;813610;35.63276;9.6783085;College Technique Haffouz;116;4;0
+8146;Nasrallah;College Technique;TN419;814609;35.360748666382;9.835864853;College Technique Nasrallah;98;4;0
+8151;Bouhajla;College Technique;TN41B;815110;35.3937739;10.0499161;College Technique Bouhajla;139;5;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812101;35.675647;10.1040589;E.P. Tatbikiya Aswar;421;16;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812103;35.6788193;10.090657;E.P.Gharbi kairouan;456;16;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812107;35.6730833;10.0944973;E.P. ElHouda;452;17;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812108;35.679752;10.097853;E.P.Ibn Jazzar Rahba;248;12;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812109;35.68250392753854;10.1012847438968;E.P. Awlad Farhan;586;20;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812116;35.6786064;10.0775362;E.P. ElMenchia 1;521;20;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812120;35.6746173;10.0856965;E.P. El Aghalba;640;23;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812125;35.7125426;10.0009277;E.P. Batten;915;30;1
+8121;Kairaouan Nord;Ecole Primaire;TN411;812127;35.7369383;10.1021755;E.P.Dhreaa Tamar;34;4;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812128;35.7339409;10.1531244;E.P. Ghabat;400;16;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812131;35.7899071;10.1442349;E.P. Elmetbassta;433;17;1
+8121;Kairaouan Nord;Ecole Primaire;TN411;812137;35.7532198;10.0561592;E.P. ElGatraniya;55;6;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812139;35.6939342;10.082029;E.P.Dar El Aman;101;6;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812141;35.6969746;10.1988184;E.P.ElMrazik;119;6;1
+8121;Kairaouan Nord;Ecole Primaire;TN411;812142;35.6828756;10.082098;E.P. Abou zamaa Balawi;853;28;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812145;35.6716188;10.0820721;E.P. Okba Ibn Nafaa;907;26;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812146;35.6689159;10.0766613;E.P.Ibn AArafa Hay Okba;711;23;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812147;35.6753427;10.0797676;E.P. ElMenchia2;258;12;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812148;35.6850439;10.084403;E.P. Sahabi 2;606;21;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812149;35.7307687;10.2073723;E.P. Awlad Hamouda;102;6;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812150;35.6753229;10.0746207;E.P. Hay Nour;188;10;1
+8121;Kairaouan Nord;Ecole Primaire;TN411;812151;35.7857757;10.073219;E.P. Majel Saadiya;83;6;0
+8121;Kairaouan Nord;Ecole Primaire;TN411;812152;35.6926929;10.0932731;E.P. Sahabi4;771;25;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812201;35.6724879;10.1045574;E.P. Tarek Ibn Zied;790;27;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812205;35.6669724;10.1001039;E.P. Tarbiya;558;20;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812206;35.66224;10.08907;E.P. Elmansoura;567;20;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812207;35.6585432;10.0909034;E.P. Sabra;464;17;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812208;35.6726798;10.1037227;E.P. Tayeb el mehiri;567;19;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812209;35.6695807;10.0852246;E.P. Hay Nacer;518;19;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812210;35.6528068;10.0863991;E.P. 2 Mars  34 Kairouan;728;25;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812211;35.5602873;10.1130132;E.P. Sidi  Omor Knani;129;6;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812212;35.6365671;9.9799446;E.P. Mareg El lil;66;6;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812213;35.4642884;9.9220699;E.P. Brikat El argoub;333;14;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812214;35.629696;10.2120929;E.P. Ain khazazia;375;15;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812215;35.681199;10.1749213;E.P. Elcharguia;37;6;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812216;35.5040641;9.9483952;E.P. ElKhadhra;470;18;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812217;35.5908689;10.1914794;E.P. El Makhsouma;593;21;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812218;35.5208384;10.2085096;E.P. Elnabech;155;6;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812219;35.6109431;10.0647745;E.P. Rakkada;561;19;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812220;35.5329913;10.0557576;E.P. Zaafrana;399;16;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812221;35.62677;10.16845;E.P. Awlad Nhar;129;6;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812222;35.5103548;10.0118977;E.P. Henchir Bichi;179;9;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812223;35.6045711;10.2577875;E.P. Elhenbez;429;18;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812224;35.6616526;10.1102713;E.P. ElTebban 1;467;18;0
+8122;Kairouan Sud;Ecole Primaire;TN412;812225;35.5358192;9.9591229;E.P. Elhamem;210;11;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812226;35.4943076;10.2255244;E.P. Elgwessim˝;198;9;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812228;35.6590571444776;10.1088810130823;E.P. ElTebban 2;248;11;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812229;35.6487676;10.0906473;E.P.Ibn eljazzar2;191;9;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812230;35.6638022;10.0829959;E.P. Hay Salem;263;12;1
+8122;Kairouan Sud;Ecole Primaire;TN412;812231;35.6743122;10.1181352;E.P. Imem Sohnoun;156;8;1
+8123;Echbika;Ecole Primaire;TN413;812303;35.56789802933159;9.77019787602612;E.P. Karia el Hwerib ;127;6;0
+8123;Echbika;Ecole Primaire;TN413;812304;35.7633626;9.8881276;E.P. Fajj El rouissate;137;6;1
+8123;Echbika;Ecole Primaire;TN413;812305;35.5878378;10.0037742;E.P. Aabida El charkiya;330;12;1
+8123;Echbika;Ecole Primaire;TN413;812309;35.61776;9.92977;E.P. Echbika Markez;624;22;1
+8123;Echbika;Ecole Primaire;TN413;812310;35.5200153;9.8438721;E.P. Dhrea Aafan;128;6;1
+8123;Echbika;Ecole Primaire;TN413;812311;35.5179615;9.908665;E.P. Abida Elgharbia;210;11;1
+8123;Echbika;Ecole Primaire;TN413;812314;35.62765;9.87229;E.P. Elgreen;225;10;0
+8123;Echbika;Ecole Primaire;TN413;812315;35.5636163;9.8410981;E.P. Elkarma;56;5;0
+8123;Echbika;Ecole Primaire;TN413;812316;35.6963642;9.9268835;E.P. Eljouaouda elHidaya;264;12;1
+8123;Echbika;Ecole Primaire;TN413;812321;35.633793;9.9480976;E.P. Werfila;203;10;1
+8123;Echbika;Ecole Primaire;TN413;812323;35.7655981;9.917652;E.P. Elrouissate;92;6;0
+8123;Echbika;Ecole Primaire;TN413;812324;35.5863726;9.9086161;E.P. Sidi ali ben salem;344;15;1
+8123;Echbika;Ecole Primaire;TN413;812326;35.6745076572598;9.97906592904352;E.P. Elaawamriya;271;12;1
+8123;Echbika;Ecole Primaire;TN413;812329;35.5391319;9.9990859;E.P. elfrajniya;159;6;0
+8123;Echbika;Ecole Primaire;TN413;812330;35.8053774;9.9229798;E.P. Sidi mahmoud;70;6;1
+8123;Echbika;Ecole Primaire;TN413;812331;35.72776;9.88403;E.P. fandra;99;6;0
+8123;Echbika;Ecole Primaire;TN413;812332;35.5364145;9.8861984;E.P. Najeh;171;7;1
+8123;Echbika;Ecole Primaire;TN413;812333;35.65381;9.96046;E.P. elmajdoub;204;11;0
+8123;Echbika;Ecole Primaire;TN413;812334;35.5939241;9.9371533;E.P. elmlelsa;201;10;1
+8123;Echbika;Ecole Primaire;TN413;812335;35.559388;9.963609;E.P. elsswelHaya;125;6;0
+8123;Echbika;Ecole Primaire;TN413;812336;35.7002953774543;9.88840164129724;E.P. elkwazyn;95;6;0
+8123;Echbika;Ecole Primaire;TN413;812337;35.6234876;9.9240983;E.P. elchbyka 2 Hay ssabryn;298;12;1
+8123;Echbika;Ecole Primaire;TN413;812338;35.591616;9.98141;E.P. elhamydat Elamal;98;6;0
+8123;Echbika;Ecole Primaire;TN413;812339;35.68323;9.90692;E.P. elrmadhnya Elamal;99;6;1
+8126;Sebikha;Ecole Primaire;TN414;812601;35.92937;10.0216;E.P. frhaat hachad;680;22;1
+8126;Sebikha;Ecole Primaire;TN414;812602;35.9617296;9.9614962;E.P. aayn bwmra;285;12;1
+8126;Sebikha;Ecole Primaire;TN414;812603;36.0212252;9.8754049;E.P. aayn dbab;315;12;1
+8126;Sebikha;Ecole Primaire;TN414;812604;35.9120937;10.0504559;E.P. elaalm;247;12;1
+8126;Sebikha;Ecole Primaire;TN414;812605;36.00118;10.20895;E.P. elaawytha;635;20;1
+8126;Sebikha;Ecole Primaire;TN414;812606;35.91453;10.12588;E.P. elblata;211;10;1
+8126;Sebikha;Ecole Primaire;TN414;812607;35.93096;9.9040546;E.P. srdyana;225;11;1
+8126;Sebikha;Ecole Primaire;TN414;812608;35.84919;9.93341;E.P. elchrfa;116;6;1
+8126;Sebikha;Ecole Primaire;TN414;812609;36.00645;10.15578;E.P. darbenaaa∆cha;813;25;1
+8126;Sebikha;Ecole Primaire;TN414;812610;36.0340706;10.1943971;E.P. dar eljmaaya;364;13;1
+8126;Sebikha;Ecole Primaire;TN414;812611;35.973202;10.154969;E.P. eldhryaaat;674;23;1
+8126;Sebikha;Ecole Primaire;TN414;812612;35.90031;10.01093;E.P. eldkhyla;208;9;1
+8126;Sebikha;Ecole Primaire;TN414;812613;36.0625868;10.1404194;E.P. elkfy;416;15;1
+8126;Sebikha;Ecole Primaire;TN414;812614;36.0013894;10.0921927;E.P. hndy elzytwna;326;14;1
+8126;Sebikha;Ecole Primaire;TN414;812615;35.8885462;9.8861835;E.P. elsbara;180;8;1
+8126;Sebikha;Ecole Primaire;TN414;812616;35.991055;9.855719;E.P. Sidi msaawd;300;12;1
+8126;Sebikha;Ecole Primaire;TN414;812618;35.81776;9.98847;E.P. ftnasa;282;12;1
+8126;Sebikha;Ecole Primaire;TN414;812619;36.1201659;10.1500629;E.P. nfat;114;6;1
+8126;Sebikha;Ecole Primaire;TN414;812620;36.0050815;9.9658079;E.P. hmad;157;6;1
+8126;Sebikha;Ecole Primaire;TN414;812621;36.03922;10.172;E.P. elswakt;297;12;0
+8126;Sebikha;Ecole Primaire;TN414;812622;35.936996;10.0236682;E.P. elmnjy slym;328;12;1
+8126;Sebikha;Ecole Primaire;TN414;812623;35.8974386;10.0824198;E.P. eldlwsy;278;12;1
+8126;Sebikha;Ecole Primaire;TN414;812624;35.9901406;10.0357121;E.P. elkhdhr;167;7;1
+8126;Sebikha;Ecole Primaire;TN414;812625;35.8661475;9.9086882;E.P. eltfw¯k;71;6;0
+8126;Sebikha;Ecole Primaire;TN414;812626;35.94821;10.10539;E.P. elmaarajy;166;7;1
+8126;Sebikha;Ecole Primaire;TN414;812627;36.0591908;10.1869489;E.P. eljwawda elkfy;133;6;0
+8126;Sebikha;Ecole Primaire;TN414;812628;35.8295859;9.8611251;E.P. Sidi abrahym elzhar;83;6;0
+8126;Sebikha;Ecole Primaire;TN414;812630;35.9361339;10.0172895;E.P. Hay elryadh;372;12;0
+8126;Sebikha;Ecole Primaire;TN414;812631;35.9523974;9.9263653;E.P. elsaaaydya;136;7;1
+8126;Sebikha;Ecole Primaire;TN414;812632;36.0506542;10.104252;E.P. wady elkhrywaa;298;12;1
+8126;Sebikha;Ecole Primaire;TN414;812633;35.87178;9.83537;E.P. Awlad chhyb;68;6;0
+8126;Sebikha;Ecole Primaire;TN414;812634;35.950879;10.1317884;E.P. eltrablsya;346;12;0
+8126;Sebikha;Ecole Primaire;TN414;812635;35.9167433;9.9472616;E.P. fryHayna;105;6;0
+8126;Sebikha;Ecole Primaire;TN414;812636;35.9603224;9.9756195;E.P. elfrywat;92;6;0
+8126;Sebikha;Ecole Primaire;TN414;812637;36.0924968;10.1509711;E.P.fdhlwn;269;12;0
+8126;Sebikha;Ecole Primaire;TN414;812638;35.9814104;10.1023476;elrwawnaE.P.;198;8;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813101;35.8488995;9.5898516;E.P. hachad;706;24;0
+8132;Ain jloula;Ecole Primaire;TN420;813102;35.7971801;9.804199;E.P. aayn jlwla;369;14;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813103;35.7768051;9.6730129;E.P. Bir ghrzan;24;3;0
+8132;Ain jloula;Ecole Primaire;TN420;813104;35.7617356;9.7634644;E.P. elnhaela;106;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813105;35.8893423;9.5542327;E.P. elkmbwra;131;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813106;35.9737432;9.6873485;E.P. elhamela;64;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813107;36.0349993;9.6915071;E.P. kssr ellmsa;310;12;1
+8132;Ain jloula;Ecole Primaire;TN420;813108;35.7927876;9.7315482;E.P. mkra;63;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813109;35.7541801;9.5841353;E.P. elmrkb;43;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813110;35.9234272;9.7201908;E.P. elebyra;41;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813111;36.04823;9.7634224;E.P. wady elkssb;149;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813112;35.91714526053495;9.64863444837769;E.P. elssaaanyn;76;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813113;35.8258669;9.5368145;E.P. Sidi aamara;38;5;0
+8132;Ain jloula;Ecole Primaire;TN420;813114;35.8530365;9.7318463;E.P. eltfyfyla;43;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813116;36.0048;9.78511;E.P. Awlad aayar;108;6;0
+8132;Ain jloula;Ecole Primaire;TN420;813117;35.8468411;9.8105779;E.P. elhasyan;86;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813118;35.7527761;9.5359811;E.P. Sidi elrymany;70;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813119;35.848243;9.5901976;E.P. elsrj;79;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813120;35.9529661;9.7330169;E.P. zghdwd;47;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813121;35.71872;9.55465;E.P. elmaaazyl;22;3;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813122;35.8476077;9.5858951;E.P.elharya;372;13;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813123;35.7476217;9.6617832;E.P. res elaaytha;67;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813124;35.850765;9.5960504;E.P. Hay elssnwbr;326;12;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813125;35.9148231;9.5748893;E.P. elklyaaa;139;6;1
+8131;El  Oueslatia;Ecole Primaire;TN415;813126;35.877382;9.5998458;E.P.Ibn Sina;36;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813127;35.9057871;9.5991843;E.P. Awlad bamr;42;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813128;35.8407441;9.6814881;E.P. elslam;66;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813129;35.7932;9.64382;E.P. elssdara;25;3;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813130;35.8800124;9.5282189;E.P. elaathmanya;50;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813131;35.99844524;9.7311363;E.P. eltawsa;51;6;0
+8131;El  Oueslatia;Ecole Primaire;TN415;813132;35.8516622;9.589408;E.P. elamtyaz;211;10;1
+8134;El Ala;Ecole Primaire;TN417;813401;35.6131354;9.56286;E.P. elaala elmrkz;529;18;1
+8134;El Ala;Ecole Primaire;TN417;813402;35.6378565;9.4530156;E.P. elbHayra;140;6;1
+8134;El Ala;Ecole Primaire;TN417;813403;35.6127188;9.4078063;E.P. eljwamaaya;102;6;0
+8134;El Ala;Ecole Primaire;TN417;813404;35.6577271;9.418354;E.P. elhnachyr;358;13;1
+8134;El Ala;Ecole Primaire;TN417;813405;35.7052505;9.5110281;E.P. elmsaaayd;84;6;1
+8134;El Ala;Ecole Primaire;TN417;813406;35.6270797;9.3702171;E.P. elrky;173;7;0
+8134;El Ala;Ecole Primaire;TN417;813407;35.6787347;9.3763246;E.P. eltwel;63;6;0
+8134;El Ala;Ecole Primaire;TN417;813408;35.6131334;9.5621949;E.P. elaala elhabyb;491;18;1
+8134;El Ala;Ecole Primaire;TN417;813409;35.6149073;9.5210312;E.P. elmrykb;141;6;1
+8134;El Ala;Ecole Primaire;TN417;813410;35.6784576;9.531694;E.P. 1 janvier frhaat hachad - Awlad aamr;177;8;1
+8134;El Ala;Ecole Primaire;TN417;813411;35.6768239;9.5368625;E.P. 20 Mars  eldbabcha;135;6;1
+8134;El Ala;Ecole Primaire;TN417;813412;35.61483;9.48104;E.P. elnkaz;112;6;1
+8134;El Ala;Ecole Primaire;TN417;813413;35.671049;9.522885;E.P. 3 Aout Awlad aamr;172;7;1
+8134;El Ala;Ecole Primaire;TN417;813414;35.6137301;9.56454;E.P. elghraba;55;5;0
+8134;El Ala;Ecole Primaire;TN417;813415;35.58876;9.53092;E.P. elaaryba;144;7;1
+8134;El Ala;Ecole Primaire;TN417;813416;35.69698;9.348;E.P. elmaamrya;83;6;0
+8134;El Ala;Ecole Primaire;TN417;813417;35.6296543531804;9.54539715666534;E.P. elfjajrya;174;9;1
+8134;El Ala;Ecole Primaire;TN417;813419;35.6014698;9.5764783;E.P. eltahr ssfr;73;6;0
+8134;El Ala;Ecole Primaire;TN417;813420;35.638;9.53086;E.P. elmhaafydh elktar;228;12;1
+8134;El Ala;Ecole Primaire;TN417;813421;35.709675;9.473729;E.P. eljlelba elzaayrat;88;6;0
+8134;El Ala;Ecole Primaire;TN417;813422;35.59636;9.42672;E.P. elbrahmya;37;5;0
+8134;El Ala;Ecole Primaire;TN417;813423;35.65651;9.4918;E.P. mssrata;70;6;0
+8134;El Ala;Ecole Primaire;TN417;813424;35.5712637;9.5522746;E.P. trza elchmelya;96;6;0
+8134;El Ala;Ecole Primaire;TN417;813425;35.62737;9.5731973;E.P. Awlad saaydan;107;6;0
+8134;El Ala;Ecole Primaire;TN417;813426;35.6567392;9.3679062;E.P. ssyada elchmelya;135;6;1
+8136;Haffouz;Ecole Primaire;TN416;813601;35.6328777;9.6758548;E.P. hafwz elmrkz;851;28;1
+8136;Haffouz;Ecole Primaire;TN416;813602;35.5234386;9.7235833;E.P. aayn elbydha¡;368;13;1
+8136;Haffouz;Ecole Primaire;TN416;813603;35.5864825;9.7337725;E.P. aayn ghrab;66;6;1
+8136;Haffouz;Ecole Primaire;TN416;813604;35.6493226;9.7387716;E.P. aayn zana;178;9;1
+8136;Haffouz;Ecole Primaire;TN416;813605;35.72934;9.60593;E.P. elaaelya;164;9;1
+8136;Haffouz;Ecole Primaire;TN416;813606;35.66653;9.80853;E.P. elchrychyra;74;6;1
+8136;Haffouz;Ecole Primaire;TN416;813607;35.5993696;9.7791581;E.P. elhawfya;246;12;1
+8136;Haffouz;Ecole Primaire;TN416;813608;35.4959422;9.7370689;E.P. elkhtatfa;352;14;1
+8136;Haffouz;Ecole Primaire;TN416;813609;35.7075618;9.6312972;E.P. khyt elwady 1;152;8;1
+8136;Haffouz;Ecole Primaire;TN416;813610;35.64707;9.5687;E.P. wady eljbas;63;6;0
+8136;Haffouz;Ecole Primaire;TN416;813612;35.5260056;9.7881964;E.P. Awlad khlf ellh;224;11;0
+8136;Haffouz;Ecole Primaire;TN416;813613;35.52554;9.61187;E.P. trza eljnwbya;107;6;1
+8136;Haffouz;Ecole Primaire;TN416;813614;35.70246;9.80703;E.P. elzrk;150;7;1
+8136;Haffouz;Ecole Primaire;TN416;813616;35.66295;9.61941;E.P. elktyfat;168;8;1
+8136;Haffouz;Ecole Primaire;TN416;813617;35.707422284371;9.66959416866302;E.P. aayn elkdya;75;6;1
+8136;Haffouz;Ecole Primaire;TN416;813618;35.56694;9.6523;E.P. elharcha;168;8;1
+8136;Haffouz;Ecole Primaire;TN416;813619;35.6366523;9.6735971;E.P. Hay elzyatyn;732;24;1
+8136;Haffouz;Ecole Primaire;TN416;813620;35.50034;9.78691;E.P. Awlad khlyf;109;6;0
+8136;Haffouz;Ecole Primaire;TN416;813621;35.49908;9.6992;E.P. elzmla;426;16;1
+8136;Haffouz;Ecole Primaire;TN416;813622;35.6003489;9.6837195;E.P. elmrayHaya;125;6;1
+8136;Haffouz;Ecole Primaire;TN416;813623;35.6901769;9.5905534;E.P. elaank;48;6;0
+8136;Haffouz;Ecole Primaire;TN416;813624;35.5436083333333;9.70186833333333;E.P. elzbara;140;6;0
+8136;Haffouz;Ecole Primaire;TN416;813625;35.7302996;9.6464462;E.P. khyt elwady 2/haaj aamar;84;6;1
+8136;Haffouz;Ecole Primaire;TN416;813626;35.64629;9.5979;E.P. Awlad elaaysawy;190;8;0
+8136;Haffouz;Ecole Primaire;TN416;813627;35.59425;9.6382687;E.P. hamam trza;54;6;0
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814101;35.3945950953852;9.54509675502777;E.P. 2 Mars  34 elhaajb;810;26;0
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814102;35.3686283;9.5696107;E.P. mhata elhaajb;135;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814103;35.3982897;9.5428761;E.P. elmbyt;441;16;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814104;35.4727296;9.6808099;E.P. aayn mjwna;130;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814105;35.54673;9.5114584;E.P. elchwachy aan elaala;270;11;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814106;35.5644262;9.4725574;E.P. elsrja aan elaala;106;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814107;35.4926844;9.5124612;E.P. elthlaja;233;12;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814108;35.4350493;9.5136151;E.P. elkntra;306;12;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814109;35.44368;9.62633;E.P. kssr elswysyn;82;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814110;35.2875529865238;9.63299963447498;E.P. elmnasa;158;7;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814111;35.3651308;9.4992881;E.P. Awlad aabas;232;12;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814112;35.48794;9.63938;E.P. Awlad aaamr;195;10;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814113;35.4417824;9.5846324;E.P. elrHayma;111;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814114;35.37501;9.63318;E.P. dar elkhryf;100;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814115;35.29242;9.56508;E.P. eldghyma;127;6;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814116;35.3869089;9.58757;E.P. elaanyzat;212;10;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814117;35.5640085;9.4727974;E.P. elhajaj;486;18;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814118;35.3243412;9.613469;E.P. aaytha elnsa;59;6;0
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814119;35.3921984;9.5520737;E.P. Hay elsaaada;581;20;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814120;35.51643;9.46475;E.P. elswdan;298;12;1
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814121;35.3173751;9.6549207;E.P. dwar elfrahatya;114;6;0
+8141;Hajeb El Ayoun;Ecole Primaire;TN418;814122;35.42455;9.64196;E.P. elfarsya;62;6;0
+8146;Nasrallah;Ecole Primaire;TN419;814601;35.35274;9.82652;E.P. Sidi alibn nssr ellh;453;18;1
+8146;Nasrallah;Ecole Primaire;TN419;814602;35.2473143;9.8592854;E.P. elaajabna;121;6;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814603;35.4045285;9.8998347;E.P. elflaylya;68;6;0
+8146;Nasrallah;Ecole Primaire;TN419;814604;35.357247;9.873632;E.P. Bir elslaymya;93;6;1
+8146;Nasrallah;Ecole Primaire;TN419;814605;35.28833;9.87943;E.P. frhaat hachad/hnchyr elhaml;112;6;1
+8146;Nasrallah;Ecole Primaire;TN419;814606;35.1841;9.81776;E.P. elkbara;176;7;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814607;35.472709;9.847172;E.P. elhamydat;140;7;1
+8146;Nasrallah;Ecole Primaire;TN419;814608;35.304083;9.735334;E.P. elkhbna;111;6;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814609;35.4242417;9.8526026;E.P. Manzel mhiri 1;616;21;1
+8146;Nasrallah;Ecole Primaire;TN419;814610;35.2371554;9.7759888;E.P. elrkwba elhamra;150;7;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814611;35.417436;9.803334;E.P. rkwba alibn saad;79;6;0
+8147;Manzel mhiri;Ecole Primaire;TN421;814612;35.3885541;9.75792;E.P. mhata Sidi saad;260;12;1
+8146;Nasrallah;Ecole Primaire;TN419;814613;35.318225;9.9024132;E.P. elslaymya;60;6;0
+8147;Manzel mhiri;Ecole Primaire;TN421;814614;35.443177;9.7475198;E.P. eltwyla;78;6;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814615;35.381937975925474;9.7176080864853;E.P. sd bwrkyba;104;6;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814616;35.4676992;9.7951476;E.P. elaazaaaza;128;7;1
+8146;Nasrallah;Ecole Primaire;TN419;814617;35.2531569;9.938458;E.P. elbrykat nssr ellh;199;9;1
+8146;Nasrallah;Ecole Primaire;TN419;814618;35.2019;9.87392;E.P. thamr;41;5;0
+8146;Nasrallah;Ecole Primaire;TN419;814619;35.3472482;9.8376143;E.P. Hay elnsym;251;12;1
+8146;Nasrallah;Ecole Primaire;TN419;814620;35.2085639;9.9291575;E.P. Nour;91;6;1
+8146;Nasrallah;Ecole Primaire;TN419;814621;35.2983532;9.7707787;E.P. ebw elkasm elchaby;152;7;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814622;35.45301;9.88219;E.P. hnchyr elmstyry;138;6;1
+8146;Nasrallah;Ecole Primaire;TN419;814623;35.2305118;9.7308866;E.P. khbna eltmama;37;5;0
+8146;Nasrallah;Ecole Primaire;TN419;814624;35.21581;9.81902;E.P. elnjaha;34;6;0
+8146;Nasrallah;Ecole Primaire;TN419;814625;35.20465;9.78677;E.P. eljmel;41;6;0
+8147;Manzel mhiri;Ecole Primaire;TN421;814626;35.4186287;9.845926;E.P. Manzel mhiri 2;103;6;1
+8146;Nasrallah;Ecole Primaire;TN419;814627;35.36384;9.83528;E.P. Hay elaazaaaza;170;6;1
+8146;Nasrallah;Ecole Primaire;TN419;814630;35.2972429;9.8529664;E.P. elryaycha;112;6;1
+8147;Manzel mhiri;Ecole Primaire;TN421;814631;35.4914656;9.8752033;E.P. elhamydat elchrkya 2;69;6;0
+8146;Nasrallah;Ecole Primaire;TN419;814632;35.2469742;9.8048632;E.P. elbchayrya;109;6;0
+8146;Nasrallah;Ecole Primaire;TN419;814633;35.18129;9.84585;E.P. elaawaynya;11;3;0
+8151;Bouhajla;Ecole Primaire;TN41B;815101;35.4000101;10.0489162;E.P. Bouhajlaelmrkz;779;22;0
+8151;Bouhajla;Ecole Primaire;TN41B;815102;35.3950537;10.0982938;E.P. elftha Sidi aamr;101;6;1
+8151;Bouhajla;Ecole Primaire;TN41B;815103;35.4759982;10.0537257;E.P.benwnys;126;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815105;35.3573634;10.1285826;E.P. Bir alibn aamara;124;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815106;35.3710595;9.9403496;E.P. Bir ahamd;170;7;1
+8151;Bouhajla;Ecole Primaire;TN41B;815107;35.2868625;10.0525124;E.P. Bir elchrfa¡;215;11;1
+8151;Bouhajla;Ecole Primaire;TN41B;815108;35.26197;10.0298;E.P. Bir eldwla;314;13;1
+8151;Bouhajla;Ecole Primaire;TN41B;815109;35.3413759;10.0368917;E.P. Bir eljdyd;329;12;1
+8151;Bouhajla;Ecole Primaire;TN41B;815111;35.4602047;10.0697911;E.P. Bir msykyn;212;12;1
+8151;Bouhajla;Ecole Primaire;TN41B;815114;35.1912708;10.0022782;E.P. dhraaa bwkf;310;13;1
+8151;Bouhajla;Ecole Primaire;TN41B;815115;35.4001049;10.131983;E.P. dhraaa mryra;180;7;1
+8151;Bouhajla;Ecole Primaire;TN41B;815117;35.4148826;9.9370917;E.P. elktyfa;218;11;1
+8151;Bouhajla;Ecole Primaire;TN41B;815118;35.4632632;9.9997365;E.P. hnchyr trad;231;11;1
+8151;Bouhajla;Ecole Primaire;TN41B;815119;35.3533275;9.926146;E.P. elazdhar;95;6;1
+8151;Bouhajla;Ecole Primaire;TN41B;815120;35.3592183;9.995666;E.P. eljhynat;358;14;1
+8151;Bouhajla;Ecole Primaire;TN41B;815121;35.392552;9.96881;E.P. khlwa elmwysat;532;18;1
+8151;Bouhajla;Ecole Primaire;TN41B;815123;35.2538;10.1366483;E.P. elwdy;137;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815124;35.3108984;10.1284613;E.P. Awlad aaachwr;178;6;1
+8151;Bouhajla;Ecole Primaire;TN41B;815125;35.4555314;10.1349003;E.P. Awlad nssyr;180;8;1
+8151;Bouhajla;Ecole Primaire;TN41B;815129;35.3946;10.0463579;E.P.Ibn khldwn;998;27;1
+8151;Bouhajla;Ecole Primaire;TN41B;815131;35.3370512;10.0938774;E.P. ellbya;195;10;1
+8151;Bouhajla;Ecole Primaire;TN41B;815133;35.2805599;10.0959146;E.P. elzkb;113;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815134;35.2217613;10.1767893;E.P. elrmadhnya;173;9;1
+8151;Bouhajla;Ecole Primaire;TN41B;815138;35.3087696;9.9597018;E.P. jhyna;259;12;1
+8151;Bouhajla;Ecole Primaire;TN41B;815139;35.2472576;10.0612027;E.P. 20 Mars  56;234;11;1
+8151;Bouhajla;Ecole Primaire;TN41B;815140;35.4172108;9.9947621;E.P. Bir elaarby;226;11;1
+8151;Bouhajla;Ecole Primaire;TN41B;815141;35.4477369;9.9484854;E.P. Awlad frha;147;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815142;35.3362432;9.9595709;E.P. 24 janvier 52;111;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815143;35.4336295;10.0807901;E.P. Sidi ahamd;158;7;1
+8151;Bouhajla;Ecole Primaire;TN41B;815144;35.335343;10.016895;E.P. elaawakbya;115;6;1
+8151;Bouhajla;Ecole Primaire;TN41B;815148;35.35796396652057;10.1364129786551;E.P. frk elssywda;115;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815149;35.400659;10.0483664;E.P. elmaarfa;678;22;0
+8151;Bouhajla;Ecole Primaire;TN41B;815150;35.3075624;10.0640989;E.P. elfwz elhadaydya;168;8;1
+8151;Bouhajla;Ecole Primaire;TN41B;815151;35.3816022;10.0152867;E.P. elshaylya;115;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815152;35.3912514;9.9923396;E.P. Awlad mbark;229;11;0
+8151;Bouhajla;Ecole Primaire;TN41B;815153;35.29793;10.15758;E.P. kssr eldbach;217;10;0
+8151;Bouhajla;Ecole Primaire;TN41B;815154;35.3766487;10.0614594;E.P. elswelmya;82;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815156;35.2245412;10.1310958;E.P. elaawaynya;86;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815157;35.4834581;10.0898607;E.P. Awlad bwhawch;287;12;0
+8151;Bouhajla;Ecole Primaire;TN41B;815158;35.3251795;9.9859612;E.P. Bir braka;120;6;0
+8151;Bouhajla;Ecole Primaire;TN41B;815160;35.4393208;10.0642929;E.P. elkssaaat;198;10;0
+8151;Bouhajla;Ecole Primaire;TN41B;815161;35.4681919;10.0201885;m ≈ eldhwahr;94;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815601;35.11616043784355;10.0326435420362;E.P. Bir elmelha Echrarda elmrkz;597;21;0
+8156;Echrarda;Ecole Primaire;TN41A;815602;35.216339;9.9644957;E.P. Bir hwydy;193;9;1
+8156;Echrarda;Ecole Primaire;TN41A;815603;35.04824;10.04027;E.P. elaawayd;207;9;1
+8156;Echrarda;Ecole Primaire;TN41A;815604;35.139;10.065;E.P. hasyn elghrslawy/Birelhalw;190;9;1
+8156;Echrarda;Ecole Primaire;TN41A;815605;35.2027;10.15025;E.P. Bir elwssfan;277;12;0
+8156;Echrarda;Ecole Primaire;TN41A;815606;35.18345;10.08947;E.P. elchraytya eljnwbya;211;10;1
+8156;Echrarda;Ecole Primaire;TN41A;815607;35.11289;10.000851;E.P. eltkdm;283;13;1
+8156;Echrarda;Ecole Primaire;TN41A;815608;35.2809538;9.9653592;E.P.eladwaz (mrzwk elfrkh)˝;216;10;0
+8156;Echrarda;Ecole Primaire;TN41A;815609;35.165758;10.04452;E.P. elaawakbya;85;6;1
+8156;Echrarda;Ecole Primaire;TN41A;815610;35.17102;10.04049;E.P.Ibn zlwch;103;6;1
+8156;Echrarda;Ecole Primaire;TN41A;815611;35.1067452;10.0930057;E.P. elmsaaadya eljnwbya;157;7;0
+8156;Echrarda;Ecole Primaire;TN41A;815612;35.12029;10.02127;E.P. tysyr elchwayHaya;145;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815613;35.15943532521248;10.1752441865404;E.P. Bir elfydh;143;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815614;35.2319305;9.9973214;E.P. Bir zrwk;77;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815615;35.09029;10.03331;E.P. Elamal;203;10;0
+8156;Echrarda;Ecole Primaire;TN41A;815616;35.116864;10.072521;E.P. elharayrya;65;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815617;35.0889432;10.0659217;E.P. elaabaydya;90;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815618;35.10049;10.07008;E.P. elchwachnya;124;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815619;35.17652;10.12032;E.P. elmzahdya;98;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815620;35.139055;10.0363398;E.P. eltyb elmhyry;225;10;0
+8156;Echrarda;Ecole Primaire;TN41A;815621;35.15938;10.0089;E.P. elaahd eljdyd;117;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815622;35.20302;10.125691;E.P. elhadaydya;100;6;1
+8156;Echrarda;Ecole Primaire;TN41A;815623;35.2549791;10.0064666;E.P. Awlad lhamr;58;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815624;35.2023976;9.984996;E.P. elhwany;122;6;0
+8156;Echrarda;Ecole Primaire;TN41A;815626;35.1890991;10.1887864;E.P. Elmanar;47;6;1
