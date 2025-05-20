@@ -864,7 +864,7 @@ def show_GPS_Etab():
         filtered_df = filtered_df[filtered_df["code_et"] == selected_etab]
 
     # 🌍 Carte Folium
-    col1, col2 = st.columns((4.3, 3.0), gap='medium')
+    col1, col2 = st.columns((4.0, 3.5), gap='medium')
 
     with col1:
         map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
