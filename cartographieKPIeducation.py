@@ -869,7 +869,7 @@ def show_GPS_Etab():
     with col1:
         map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
         
-        for _, row in df.iterrows():
+        for _, row in  filtered_df.iterrows():
             nature_c = row["nature"].strip().lower()  # normalisation
             popup_text = f"""<strong>{row['nature']}</strong><br>
             Délégation : {row['deleg1']}<br>
