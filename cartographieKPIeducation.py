@@ -844,7 +844,7 @@ def show_GPS_Etab():
 
     # -------------------
     # 1️⃣ Choix de délégation
-    delegations = df['deleg1'].dropna().unique().tolist()
+    delegations = df['deleg1'].dropna().unique().tolist()[::1]
     selected_deleg = st.selectbox("📍 Filtrer par délégation :", ["Toutes les délégations"] + sorted(delegations))
 
     # -------------------
