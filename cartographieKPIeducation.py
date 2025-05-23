@@ -827,7 +827,7 @@ def show_GPS_Etab():
         df = pd.read_csv('GPS.csv',
             sep=';',
             encoding= 'ISO-8859-1',
-            on_bad_lines='skip'
+            on_bad_lines='skip', dtype={'code_et': str}
         )
         df['lat1'] = pd.to_numeric(df['lat1'], errors='coerce')
         df['lon1'] = pd.to_numeric(df['lon1'], errors='coerce')
@@ -844,7 +844,7 @@ def show_GPS_Etab():
 
     # -------------------
     # 1️⃣ Choix de délégation
-    delegations = df['deleg1'].dropna().unique().tolist()[::1]
+    delegations = df['deleg1'].dropna().unique().tolist()
     selected_deleg = st.selectbox("📍 Filtrer par délégation :", ["Toutes les délégations"] + sorted(delegations))
 
     # -------------------
@@ -864,7 +864,7 @@ def show_GPS_Etab():
         filtered_df = filtered_df[filtered_df["code_et"] == selected_etab]
 
     # 🌍 Carte Folium
-    col1, col2 = st.columns((4.0, 3.5), gap='medium')
+    col1, col2 = st.columns((4.3, 3.0), gap='medium')
 
     with col1:
         map = folium.Map(location=[35.40, 10.06], zoom_start=8, scrollWheelZoom=False, tiles='CartoDB positron')
@@ -906,9 +906,7 @@ def show_GPS_Etab():
                 popup=popup_text,
                 icon=folium.Icon(color=icon_color, icon=icon_name, prefix='fa')
             ).add_to(map)
-
-         
-            
+    
            
         st_folium(map, width=1000, height=600)
     with col2:
@@ -916,8 +914,99 @@ def show_GPS_Etab():
         # Affiche les infos
         
         st.dataframe( filtered_df.drop(columns=["lat1", "lon1","ref_tn_cod1","codedel1"]))  # Cache coords si tu veux 
+    def load_data():
+                df_pr=pd.read_csv('avanprojets.csv',sep=';',  encoding= 'ISO-8859-1', on_bad_lines='skip', dtype={'code_et': str})
+                    
+                return df_pr
+    df_pr = load_data()
+        # Convertir en string dans les deux DataFrames
+    df_pr['code_et'] = df_pr['code_et'].astype(str).str.strip()
+    df['code_et'] = df['code_et'].astype(str).str.strip()
 
-  
-           
+                # Idem pour 'nature' si tu merges aussi dessus
+    df_pr['nature'] = df_pr['nature'].astype(str).str.strip().str.lower()
+    df['nature'] = df['nature'].astype(str).str.strip().str.lower()
+
+                # Faire le merge       
+    df_final = df_pr.merge(df,on=["code_et", "nature"], how="left")
+    df_filtered = df_final.copy()
+    with col1:
+        if selected_deleg != "Toutes les délégations":
+            df_filtered = df_filtered[df_filtered['deleg1']== selected_deleg]
+
+        if selected_etab != "Tous les établissements":
+            df_filtered = df_filtered[df_filtered['code_et'] == selected_etab]
+        if not df_filtered.empty:
+            count_by_type = df_filtered['type_inter'].value_counts().reset_index()
+            count_by_type.columns = ['Type dintervention', 'Nombre']
+            st.subheader("les projets d'investissemnt de CRE Kairouan selon le type 'intervention")
+            fig = px.pie(
+                count_by_type,
+                names='Type dintervention',
+                values='Nombre',
+                hole=0.5,
+                color_discrete_sequence=px.colors.sequential.RdBu_r
+            )
+            fig.update_traces(textinfo='percent+label')
+
+            st.plotly_chart(fig, use_container_width=True)
+
+            count_by_bailleur= df_filtered['Bailleur'].value_counts().reset_index()
+            count_by_bailleur.columns = ['Bailleur de Fond', 'Nombre']
+            st.subheader("les projets d'investissement de CRE Kairouan selon le BF")
+            fig1 = px.pie(
+                count_by_bailleur,
+                names='Bailleur de Fond',
+                values='Nombre',
+                hole=0.5,
+                color_discrete_sequence=px.colors.sequential.RdBu_r
+            )
+            fig1.update_traces(textinfo='percent+label')
+
+            st.plotly_chart(fig1, use_container_width=True)
+        else:
+            st.warning("Aucune donnée disponible pour les filtres sélectionnés.")
+    with col2:
+
+        if selected_deleg != "Toutes les délégations":
+            df_filtered = df_filtered[df_filtered['deleg1'] == selected_deleg]
+
+        if selected_etab != "Tous les établissements":
+            df_filtered = df_filtered[df_filtered['code_et'] == selected_etab]
+        if not df_filtered.empty:
+            count_by_ann = df_filtered['Ann_prog'].value_counts().reset_index()
+            count_by_ann = count_by_ann.sort_values(by='Ann_prog')
+            count_by_ann.columns = ['Annee de programmation', 'Nombre']
+            st.subheader("les projets d'investissemnt de CRE Kairouan selon l'année de programmation")
+            fig = px.pie(
+                count_by_ann,
+                names='Annee de programmation',
+                values='Nombre',
+                hole=0.5,
+                color_discrete_sequence=px.colors.sequential.RdBu_r
+            )
+            fig.update_traces(textinfo='percent+label')
+
+            st.plotly_chart(fig, use_container_width=True)
+
+            count_by_typeann = df_filtered.groupby([ 'Ann_prog','type_inter']).size().reset_index(name='Nombre')
+            count_by_typeann = count_by_typeann.sort_values(by=['Ann_prog', 'type_inter'])
+            count_by_typeann['intervention_annee'] = count_by_typeann['type_inter'] + ' - ' + count_by_typeann['Ann_prog'].astype(str)
+
+            st.subheader("les projets d'investissement de CRE Kairouan selon le type d'intervention et l'année de programmation")
+            fig1 = px.pie(
+                count_by_typeann,
+                names='intervention_annee',
+                values='Nombre',
+                hole=0.5,
+                color_discrete_sequence=px.colors.sequential.RdBu_r
+            )
+            fig1.update_traces(textinfo='percent+label')
+
+            st.plotly_chart(fig1, use_container_width=True)
+        else:
+            st.warning("Aucune donnée disponible pour les filtres sélectionnés.")
+         
+               
 # === 7. Exécuter la navigation ===
 navigate()  # Démarre la fonction de navigation
