@@ -9,3 +9,6 @@ altair
 geoviews 
 cartopy   
 panel 
+openai
+streamlit-mic-recorder
+gtts
