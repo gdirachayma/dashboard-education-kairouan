@@ -12,3 +12,5 @@ panel
 openai
 streamlit-mic-recorder
 gtts
+requests
+openai
