@@ -54,51 +54,8 @@ h1 {
 
 
 
-# === Simuler une base d'utilisateurs ===
-USER_CREDENTIALS = {
-    "admin": "pass12345",
-    "kairouan": "education2025",
-    "chaymaguedira":"290190Ch@yma"
-}
-
-# === Authentification de base ===
-def login():
-    col1, col2 = st.columns((1.3,5.0), gap='medium')
-    with col1:
-         st.image("470202910_1029942125839144_4726740988042572752_n.jpg", use_container_width=True)
-    with col2:
-        st.title("🔐 Connexion au Dashboard-KPI Education in KAIROUAN")
-        with st.form(key="login_form"):
-            username = st.text_input("Nom d'utilisateur")
-            password = st.text_input("Mot de passe", type="password")
-             
-            if st.form_submit_button("Se connecter"):
-                if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
-                    st.session_state.username = username
-                    st.session_state.logged_in = True
-                    st.success("Bienvenue ! Vous êtes connecté ✅ ")
-                else:
-                    st.error("Nom d'utilisateur ou mot de passe incorrect ❌")
-    st.markdown(
-            """
-            <div style="text-align: center;">
-                <img src="https://i.pinimg.com/originals/d7/64/c7/d764c70776b64e523cb4eea2f322db96.gif" style="width:200%; max-width:1090px;">
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-         
-# === 4. Gestion de la session ===
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-if "current_step" not in st.session_state:
-    st.session_state.current_step = 0
 
 def navigate():
-    # Page de login ou page après connexion
-    if not st.session_state.logged_in:
-        login()  # Si l'utilisateur n'est pas connecté, afficher la page de login
-    else:
         with st.sidebar:    
             st.image('470202910_1029942125839144_4726740988042572752_n.jpg')
             st.title('Indicateurs éducatifs de Kairouan ')
